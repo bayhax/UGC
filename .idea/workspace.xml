@@ -2,19 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edcdff1e-7611-4d1e-bf3d-b41f10cc4968" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/home/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/home/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/home/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_mod/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_mod/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_mod/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_mod/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_server/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_server/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_server/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_server/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/create_server.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/create_server.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/ugc_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ugc_index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ugc_mod.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ugc_mod.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ugc_mod_comment.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ugc_mod_comment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ugc_mod_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ugc_mod_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ugc_mod_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ugc_mod_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ugc_mod_get.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ugc_mod_obtain.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ugc_mod_write_comment.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ugc_mod_write_comment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ugc_server.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ugc_server.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -74,10 +73,10 @@
       <screen x="67" y="27" width="1651" height="899" />
     </state>
     <state x="660" y="395" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1651.899@67.27.1651.899" timestamp="1589789543504" />
-    <state x="555" y="219" width="672" height="678" key="search.everywhere.popup" timestamp="1589787389715">
+    <state x="555" y="219" width="672" height="678" key="search.everywhere.popup" timestamp="1589803055193">
       <screen x="67" y="27" width="1651" height="899" />
     </state>
-    <state x="555" y="219" width="672" height="678" key="search.everywhere.popup/67.27.1651.899@67.27.1651.899" timestamp="1589787389715" />
+    <state x="555" y="219" width="672" height="678" key="search.everywhere.popup/67.27.1651.899@67.27.1651.899" timestamp="1589803055193" />
     <state x="617" y="388" width="540" height="175" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1589773321611">
       <screen x="67" y="27" width="1651" height="899" />
     </state>

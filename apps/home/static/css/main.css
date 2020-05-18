@@ -40,9 +40,37 @@ html,body{height:100%}
 .title_link ul .download {
     background: orange;
 }
+.right_con {
+    font-size: 20px;
+    background: #42ad46;
+    width: 10%;
+    height: 80%;
+    float: right;
+}
+.right_con ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style:none;
+    height: 100%;
+    width: 100%;
+}
+.right_con ul li{
+    display: inline-block;
+    height: 20%;
+    width: 100%;
+
+}
+.right_con ul li a{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    line-height: 5em;
+    text-align: center;
+}
 .body {
     height:80%;
-    width:90%;
+    width:100%;
     /*background: red;*/
 }
 .footer {
@@ -164,4 +192,83 @@ html,body{height:100%}
     padding: 2px 35px;
     height: 50%;
     line-height:4em;
+}
+.body .head_nav {
+    height: 15%;
+    width: 60%;
+    margin-left: 20%;
+    background: red;
+}
+.body .head_nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style:none;
+    height: 100%;
+    width: 100%;
+}
+.body .head_nav ul li{
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+}
+.body .head_nav ul li a{
+    display: inline-block;
+    border: 2px solid #42ad46;
+    margin-top:8%;
+    padding: 2px 35px;
+    height: 50%;
+    line-height:4em;
+}
+.body .user {
+    height: 7%;
+    width:60%;
+    margin-left: 20%;
+    text-align: center;
+    line-height: 3em;
+    background: yellow;
+}
+.user .nickname {
+    display: inline-block;
+    width: 50%;
+    line-height:3em;
+}
+.user .score {
+    display: inline-block;
+    width: 50%;
+    float: right;
+    line-height: 3em;
+}
+.body .show {
+    height:100%;
+    width:60%;
+    margin-left: 20%;
+    background: gray;
+}
+.user .obtain {
+    display: inline-block;
+    width: 50%;
+    line-height:3em;
+}
+.user .create {
+    display: inline-block;
+    width: 50%;
+    float: right;
+    line-height: 3em;
+}
+.show .create_mod {
+    display: inline-block;
+    height: 10%;
+}
+.register {
+    height: 100%;
+    width: 100%;
+}
+.register ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style:none;
+    height: 100%;
+    width: 100%;
 }
