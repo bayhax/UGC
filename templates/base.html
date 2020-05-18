@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<!-- 网页标题内容块 -->
+	<title>{% block title %}{% endblock title %}</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+	<link rel="SHORTCUT ICON" type="text/css" href="{% static 'img/favicon.ico' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-table.css' %}">
+    <script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap-table.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap-table-zh-CN.js' %}"></script>
+	<!-- 网页顶部引入文件块 -->
+	{% block topfiles %}{% endblock topfiles %}
+</head>
+<body>
+	<!-- 网页顶部导航块 -->
+	{% block header_con %}
+	<div class="header">
+        <div class="logo"><img src="{% static 'img/baymax.jpg' %}" alt="logo" height="83px"></div>
+        <div class="title_link">
+			<ul>
+				<li class="li"><a href="/home/index">首页</a></li>
+				<li class="li"><a href="/ugc_home/ugc_index">UGC中心</a></li>
+				<li class="li"><a href="/contact/contact">联系我们</a></li>
+        	</ul>
+		</div>
+	</div>
+	{% endblock header_con %}
+
+	<!-- 网页面主题内容块 -->
+	{% block body %}
+	<div class="body"></div>
+	{% endblock body%}
+
+	<div class="footer">
+		<div class="health_advice">
+			<p>健康忠告</p>
+			<ul>
+				<li class="li">抵制不良游戏</li>
+				<li class="li">拒绝盗版游戏</li>
+				<li class="li">注意自我保护</li>
+				<li class="li">谨防上当受骗</li>
+			</ul>
+			<ul>
+				<li class="li">适度游戏益脑</li>
+				<li class="li">沉迷游戏伤身</li>
+				<li class="li">合理安排时间</li>
+				<li class="li">享受健康生活</li>
+			</ul>
+		</div>
+		<div class="foot_link">
+			<a href="#">家长监护工程</a>
+			<span>|</span>
+			<a href="#">纠纷处理</a>
+		</div>
+		<p>网络文化经营许可证： 京网文[2019]3669-352京ICP证: 京B2-20191828</p>
+		<p>京ICP备 19009550号 ©2019-2020 北京第零世界科技有限公司 版权所有</p>
+	</div>
+	<!-- 网页底部html元素块 -->
+	{% block bottom %}{% endblock bottom%}
+	<!-- 网页底部页面文件块 -->
+	{% block bottomfiles %}{% endblock bottomfiles%}
+</body>
+</html>
