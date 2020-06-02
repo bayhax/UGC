@@ -1,0 +1,15 @@
+.dispute {
+    height: 50rem;
+    width: 100%;
+    border: 2px solid yellow;
+}
+.dispute_title {
+    font-size:24px;
+    height: 5%;
+    text-indent: 3%;
+}
+.dispute_content {
+    font-size:16px;
+    height:80%;
+    text-indent:5%;
+}

@@ -1,7 +1,138 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="zh-CN">
 {% load static %}
-{% block title %}北京第零世界科技有限公司{% endblock title %}
+<head>
+    <meta charset="utf-8">
+    <title>北京第零世界科技有限公司</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
-{% block body %}
-<div class="body"></div>
-{% endblock body %}
+    <!-- Link Swiper's CSS -->
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/swiper.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css'%}">
+    <!--2020.04.04全国抗击疫情哀悼日灰色背景-->
+    <style>
+        .gray{
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+            _filter: none;
+        }
+    </style>
+    <!-- Demo styles -->
+</head>
+<body>
+
+    <!--网页顶部导航块-->
+    <div class="head_nav">
+            <div class="logo"><img src="{% static 'img/baymax.jpg' %}" alt="logo" height="100%"></div>
+            <div class="title_link">
+                <ul>
+                    <li class="li"><a href="/home/index#index" class="active" id="index">首页</a></li>
+                    <li class="li"><a href="/home/index#ugc" id="ugc">UGC中心</a></li>
+                    <li class="li"><a href="/home/index#contact" id="contact">联系我们</a></li>
+                    <li class="li filling"><a href="/home/index#download" id="download">下载</a></li>
+                </ul>
+                <div class="hide_title"><img src="{% static 'img/baymax.jpg' %}" height="100%"></div>
+            </div>
+        </div>
+
+    <!--最外层body很重要，对footer的绝对定位有重要作用，不然footer没有参考-->
+    <div id="body_con" class="body_con">
+        <!--网页主题内容-->
+        <div class="body_container">
+            <!-- Swiper -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" data-hash="index">视频</div>
+                    <div class="swiper-slide" data-hash="ugc"><div class="news_box">
+                        <div id="ugc_header" class="ugc_header">
+                            <button type="button" id="ugc_index" class="ugc_index">首页</button>
+                            <button type="button" id="ugc_mod" class="ugc_mod">MOD</button>
+                            <button type="button" id="ugc_server" class="ugc_server">服务器</button>
+                        </div>
+                        <div id="ugc_user" class="ugc_user">
+                            <div id="user" class="user">用户名</div>
+                            <div id="score" class="score">积分</div>
+                        </div>
+                        <div class="swiper-ugc">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="ugc_box">
+
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="ugc_box"></div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="ugc_box"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                    <div class="swiper-slide" data-hash="contact">
+                        <div class="about_box">
+                        <div class="about_us">
+                        <h2 style="font-size:30px; text-align:center;">关于我们</h2>
+                            <p>北京第零世界科技有限公司成立于2018年1月，企业围绕"诚信透明、主动担当、工匠精神、活力进取"四大文化，致力于精品游戏研发。</p>
+                        </div>
+                        <div class="contact_us">
+                            <h2 style="font-size:30px;text-align:center">联系我们</h2>
+                            <p>地址： 北京市朝阳区建国路15号院甲1号北岸1292三间房创意生活园区9-7291</p>
+                            <p>邮箱：</p>
+                        </div>
+                            </div>
+                    </div>
+                    <div class="swiper-slide" data-hash="download">
+                        下载
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+            <!--页面底部滑入式页尾-->
+            <div id="box_footer" class="box_footer">
+                <footer id="footer" class="footer">
+                    <div class="box">
+                <div class="content">
+                    <p><span>健康管理</span></p>
+                    <ul>
+                        <li class="li">抵制不良游戏</li>
+                        <li class="li">拒绝盗版游戏</li>
+                        <li class="li">注意自我保护</li>
+                        <li class="li">谨防上当受骗</li>
+                    </ul>
+                    <ul>
+                        <li class="li">适度游戏益脑</li>
+                        <li class="li">沉迷游戏伤身</li>
+                        <li class="li">合理安排时间</li>
+                        <li class="li">享受健康生活</li>
+                    </ul>
+                    <p>
+                        <a href="/home/supervisor" target="_blank">家长监护工程</a><span>|</span>
+                        <a href="/home/dispute" target="_blank">纠纷处理</a>
+                    </p>
+                    <p><span>网络文化经营许可证： 京网文[2019]3669-352京ICP证: 京B2-20191828</span></p>
+                    <p><span>京ICP备 19009550号 ©2019-2020 北京第零世界科技有限公司 版权所有</span></p>
+
+                </div>
+            </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <div id="bg_img" class="bg_img active_img"></div>
+    <!-- Swiper JS -->
+    <script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/swiper-nav-page.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/news_slide.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/public.js' %}"></script>
+
+</body>
+</html>
