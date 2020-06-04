@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="edcdff1e-7611-4d1e-bf3d-b41f10cc4968" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/home/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/img/test.flv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/news_slide.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/public.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/home/static/js/public.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,9 +81,10 @@
     </state>
     <state x="552" y="219" width="672" height="678" key="search.everywhere.popup/67.27.1641.899@67.27.1641.899" timestamp="1591164750451" />
     <state x="555" y="219" width="672" height="678" key="search.everywhere.popup/67.27.1651.899@67.27.1651.899" timestamp="1589803055193" />
-    <state x="617" y="388" width="540" height="175" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1589773321611">
-      <screen x="67" y="27" width="1651" height="899" />
+    <state x="614" y="388" width="540" height="175" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1591250425418">
+      <screen x="67" y="27" width="1641" height="899" />
     </state>
+    <state x="614" y="388" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/67.27.1641.899@67.27.1641.899" timestamp="1591250425418" />
     <state x="617" y="388" width="540" height="175" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/67.27.1651.899@67.27.1651.899" timestamp="1589773321611" />
   </component>
 </project>

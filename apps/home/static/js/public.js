@@ -13,7 +13,7 @@ function format(shijianchuo)
     if( d == 4 && m == 4 & y == 2020) {
         $('body').addClass('gray');
     }
-}
+};
 format(timestamp2);
 // 顶部导航栏隐藏
 $(".hide_title").click(function(){
@@ -22,4 +22,19 @@ $(".hide_title").click(function(){
     }else{
         $(".title_link ul").css({'margin-left':'0','width':'90%','opacity':'1','overflow':'hidden'})
     }
-})
+});
+var game_video = document.getElementById('display_video');
+function playPause(){
+    if(game_video.paused){
+        game_video.play()
+    }
+    else{
+        game_video.pause()
+    }
+};
+function download(){
+    document.getElementById("download_overflow").style.display="block";
+};
+function download_close(){
+    document.getElementById("download_overflow").style.display="none";
+};
