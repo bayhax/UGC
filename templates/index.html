@@ -47,45 +47,81 @@
             <!-- Swiper -->
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" data-hash="index">视频</div>
-                    <div class="swiper-slide" data-hash="ugc"><div class="news_box">
-                        <div id="ugc_header" class="ugc_header">
-                            <button type="button" id="ugc_index" class="ugc_index">首页</button>
-                            <button type="button" id="ugc_mod" class="ugc_mod">MOD</button>
-                            <button type="button" id="ugc_server" class="ugc_server">服务器</button>
+                    <div class="swiper-slide" data-hash="index">
+                        <div id="game_video" class="game_video">
+                            <video src="http://v2v.cc/~j/theora_testsuite/320x240.ogg" height="90%" width="90%" controls>您的浏览器不支持video标签</video>
                         </div>
-                        <div id="ugc_user" class="ugc_user">
+                    </div>
+                    <div class="swiper-slide" data-hash="ugc">
+                        <div class="ugc_con">
+                            <div id="ugc_header" class="ugc_header">
+                                <ul>
+                                    <li id="ugc_index" class="ugc_index">
+                                        <a href="/home/index#ugc_index">首页</a></li>
+                                    <li id="ugc_mod" class="ugc_mod">
+                                        <a href="/home/index#ugc_mod">MOD</a></li>
+                                    <li id="ugc_server" class="ugc_server">
+                                        <a href="/home/index#ugc_server">服务器</a></li>
+                                </ul>
+                        </div>
+                            <div id="ugc_user" class="ugc_user">
                             <div id="user" class="user">用户名</div>
                             <div id="score" class="score">积分</div>
                         </div>
-                        <div class="swiper-ugc">
+                            <div class="swiper-ugc">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
+                                <div class="swiper-slide" data-hash="ugc_index">
                                     <div class="ugc_box">
 
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
+                                <div class="swiper-slide" data-hash="ugc_mod">
                                     <div class="ugc_box"></div>
                                 </div>
-                                <div class="swiper-slide">
+                                <div class="swiper-slide" data-hash="ugc_server">
                                     <div class="ugc_box"></div>
                                 </div>
                             </div>
                         </div>
-                    </div></div>
+                        </div>
+                    </div>
                     <div class="swiper-slide" data-hash="contact">
-                        <div class="about_box">
-                        <div class="about_us">
-                        <h2 style="font-size:30px; text-align:center;">关于我们</h2>
-                            <p>北京第零世界科技有限公司成立于2018年1月，企业围绕"诚信透明、主动担当、工匠精神、活力进取"四大文化，致力于精品游戏研发。</p>
-                        </div>
-                        <div class="contact_us">
-                            <h2 style="font-size:30px;text-align:center">联系我们</h2>
-                            <p>地址： 北京市朝阳区建国路15号院甲1号北岸1292三间房创意生活园区9-7291</p>
-                            <p>邮箱：</p>
-                        </div>
+                        <div class="contact_box">
+                            <div class="community">
+                            <h2 style="font-size:30px; text-align:left;">官方社区</h2>
+                                <button type="button" id="official_community" class="community_button">点击进入官方社区</button>
+                                <div class="matrix_code">
+                                    <img src="{% static 'img/matrix_code.jpeg' %}" alt="official" height="65%">
+                                    <font style="font-size:12px; display: block;text-align:center;">扫描二维码加入</font></div>
                             </div>
+                            <div class="taptap">
+                                <h2 style="font-size:30px;text-align:left">TapTap</h2>
+                                <button type="button" id="taptap_community" class="community_button">点击进入官方社区</button>
+                                <div class="matrix_code"><img src="{% static 'img/matrix_code.jpeg' %}" alt="taptap" height="65%">
+                                    <font style="font-size:12px; display: block; text-align:center;">扫描二维码加入</font></div>
+                            </div>
+                            <div class="weibo">
+                                <h2 style="font-size:30px;text-align:left">官方微博</h2>
+                                <button type="button" id="weibo_community" class="community_button">点击进入官方社区</button>
+                                <div class="matrix_code"><img src="{% static 'img/matrix_code.jpeg' %}" alt="weibo" height="65%">
+                                    <font style="font-size:12px; display: block; text-align:center;">扫描二维码加入</font></div>
+                            </div>
+                            <div class="qq">
+                                <h2 style="font-size:30px;text-align:left">官网qq群</h2>
+                                <img src="{% static 'img/qq.jpg' %}" height="15%">
+                                <div class="qq_entry">
+                                    656565656565(1群)&nbsp;&nbsp;<button type="button" id="qq_1" class="qq_talk">一键入群</button>
+                                </div>
+                                <br><img src="{% static 'img/qq.jpg' %}" height="15%">
+                                <div class="qq_entry">
+                                    656565656565(2群)&nbsp;&nbsp;<button type="button" id="qq_2" class="qq_talk">一键入群</button>
+                                </div>
+                                <br><img src="{% static 'img/qq.jpg' %}" height="15%">
+                                <div class="qq_entry">
+                                    656565656565(3群)&nbsp;&nbsp;<button type="button" id="qq_3" class="qq_talk">一键入群</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="swiper-slide" data-hash="download">
                         下载

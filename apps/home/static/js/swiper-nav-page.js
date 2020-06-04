@@ -24,13 +24,24 @@ $('#download').click(function(){
     mySwiper.slideTo(3, 1000, true);
 })
 
-// 新闻页面轮播
+// ugc页面
 var ugcSwiper = new Swiper('.swiper-ugc', {
     direction: 'horizontal',
     lazy: {
         loadPrevNext: true,
     },
+    mousewheel: false,
+    hashNavigation:true,
 });
+$('#ugc_index').click(function(){
+    ugcSwiper.slideTo(0, 1000, true);
+})
+$('#ugc_mod').click(function(){
+    ugcSwiper.slideTo(1, 1000, true);
+})
+$('#ugc_server').click(function(){
+    ugcSwiper.slideTo(2, 1000, true);
+})
 recognize_url_hash();
 // 导航追踪
 window.onhashchange=function(event){
@@ -45,13 +56,27 @@ function recognize_url_hash(){
         $("#ugc").addClass("active")
         $(".bg_img").css("background","url(../../static/img/bg_1.jpeg")
         $("#index,#contact,#download").removeClass("active")
+        $("#ugc_index").addClass("active_button")
+        $("#ugc_mod,#ugc_server").removeClass("active_button")
     }else if(window.location.hash=="#contact"){
         $("#contact").addClass("active")
         $(".bg_img").css("background","url(../../static/img/bg_1.jpeg")
         $("#ugc,#index,#download").removeClass("active")
-    }else{
+    }else if(window.location.hash=="#download"){
         $("#download").addClass("active")
         $(".bg_img").css("background","url(../../static/img/bg_1.jpeg")
         $("#ugc,#contact,#index").removeClass("active")
-    };
+    }else if(window.location.hash=="#ugc_index"){
+        mySwiper.slideTo(1, 500, true);
+        $("#ugc_index").addClass("active_button")
+        $("#ugc_mod,#ugc_server").removeClass("active_button")
+    }else if(window.location.hash=="#ugc_mod"){
+        mySwiper.slideTo(1, 500, true);
+        $("#ugc_mod").addClass("active_button")
+        $("#ugc_index,#ugc_server").removeClass("active_button")
+    }else{
+        mySwiper.slideTo(1, 500, true);
+        $("#ugc_server").addClass("active_button")
+        $("#ugc_mod,#ugc_index").removeClass("active_button")
+    }
 };
