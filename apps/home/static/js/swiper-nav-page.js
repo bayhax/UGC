@@ -67,15 +67,15 @@ function recognize_url_hash(){
         $(".bg_img").css("background","url(../../static/img/bg_1.jpeg")
         $("#ugc,#contact,#index").removeClass("active")
     }else if(window.location.hash=="#ugc_index"){
-        mySwiper.slideTo(1, 500, true);
+        mySwiper.slideTo(1, 200, true);
         $("#ugc_index").addClass("active_button")
         $("#ugc_mod,#ugc_server").removeClass("active_button")
     }else if(window.location.hash=="#ugc_mod"){
-        mySwiper.slideTo(1, 500, true);
+        mySwiper.slideTo(1, 200, true);
         $("#ugc_mod").addClass("active_button")
         $("#ugc_index,#ugc_server").removeClass("active_button")
     }else{
-        mySwiper.slideTo(1, 500, true);
+        mySwiper.slideTo(1, 200, true);
         $("#ugc_server").addClass("active_button")
         $("#ugc_mod,#ugc_index").removeClass("active_button")
     }

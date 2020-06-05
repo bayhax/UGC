@@ -4,6 +4,7 @@
 from django.urls import path
 from apps.ugc_home import views
 urlpatterns = [
-    path('ugc_index', views.UgcIndexView.as_view()),  # ugc首页
-
+    path('login', views.LoginView.as_view()),  # 登录页面
+    path('register', views.RegisterView.as_view()),  # 注册页面
+    path('active', views.ActiveView.as_view()),  # 邮箱验证
 ]

@@ -500,3 +500,89 @@ html,body{height:100%;}
     height: 50%;
     line-height:5rem;
 }
+
+/* 登录 */
+.form_input {
+    position: absolute;
+    top:35%;
+    left: 40%;
+}
+.user_error,.pwd_error{color:#f00;position:relative;display:none;}
+.name_input,.pass_input{display:block;width:20rem;height:3rem;border:1px solid #e0e0e0;font-size:1rem;margin-bottom:0.5rem;}
+.pass_input{top:65px;background-position:280px -95px;}
+.more_input{position:relative; width:100%;}
+
+.more_input input{float:left;margin-top:2px;}
+.more_input label{float:left;margin-left:10px;}
+.more_input a{float:right;color:#666}
+.more_input a:hover{color:#ff8800}
+
+.input_submit{
+    width: 100%;
+    height: 2.2rem;
+    position: relative;
+    left: 0;
+    top: 0.2rem;
+    background-color: #47aa34;
+    color: #fff;
+    font-size: 22px;
+    border: 0px;
+    margin: 0.5rem 0rem;
+    cursor: pointer;
+}
+/* 注册 */
+.register {
+    position: absolute;
+    top:35%;
+    left: 40%;
+}
+.register ul li input {
+    height: 2rem;
+    width: 15rem;
+    margin: 0.2rem 0;
+    border:1px solid #e0e0e0;
+    outline:none;
+    text-indent:10px;
+    background-color:#f8f8f8;
+}
+.register ul li label {
+    display: inline-block;
+    width: 5rem;
+}
+.register .agreement {
+    margin: 0.3rem 0;
+    position:relative;
+    width:100%;
+}
+.register li.agreement #allow {
+    height: 1rem;
+    width: 1rem;
+    line-height: 1rem;
+    margin-right:1rem;
+    display: inline-block;
+}
+.register li.agreement label {
+    float: right;
+    width: 20rem;
+    line-height: 1.5rem;
+    display: inline-block;
+}
+.register li.agreement input {
+    float:left;
+}
+.register li.reg_sub {
+    display: inline-block;
+    width:100%;
+    margin-top:0.3rem;
+}
+.register li.reg_sub input {
+    width: 20.5rem;
+    background-color:#06ec82;
+}
+.register .error_tip {
+    display: none;
+}
+.register .error_tip2 {
+    display: none;
+}
+
