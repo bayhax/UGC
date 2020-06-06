@@ -39,6 +39,7 @@ class UgcUserManager(BaseUserManager):
 class UgcUser(AbstractUser):
     """ugc用户表"""
     identity = models.CharField(max_length=18, unique=True, verbose_name='身份证号')
+    score = models.IntegerField(default=0, verbose_name='积分')
     name = models.CharField(max_length=10, verbose_name='真实姓名')
     phone = models.CharField(max_length=11, verbose_name='手机号', unique=True)
     # 将phone/email/username作为username_filed，而不是原来的username字段，需要重写username

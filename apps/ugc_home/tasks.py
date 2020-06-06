@@ -26,6 +26,6 @@ def send_register_active_email(to_email, username, token):
     message = ''
     sender = settings.EMAIL_FROM
     receiver = [to_email]
-    html_message = """<h1>%s, 欢迎来到从零开始</h1>请点击下面链接激活账户<br><a href="http://127.0.0.1:8000/ugc_home/active/%s"
+    html_message = """<h1>%s, 欢迎来到从零开始</h1>请在一小时内点击下面链接激活账户<br><a href="http://127.0.0.1:8000/ugc_home/active/%s"
     >http://127.0.0.1:8000/ugc_home/active/%s</a>""" % (username, token, token)
     send_mail(subject, message, sender, receiver, html_message=html_message)

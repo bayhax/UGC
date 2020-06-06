@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="register">
-        <form method="post" action="">
+        <form method="post" action="" onsubmit="alert('请在一小时内去邮箱中检查邮件且激活账户')">
             <ul>
                 <li>
                     <label>用户名:</label>
@@ -59,5 +59,8 @@
         </form>
         {{ errmsg }}
     </div>
+    <script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/register.js'%} "></script>
 </body>
 </html>

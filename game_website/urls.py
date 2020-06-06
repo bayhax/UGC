@@ -23,4 +23,5 @@ urlpatterns = [
     path('ugc_mod/',  include('ugc_mod.urls')),  # ugc模型链接
     path('ugc_server/', include('ugc_server.urls')),  # 用户自建服务器
     path('contact/', include('contact.urls')),  # 联系我们
+    path('password-reset/', include('password_reset.urls')),  # 重置密码
 ]

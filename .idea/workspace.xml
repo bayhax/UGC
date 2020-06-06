@@ -4,19 +4,13 @@
     <list default="true" id="edcdff1e-7611-4d1e-bf3d-b41f10cc4968" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/home/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/home/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/home/static/css/news_content.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/home/static/css/news_more.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/home/static/js/swiper-nav-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/home/static/js/swiper-nav-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/home/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ugc_home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ugc_home/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/tasks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ugc_home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ugc_home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_mod/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_mod/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_mod/migrations/0002_auto_20200518_1611.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_server/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_server/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_website/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_website/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game_website/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_website/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_website/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_website/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
@@ -29,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -94,10 +88,10 @@
       <screen x="67" y="27" width="1651" height="899" />
     </state>
     <state x="660" y="395" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1651.899@67.27.1651.899" timestamp="1589789543504" />
-    <state x="552" y="219" width="672" height="678" key="search.everywhere.popup" timestamp="1591353056849">
+    <state x="552" y="219" width="672" height="678" key="search.everywhere.popup" timestamp="1591429563144">
       <screen x="67" y="27" width="1641" height="899" />
     </state>
-    <state x="552" y="219" width="672" height="678" key="search.everywhere.popup/67.27.1641.899@67.27.1641.899" timestamp="1591353056849" />
+    <state x="552" y="219" width="672" height="678" key="search.everywhere.popup/67.27.1641.899@67.27.1641.899" timestamp="1591429563144" />
     <state x="555" y="219" width="672" height="678" key="search.everywhere.popup/67.27.1651.899@67.27.1651.899" timestamp="1589803055193" />
     <state x="614" y="388" width="540" height="175" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1591250425418">
       <screen x="67" y="27" width="1641" height="899" />

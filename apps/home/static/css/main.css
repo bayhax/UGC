@@ -240,6 +240,10 @@ html,body{height:100%;}
     float: left;
     margin-left: 24%;
 }
+.ugc_user .quit {
+    float: left;
+
+}
 .ugc_user .score {
     float: right;
     margin-right: 20%;
@@ -512,7 +516,7 @@ html,body{height:100%;}
 .pass_input{top:65px;background-position:280px -95px;}
 .more_input{position:relative; width:100%;}
 
-.more_input input{float:left;margin-top:2px;}
+.more_input input{float:left;height:1.3rem;line-height:1.3rem;}
 .more_input label{float:left;margin-left:10px;}
 .more_input a{float:right;color:#666}
 .more_input a:hover{color:#ff8800}
@@ -553,6 +557,7 @@ html,body{height:100%;}
     margin: 0.3rem 0;
     position:relative;
     width:100%;
+    height: 1rem;
 }
 .register li.agreement #allow {
     height: 1rem;
@@ -562,7 +567,7 @@ html,body{height:100%;}
     display: inline-block;
 }
 .register li.agreement label {
-    float: right;
+    float: left;
     width: 20rem;
     line-height: 1.5rem;
     display: inline-block;
@@ -581,8 +586,10 @@ html,body{height:100%;}
 }
 .register .error_tip {
     display: none;
+    color: red;
 }
 .register .error_tip2 {
     display: none;
+    color: red;
 }
 

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_celery_beat',  # 定时任务
     'django_celery_results',  # 定时任务结果
+    'password_reset',  # 重置密码
     'home',  # 官网首页
     'ugc_home',  # ugc首页
     'ugc_mod',  # ugc_mod
@@ -109,7 +110,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# 自定义django用户系统
 AUTH_USER_MODEL = "ugc_home.UgcUser"
+AUTHENTICATION_BACKENDS = ('ugc_home.views.CustomBackend',)
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
@@ -146,9 +149,11 @@ EMAIL_HOST = 'smtp.163.com'
 EMAIL_PORT = 25
 # 发送邮件的邮箱
 EMAIL_HOST_USER = 'whlbayhax@163.com'
+# 邮件发送报错553权限问题所加且必须加.
+DEFAULT_FROM_EMAIL = 'whlbayhax@163.com'
 # 在邮箱中设置的客户端授权密码
 EMAIL_HOST_PASSWORD = 'JFCCLQYJKXWSFWIT'
-# 收件人看到的发件人，此处填写的要有 @ 符号， 不然send_mail函数会报缺少参数解包的错误.
+# 收件人看到的发件人，此处填写的要有电子邮件且有 @ 符号， 不然send_mail函数会报缺少参数解包的错误.
 EMAIL_FROM = '第零世界<whlbayhax@163.com>'
 # Django的缓存配置, redis
 CACHES = {

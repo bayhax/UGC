@@ -1,7 +1,9 @@
+from django.contrib.auth.backends import ModelBackend
+from django.db.models import Q
 from django.http import HttpResponse
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer, SignatureExpired
 from django.conf import settings
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views.generic import View
@@ -57,7 +59,7 @@ class RegisterView(View):
         user.is_active = 0
         user.save()
 
-        # 发送激活邮件，包含激活链接：http://127.0.0.1:8000/usr/activeid
+        # 发送激活邮件，包含激活链接：http://127.0.0.1:8000/
         # 激活连接中需要包含用户的身份信息,并且把身份信息进行加密
 
         # 加密用户的身份信息，生成激活token
@@ -95,7 +97,18 @@ class ActiveView(View):
 
         except SignatureExpired as e:
             # 激活链接已过期
-            return HttpResponse('激活链接已过期')
+            return HttpResponse('激活链接已过期,请点击这里重新发送邮件进行验证。')
+
+
+# 重写authenticate验证
+class CustomBackend(ModelBackend):
+    def authenticate(self, request, username=None, password=None, **kwargs):
+        try:
+            user = UgcUser.objects.get(Q(username=username) | Q(phone=username))
+            if user.check_password(password):
+                return user
+        except Exception as e:
+            return None
 
 
 # 登录视图
@@ -119,7 +132,7 @@ class LoginView(View):
         password = request.POST.get('pwd')
         # 校验数据
         if not all([username, password]):
-            return render(request, 'login.html', {'errmsg': '数据不完整'})
+            return render(request, 'login.html', {'errmsg': '账号或密码未填写'})
         # 业务处理：登录校验
         user = authenticate(username=username, password=password)
         if user is not None:
@@ -129,12 +142,11 @@ class LoginView(View):
                 # 记录用户的登录状态
                 login(request, user)
 
-                # 跳转到首页
-                response = redirect(reverse('goods:index'))
+                # 跳转到ugc首页
+                response = redirect('/home/index#ugc')
 
                 # 判断是否需要记住用户名
                 remember = request.POST.get('remember')
-
                 if remember == "on":
                     # 记住用户名
                     response.set_cookie('username', username, max_age=3600 * 7 * 24)
@@ -150,3 +162,19 @@ class LoginView(View):
         else:
             # 用户名或密码错误
             return render(request, 'login.html', {'errmsg': '用户名或密码错误'})
+
+
+# 退出登录
+def user_quit(request):
+    logout(request)
+    return redirect('/home/index#ugc')
+
+
+# 忘记密码重置
+class ResetPasswordView(View):
+    """重置密码"""
+    def get(self, request):
+        return render(request, 'login.html')
+
+    def post(self, request):
+        pass
