@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/swiper.min.css'%}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-table.min.css'%}">
     <!--2020.04.04全国抗击疫情哀悼日灰色背景-->
     <style>
         .gray{
@@ -80,29 +81,66 @@
                                         <a href="/home/index#ugc_server">服务器</a></li>
                                 </ul>
                         </div>
-                            <div id="ugc_user" class="ugc_user">
-                                {% if request.user.is_authenticated %}
-                                    <div class="user">{{ request.user }}
-                                        <a href='/ugc_home/user_quit'><span style="font-size:14px;">退出</span></a></div>
-                                    <div id="score" class="score">积分</div>
-                                {% else %}
-                                    <div id="user" class="user"><a href="/ugc_home/login"> 登录</a>|
-                                    <a href="/ugc_home/register"> 注册</a></div>
 
-                                {% endif %}
-                        </div>
                             <div class="swiper-ugc">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide" data-hash="ugc_index">
-                                    <div class="ugc_box">
+                                    <div id="swiper_con" class="swiper_con">
+                                        <div id="index_user" class="ugc_user">
+                                            {% if request.user.is_authenticated %}
+                                                <div class="user">{{ request.user }}
+                                                    <a href='/ugc_home/user_quit'><span style="font-size:14px;">退出</span></a>
+                                                </div>
+                                                <div id="score" class="score">积分</div>
+                                            {% else %}
+                                                <div id="user" class="user"><a href="/ugc_home/login"> 登录</a>|
+                                                <a href="/ugc_home/register"> 注册</a></div>
 
+                                            {% endif %}
+                                        </div>
+                                        <div class="ugc_box">
+
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="swiper-slide" data-hash="ugc_mod">
-                                    <div class="ugc_box"></div>
+                                    <div class="swiper_con">
+                                        <div id="mod_user" class="ugc_user">
+                                            {% if request.user.is_authenticated %}
+                                                <div class="user" id="obtained">
+                                                    <input type="hidden" id="user_id" value="{{ request.user.id }}">已获得
+
+                                                </div>
+                                            <div class="score">我创建的</div>
+                                            {% else %}
+                                                <div class="user"><a href="/ugc_home/login">请登录</a>|
+                                                <a href="/ugc_home/register"> 注册</a></div>
+                                            {% endif %}
+                                        </div>
+                                        <div class="ugc_box" id="ugc_box">
+                                            <table></table>
+                                            <div class="mod_select">
+                                            <button>上一页</button>
+                                            <div class="pagination"></div>
+                                            <button>下一页</button>
+                                        </div>
+                                        </div>
+
+                                    </div>
                                 </div>
                                 <div class="swiper-slide" data-hash="ugc_server">
-                                    <div class="ugc_box"></div>
+                                    <div class="swiper_con">
+                                        <div id="server_user" class="ugc_user">
+                                            {% if request.user.is_authenticated %}
+                                                <div class="user">创建租赁服</div>
+                                            {% else %}
+                                                <div class="user"><a href="/ugc_home/login"> 登录</a>|
+                                                <a href="/ugc_home/register"> 注册</a></div>
+
+                                            {% endif %}
+                                        </div>
+                                        <div class="ugc_box"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -194,8 +232,10 @@
     <!-- Swiper JS -->
     <script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/swiper-nav-page.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/public.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/mod.js' %}"></script>
 </body>
 </html>

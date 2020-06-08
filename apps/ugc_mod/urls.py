@@ -4,8 +4,7 @@
 from django.urls import path
 from apps.ugc_mod import views
 
-
 urlpatterns = [
-    path('ugc_mod', views.UgcModView.as_view()),  # 用户创建模型页
-
+    path('user_obtained', views.UserObtainedView.as_view()),  # 用户已经获得的MOD
+    path('user_create', views.UgcCreateView.as_view()),  # 用户自己创建的MOD
 ]

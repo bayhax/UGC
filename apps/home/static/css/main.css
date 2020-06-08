@@ -223,6 +223,10 @@ html,body{height:100%;}
     text-align: center;
     cursor: pointer;
 }
+.swiper_con {
+    height: 100%;
+    width: 100%;
+}
 .ugc_user {
     line-height: 2rem;
     width: 80%;
@@ -231,6 +235,7 @@ html,body{height:100%;}
 }
 .ugc_box {
     text-align: center;
+    margin:auto;
     width: 75%;
     height: 90%;
     background: red;

@@ -58,6 +58,7 @@ function recognize_url_hash(){
         $("#index,#contact,#download").removeClass("active")
         $("#ugc_index").addClass("active_button")
         $("#ugc_mod,#ugc_server").removeClass("active_button")
+        ugcSwiper.slideTo(0, 200, true)
     }else if(window.location.hash=="#contact"){
         $("#contact").addClass("active")
         $(".bg_img").css("background","url(../../static/img/bg_1.jpeg")
