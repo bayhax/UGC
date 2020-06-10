@@ -11,9 +11,9 @@ html,body{height:100%;}
     width:100%;
     opacity:0;
     background:url(../img/bg_1.jpeg);
-    -webkit-transition: all 1s linear;
-    -o-transition: all 1s linear;
-    transition: all 1s linear;
+    -webkit-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
 }
 .active_img {
     opacity:0.2;
@@ -59,7 +59,7 @@ html,body{height:100%;}
     list-style:none;
     height: 100%;
     width: 90%;
-    transition: all 0.8s ease-in-out;
+    transition: all 0.8s easeInOutQuart;
 }
 .hide_title{
     cursor: pointer;
@@ -227,12 +227,30 @@ html,body{height:100%;}
     height: 100%;
     width: 100%;
 }
+
 .ugc_user {
     line-height: 2rem;
     width: 80%;
     margin: 0 10%;
     height: 5%;
 }
+.ugc_index_mod {
+    position: relative;
+    height: 95%;
+    width: 90%;
+    margin:1% auto;
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+}
+
+.ugc_index_mod::-webkit-scrollbar {
+    width: 6px; //滚动条的宽度
+}
+.ugc_index_mod::-webkit-scrollbar-thumb {
+    background-color: #8899A7;//滚动条的颜色
+    border-radius: 3px;//滚动条的边框倒角
+}
+
 .ugc_box {
     text-align: center;
     margin:auto;
@@ -240,14 +258,15 @@ html,body{height:100%;}
     height: 90%;
     background: red;
     overflow: auto;
+    position:relative;
 }
 .ugc_user .user {
     float: left;
     margin-left: 24%;
+    cursor: pointer;
 }
 .ugc_user .quit {
     float: left;
-
 }
 .ugc_user .score {
     float: right;
@@ -420,10 +439,14 @@ html,body{height:100%;}
     margin-left: 10%;
     text-align:left;
 }
-.qq .qq_entry {
-    float: right;
+.qq_contact {
+    height:2rem;
+    width: 100%;
+}
+.qq_contact .qq_entry {
+    float: left;
     text-align: center;
-    margin-right:73%;
+    margin-left: 1.2rem;
 }
 .contact_us p {
     font-size:15px;
@@ -598,3 +621,37 @@ html,body{height:100%;}
     color: red;
 }
 
+/* mod列表分页*/
+.ugc_box table{
+    margin: auto;
+    width: 80%;
+}
+.ugc_box table tr{
+    width: 100%;
+    height:3rem;
+    line-height: 3rem;
+    text-align: left;
+}
+.ugc_box .mod_select{
+    position: absolute;
+    width: 100%;
+    bottom: 0.6rem;
+    text-align: center;
+}
+.page_select span{
+    cursor: pointer;
+    display: inline-block;
+    margin-left:10px;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: #eee;
+}
+.page_select{
+    margin:auto 20px;
+}
+.page_select, button {
+    cursor: pointer;
+    display: none;
+}

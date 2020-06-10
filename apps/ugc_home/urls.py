@@ -10,4 +10,5 @@ urlpatterns = [
     path('user_quit', views.user_quit, name='user_quit'),  # 退出
     path('register', views.RegisterView.as_view()),  # 注册页面
     re_path(r'^active/(?P<token>.*)$', views.ActiveView.as_view()),  # 邮箱验证
+    path('mod', views.ModView.as_view()),  # MOD展示页
 ]

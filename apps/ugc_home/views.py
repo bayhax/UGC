@@ -1,3 +1,5 @@
+import json
+
 from django.contrib.auth.backends import ModelBackend
 from django.db.models import Q
 from django.http import HttpResponse
@@ -173,8 +175,20 @@ def user_quit(request):
 # 忘记密码重置
 class ResetPasswordView(View):
     """重置密码"""
+
     def get(self, request):
         return render(request, 'login.html')
 
     def post(self, request):
         pass
+
+
+# ugc_index页面mod展示
+class ModView(View):
+    def get(self, request):
+        return redirect('/ugc_home/index')
+
+    def post(self, request):
+        mod_list = [{'mod_id': '1', 'mod_img': '23', 'mod_title': 'r'},
+                    {'mod_id': '2', 'mod_img': '24', 'mod_title': 'ef'}]
+        return HttpResponse(json.dumps(mod_list))

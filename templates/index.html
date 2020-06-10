@@ -85,7 +85,7 @@
                             <div class="swiper-ugc">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide" data-hash="ugc_index">
-                                    <div id="swiper_con" class="swiper_con">
+                                    <div id="swiper_con" class="swiper_con ">
                                         <div id="index_user" class="ugc_user">
                                             {% if request.user.is_authenticated %}
                                                 <div class="user">{{ request.user }}
@@ -99,7 +99,9 @@
                                             {% endif %}
                                         </div>
                                         <div class="ugc_box">
-
+                                            <div class="ugc_index_mod" id="ugc_index_mod">
+                                                <table id="ugc_index_mod_table"></table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -108,22 +110,21 @@
                                         <div id="mod_user" class="ugc_user">
                                             {% if request.user.is_authenticated %}
                                                 <div class="user" id="obtained">
-                                                    <input type="hidden" id="user_id" value="{{ request.user.id }}">已获得
-
-                                                </div>
-                                            <div class="score">我创建的</div>
+                                                    <input type="hidden" id="user_id" value="{{ request.user.id }}">已获得</div>
+                                                <div class="score" id="created" style="cursor:pointer;">我创建的</div>
                                             {% else %}
                                                 <div class="user"><a href="/ugc_home/login">请登录</a>|
                                                 <a href="/ugc_home/register"> 注册</a></div>
                                             {% endif %}
                                         </div>
-                                        <div class="ugc_box" id="ugc_box">
-                                            <table></table>
+                                        <div class="ugc_box" id="ugc_mod_mod">
+                                            <table id="mod_table"></table>
                                             <div class="mod_select">
-                                            <button>上一页</button>
-                                            <div class="pagination"></div>
-                                            <button>下一页</button>
-                                        </div>
+                                                <button>上一页</button>
+                                                <div class="page_select" id="page_select">
+                                                </div>
+                                                <button>下一页</button>
+                                            </div>
                                         </div>
 
                                     </div>
@@ -139,7 +140,9 @@
 
                                             {% endif %}
                                         </div>
-                                        <div class="ugc_box"></div>
+                                        <div class="ugc_box">
+                                            您还未开通租赁服
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -169,17 +172,23 @@
                             </div>
                             <div class="qq">
                                 <h2 style="font-size:30px;text-align:left">官网qq群</h2>
-                                <img src="{% static 'img/qq.jpg' %}" height="15%">
-                                <div class="qq_entry">
-                                    656565656565(1群)&nbsp;&nbsp;<button type="button" id="qq_1" class="qq_talk">一键入群</button>
-                                </div>
-                                <br><img src="{% static 'img/qq.jpg' %}" height="15%">
-                                <div class="qq_entry">
-                                    656565656565(2群)&nbsp;&nbsp;<button type="button" id="qq_2" class="qq_talk">一键入群</button>
-                                </div>
-                                <br><img src="{% static 'img/qq.jpg' %}" height="15%">
-                                <div class="qq_entry">
-                                    656565656565(3群)&nbsp;&nbsp;<button type="button" id="qq_3" class="qq_talk">一键入群</button>
+                                <div class="qq_contact">
+                                    <img src="{% static 'img/qq.jpg' %}" style="height:100%;float:left">
+                                    <div class="qq_entry">
+                                        656565656565(1群)&nbsp;&nbsp;<button type="button" id="qq_1" class="qq_talk">一键入群</button>
+                                    </div>
+                                </div><br>
+                                <div class="qq_contact">
+                                    <img src="{% static 'img/qq.jpg' %}" style="height:100%;float:left">
+                                    <div class="qq_entry">
+                                        656565656565(2群)&nbsp;&nbsp;<button type="button" id="qq_2" class="qq_talk">一键入群</button>
+                                    </div>
+                                </div><br>
+                                <div class="qq_contact">
+                                    <img src="{% static 'img/qq.jpg' %}" style="height:100%;float:left">
+                                    <div class="qq_entry">
+                                        656565656565(3群)&nbsp;&nbsp;<button type="button" id="qq_3" class="qq_talk">一键入群</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
