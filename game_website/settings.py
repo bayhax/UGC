@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_celery_beat',  # 定时任务
     'django_celery_results',  # 定时任务结果
     'password_reset',  # 重置密码
+    'tinymce',  # 富文本编辑器
     'home',  # 官网首页
     'ugc_home',  # ugc首页
     'ugc_mod',  # ugc_mod
@@ -136,11 +137,21 @@ STATICFILES_DIR = [os.path.join(BASE_DIR, 'static')]
 # STATIC_ROOT = '/home/static'
 # 富文本编辑器配置
 TINYMCE_DEFAULT_CONFIG = {
-    'theme': 'advanced',
-    'width': 600,
-    'height': 400,
-}
+    'selector': 'textarea',
+    'language': 'zh_CN',
+    'theme': 'modern',
+    'plugins': 'print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link '
+               'media template code codesample table charmap hr pagebreak nonbreaking anchor insertdatetime advlist '
+               'lists wordcount imagetools textpattern help emoticons autosave autoresize textcolor',
+    'toolbar': 'fontselect fontsizeselect forecolor backcolor | image undo redo restoredraft | cut copy paste '
+               'pastetext | outdent indent bullist numlist | blockquote subscript superscript removeformat | charmap '
+               'emoticons hr pagebreak insertdatetime print preview | code fullscreen',
+    'images_upload_url': '/home/upload_image',
+    'images_reuse_filename': 'true',
+    'width': 800,
+    'height': 1000,
 
+}
 # 发送邮件配置
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # 发邮件的smtp服务地址

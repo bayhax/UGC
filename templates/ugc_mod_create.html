@@ -1,27 +1,89 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
 {% load static %}
-{% block title %}北京第零世界科技有限公司{% endblock title %}
+<head>
+    <meta charset="UTF-8">
+    <title>北京第零世界科技有限公司</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/create_mod.css'%}">
+</head>
+<body>
+    <div class="mod_title" id="mod_title">
+        <span style="float:left; margin-right:1.4rem;">标题:</span>
+        <input type="text" id="title_text">
+    </div>
+    <div class="show_picture" id="show_picture">
+        <div style="float:left; margin-right:1.4rem;">主图:</div>
+        <input type="file" accept="image/*" id="upload_image" class="upload_image" name="upload_image">
+        <label for="upload_image" id="img_label">+</label>
+        <div class="upload_tip">为了更好的展示效果，请上传一张 Npx * Npx的图片</div>
+    </div>
+    <div class="text" id="text">
+        <div style="margin-bottom:5px;">正文:</div>
+        <textarea id="mod_content">Next, use our Get Started docs to setup Tiny!</textarea>
+    </div>
+    <div id="confirm" class="confirm">确定</div>
+    <script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
-{% block body %}
-<div class="body">
-    <div class="head_nav">
-        <ul>
-            <li><a href="/ugc_home/ugc_index">首页</a></li>
-            <li><a href="/ugc_mod/ugc_mod">MOD</a></li>
-            <li><a href="/ugc_server/ugc_server">服务器</a></li>
-        </ul>
+    <script>
+        tinymce.init({
+            selector:'textarea',
+            plugin:'a_tinymce_plugin',
+            height:'50rem',
+            width:'60rem',
+        });
+        $("#upload_image").on('change', function(e){
+            var img_file = e.target.files[0];
+            var imgSize = e.target.files[0].size;
+            if(imgSize > 1024*1024){
+                return alert('上传图片不能超过1M');
+            }
+            if(!img_file.type.match('image.*')){
+                return alert('请选择图片文件');
+            }
+            var reader = new FileReader();
+            reader.readAsDataURL(img_file);
 
-    </div>
-    <div class="user">
-        <div class="nickname">
-            已获得
-        </div>
-        <div class="score">
-            <u>我创建的</u>
-        </div>
-    </div>
-    <div class="show">
-        <div class="create_mod">创建MOD</div>
-    </div>
-</div>
-{% endboloc body %}
+            reader.onload = function(arg){
+                var img = '<img class="preview" src="' + arg.target.result + '" alt="preview"/>';
+                $("#img_label").empty().append(img);
+            }
+
+        })
+        // 将mod相关信息上传到服务器，后端处理
+        $("#confirm").click(function(){
+            // form体
+            var form_data = new FormData();
+
+            // 要传到后端的MOD信息
+            var mod_title = $("#title_text").val();
+            var img_file = $("#upload_image")[0].files[0];
+            var mod_content = $("#mod_content").val();
+
+            // 向表单添加
+            form_data.append('mod_title', mod_title);
+            form_data.append('img_file', img_file);
+            form_data.append('mod_content', mod_content);
+
+            // Ajax  post方式传输
+            $.ajax({
+                type: "post",
+                url: "/ugc_mod/create_mod",
+                dataType: "json",
+                crossDomain: true,  //是否跨域
+                processData: false,  //不转换数据
+                contentType: false,  //不设置内容格式
+                data: form_data,
+                success: function(ret){
+                    alert(ret.result)
+                },
+                error: function(ret){
+                    alert(ret.result)
+                },
+            })
+
+        })
+    </script>
+</body>
+</html>

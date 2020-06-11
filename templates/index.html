@@ -120,10 +120,10 @@
                                         <div class="ugc_box" id="ugc_mod_mod">
                                             <table id="mod_table"></table>
                                             <div class="mod_select">
-                                                <button>上一页</button>
+                                                <button id="prev">上一页</button>
                                                 <div class="page_select" id="page_select">
                                                 </div>
-                                                <button>下一页</button>
+                                                <button id="next">下一页</button>
                                             </div>
                                         </div>
 
@@ -131,18 +131,22 @@
                                 </div>
                                 <div class="swiper-slide" data-hash="ugc_server">
                                     <div class="swiper_con">
-                                        <div id="server_user" class="ugc_user">
-                                            {% if request.user.is_authenticated %}
-                                                <div class="user">创建租赁服</div>
-                                            {% else %}
+                                        {% if request.user.is_authenticated %}
+                                            <div id="server_user" class="ugc_user">
+                                                    <div class="user">创建租赁服</div>
+                                            </div>
+                                            <div class="ugc_box">
+                                                您还未开通租赁服
+                                            </div>
+                                        {% else %}
+                                            <div class="ugc_server">
                                                 <div class="user"><a href="/ugc_home/login"> 登录</a>|
                                                 <a href="/ugc_home/register"> 注册</a></div>
-
-                                            {% endif %}
-                                        </div>
-                                        <div class="ugc_box">
-                                            您还未开通租赁服
-                                        </div>
+                                            </div>
+                                            <div class="ugc_box">
+                                                请登录
+                                            </div>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>

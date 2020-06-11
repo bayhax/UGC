@@ -1,6 +1,7 @@
 from django.db import models
 from db.base_model import BaseModel
 from ugc_home.models import UgcUser
+from tinymce.models import HTMLField
 
 
 # Create your models here.
@@ -9,7 +10,7 @@ class UgcMod(BaseModel):
     objects = models.Manager()
     title = models.CharField(max_length=20, unique=True, verbose_name='标题')
     status = models.SmallIntegerField(verbose_name='状态')
-    content = models.TextField(verbose_name='mod内容')
+    content = HTMLField(verbose_name='mod内容')
     create = models.ForeignKey(UgcUser, blank=True, null=True, on_delete=models.SET_NULL, verbose_name='创建者id')
 
     class Meta:

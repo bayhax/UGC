@@ -1,0 +1,39 @@
+.show_picture {
+    margin-top: 1.5rem;
+    left: 2rem;
+    display: block;
+    height: 10rem;
+    line-height: 10rem;
+}
+.upload_image {
+    width: 0.1px;
+    height: 0.1px;
+    position: relative;
+    opacity: 0;
+    overflow: hidden;
+    z-index:-1;
+
+}
+.upload_tip {
+    display: inline-block;
+    float: left;
+    margin-left: 2rem;
+}
+.upload_image + label {
+    float: left;
+    font-size: 2rem;
+    color: #434446;
+    border: 1px solid black;
+    height: 8rem;
+    width: 8rem;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    line-height: 8rem;
+}
+.preview {
+    display: inline-block;
+    margin-top: 0.1rem;
+    height: 7.8rem;
+    width: 7.8rem;
+}

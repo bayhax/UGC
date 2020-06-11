@@ -120,9 +120,9 @@ function recognize_url_hash(){
             var pageIndex=1; // 页码
             var pageSize = 10; // 每页显示10条数据
             var table = document.getElementById('mod_table') // 获取表格元素
-            var pagination = document.getElementsByClassName('page_select')[0] // 页码按钮们的父盒子
-            var previous = document.getElementsByTagName('button')[0] // 获取上一页按钮
-            var next = document.getElementsByTagName('button')[1] // 获取下一页按钮
+            var pagination = document.getElementById('page_select') // 页码按钮们的父盒子
+            var previous = document.getElementById('prev') // 获取上一页按钮
+            var next = document.getElementById('next') // 获取下一页按钮
             // 每次请求数据，前一次的数据要清除，table和页码,并且页码选择要清除
             table.innerHTML = ''
             pagination.innerHTML = ''
