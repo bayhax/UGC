@@ -12,7 +12,6 @@
     opacity: 0;
     overflow: hidden;
     z-index:-1;
-
 }
 .upload_tip {
     display: inline-block;
@@ -36,4 +35,12 @@
     margin-top: 0.1rem;
     height: 7.8rem;
     width: 7.8rem;
+}
+.mod_content {
+    left: 3.6rem;
+    position: relative;
+}
+.confirm {
+    position: relative;
+    left: 3.6rem;
 }

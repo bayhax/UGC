@@ -19,20 +19,23 @@
     </div>
     <div class="text" id="text">
         <div style="margin-bottom:5px;">正文:</div>
-        <textarea id="mod_content">Next, use our Get Started docs to setup Tiny!</textarea>
+        <div class="mod_content"><textarea id="mod_content">Next, use our Get Started docs to setup Tiny!</textarea></div>
     </div>
     <div id="confirm" class="confirm">确定</div>
     <script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="{% static 'js/tinymce.min.js' %}" referrerpolicy="origin"></script>
 
     <script>
+        // 初始化配置tinymce。
         tinymce.init({
             selector:'textarea',
+            language:'zh_CN',
             plugin:'a_tinymce_plugin',
-            height:'50rem',
-            width:'60rem',
+            height:'25rem',
+            width:'50rem',
         });
+        // 上传图片
         $("#upload_image").on('change', function(e){
             var img_file = e.target.files[0];
             var imgSize = e.target.files[0].size;

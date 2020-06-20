@@ -33,10 +33,10 @@ $(document).mousemove(function(e){
 $('#index').click(function(){
     mySwiper.slideTo(0, 1000, true);
 })
-$('#ugc').click(function(){
+$('#contact').click(function(){
     mySwiper.slideTo(1, 1000, true);
 })
-$('#contact').click(function(){
+$('#ugc').click(function(){
     mySwiper.slideTo(2, 1000, true);
 })
 $('#download').click(function(){
@@ -60,11 +60,11 @@ window.onhashchange=function(event){
 function recognize_url_hash(){
     if(window.location.hash=="#index" || window.location.hash==""){
         $("#index").addClass("active")
-        $(".bg_img").css("background","url(../../static/img/bg_1.jpeg")
+        $(".bg_img").css({"background":"url(../../static/img/bg_1.png","background-size":"cover"})
         $("#ugc,#contact,#download").removeClass("active")
     }else if(window.location.hash=="#ugc"){
         $("#ugc").addClass("active")
-        $(".bg_img").css("background","url(../../static/img/bg_1.jpeg")
+        $(".bg_img").css({"background":"url(../../static/img/bg_1.png","background-size":"cover"})
         $("#index,#contact,#download").removeClass("active")
         $("#ugc_index").addClass("active_button")
         $("#ugc_mod,#ugc_server").removeClass("active_button")
@@ -76,7 +76,7 @@ function recognize_url_hash(){
             for(var i=0;i<mod_list.length;i++){
                 var link = document.createElement('a')
                 var row = document.createElement('div')
-                row.style = 'height:25rem;width:100%;margin:1rem auto;background:url(../../static/img/bg_1.jpeg);color:red;'
+                row.style = 'height:25rem;width:100%;margin:1rem auto;background:no-repeat url(../../static/img/bg_1.png);color:#F2F2F2;'
                 row.innerHTML = mod_list[i].mod_title;
                 link.appendChild(row)
                 link.href = '/home/index'
@@ -85,14 +85,14 @@ function recognize_url_hash(){
         });
     }else if(window.location.hash=="#contact"){
         $("#contact").addClass("active")
-        $(".bg_img").css("background","url(../../static/img/bg_1.jpeg")
+        $(".bg_img").css({"background":"url(../../static/img/bg_1.png","background-size":"cover"})
         $("#ugc,#index,#download").removeClass("active")
     }else if(window.location.hash=="#download"){
         $("#download").addClass("active")
-        $(".bg_img").css("background","url(../../static/img/bg_1.jpeg")
+        $(".bg_img").css({"background":"url(../../static/img/bg_1.png","background-size":"cover"})
         $("#ugc,#contact,#index").removeClass("active")
     }else if(window.location.hash=="#ugc_index"){
-        mySwiper.slideTo(1, 200, true);
+        mySwiper.slideTo(2, 200, true);
         $("#ugc_index").addClass("active_button")
         $("#ugc_mod,#ugc_server").removeClass("active_button")
         $.post("/ugc_home/mod", function(data){
@@ -102,7 +102,7 @@ function recognize_url_hash(){
             for(var i=0;i<mod_list.length;i++){
                 var link = document.createElement('a')
                 var row = document.createElement('div')
-                row.style = 'height:25rem;width:100%;margin:1rem auto;background:url(../../static/img/bg_1.jpeg);color:red;'
+                row.style = 'height:25rem;width:100%;margin:1rem auto;no-repeat background:url(../../static/img/bg_1.png);color:#F2F2F2;'
                 row.innerHTML = mod_list[i].mod_title;
                 link.appendChild(row)
                 link.href = '/home/index'
@@ -110,7 +110,7 @@ function recognize_url_hash(){
             }
         });
     }else if(window.location.hash=="#ugc_mod"){
-        mySwiper.slideTo(1, 200, true);
+        mySwiper.slideTo(2, 200, true);
         $("#ugc_mod").addClass("active_button")
         $("#ugc_index,#ugc_server").removeClass("active_button")
         $.post('/ugc_mod/all_mod', function(data){
@@ -277,7 +277,7 @@ function recognize_url_hash(){
             }
         })
     }else{
-        mySwiper.slideTo(1, 200, true);
+        mySwiper.slideTo(2, 200, true);
         $("#ugc_server").addClass("active_button")
         $("#ugc_mod,#ugc_index").removeClass("active_button")
     }
