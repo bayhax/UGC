@@ -1,3 +1,33 @@
+//var video = document.querySelector('#display_video');
+//var mediaSource = new MediaSource();
+//video.src = URL.createObjectURL(mediaSource);
+//mediaSource.addEventListener('sourceopen', sourceOpen);
+//
+//function sourceOpen(e) {
+//    URL.revokeObjectURL(video.src);
+//    // 设置 媒体的编码类型
+//    var mime = 'video/mp4; codecs="avc1.42E01E, mp4a.40.2"';
+//    var mediaSource = e.target;
+//    var sourceBuffer = mediaSource.addSourceBuffer(mime);
+//    var videoUrl = '../static/img/show_video.mp4';
+//    fetch(videoUrl).then(function(response) {
+//            console.log(response)
+//            return response.arrayBuffer();
+//    })
+//    .then(function(arrayBuffer) {
+//        sourceBuffer.addEventListener('updateend', function(e) {
+//            if (!sourceBuffer.updating && mediaSource.readyState === 'open') {
+//                mediaSource.endOfStream();
+//                // 在数据请求完成后，我们需要调用 endOfStream()。它会改变 MediaSource.readyState 为 ended 并且触发 sourceended 事件。
+//                video.play().then(function() {}).catch(function(err) {
+//                    console.log(err)
+//                });
+//            }
+//        });
+//        sourceBuffer.appendBuffer(arrayBuffer);
+//    });
+//}
+
 // ugc页面
 var ugcSwiper = new Swiper('.swiper-ugc', {
     direction: 'horizontal',
@@ -39,10 +69,27 @@ $('#contact').click(function(){
 $('#ugc').click(function(){
     mySwiper.slideTo(2, 1000, true);
 })
-$('#download').click(function(){
-    mySwiper.slideTo(3, 1000, true);
-})
-
+//$('#download').click(function(){
+//    mySwiper.slideTo(3, 1000, true);
+//})
+function download(){
+    if(mySwiper.realIndex == 0){
+        document.getElementById("download_overflow").style.display="block";
+    }else if(mySwiper.realIndex == 1){
+        document.getElementById("download_overflow_2").style.display="block";
+    }else{
+        document.getElementById("download_overflow_3").style.display="block";
+    }
+};
+function download_close(){
+    if(mySwiper.realIndex == 0){
+        document.getElementById("download_overflow").style.display="none";
+    }else if(mySwiper.realIndex == 1){
+        document.getElementById("download_overflow_2").style.display="none";
+    }else{
+        document.getElementById("download_overflow_3").style.display="none";
+    }
+};
 $('#ugc_index').click(function(){
     ugcSwiper.slideTo(0, 1000, true);
 })
@@ -87,11 +134,13 @@ function recognize_url_hash(){
         $("#contact").addClass("active")
         $(".bg_img").css({"background":"url(../../static/img/bg_1.png","background-size":"cover"})
         $("#ugc,#index,#download").removeClass("active")
-    }else if(window.location.hash=="#download"){
-        $("#download").addClass("active")
-        $(".bg_img").css({"background":"url(../../static/img/bg_1.png","background-size":"cover"})
-        $("#ugc,#contact,#index").removeClass("active")
-    }else if(window.location.hash=="#ugc_index"){
+    }
+//    else if(window.location.hash=="#download"){
+//        $("#download").addClass("active")
+//        $(".bg_img").css({"background":"url(../../static/img/bg_1.png","background-size":"cover"})
+//        $("#ugc,#contact,#index").removeClass("active")
+//    }
+    else if(window.location.hash=="#ugc_index"){
         mySwiper.slideTo(2, 200, true);
         $("#ugc_index").addClass("active_button")
         $("#ugc_mod,#ugc_server").removeClass("active_button")

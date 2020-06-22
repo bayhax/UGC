@@ -35,9 +35,9 @@
                     <li class="li"><a href="/home/index#index" class="active" id="index">首页</a></li>
                     <li class="li"><a href="/home/index#contact" id="contact">联系我们</a></li>
                     <li class="li"><a href="/home/index#ugc" id="ugc">UGC中心</a></li>
-                    <li class="li filling"><a href="/home/index#download" id="download">下载</a></li>
+                    <li class="li filling" onclick="download()"><a href="#" id="download">下载</a></li>
                 </ul>
-                <div class="hide_title"><img src="{% static 'img/hide_title.png' %}" style="height: 1.5rem;margin-top: 0.5rem;"></div>
+<!--                <div class="hide_title"><img src="{% static 'img/hide_title.png' %}" style="height: 1.5rem;margin-top: 0.5rem;"></div>-->
             </div>
         </div>
 
@@ -51,7 +51,7 @@
                     <div class="swiper-slide" data-hash="index">
                         <div id="game_video" class="game_video">
                             <div id="video_content" class="video_content">
-                            <video id="display_video" style="height:100%;width:100%;object-fit:fill" preload="auto">
+                            <video id="display_video" style="height:100%;width:100%;object-fit:fill" autoplay preload="auto" poster="{% static 'img/logo.png' %}">
                                 <source src="{% static 'img/show_video.mp4'%}" type="video/mp4">
                                 您的浏览器不支持video标签</video></div>
                             <div id="index_page_logo" class="index_page_logo"><img src="{% static 'img/logo.png' %}" alt="logo"></div>
@@ -79,8 +79,28 @@
                             <img src="{% static 'img/qq.png'%}" alt="qq">
                             <img src="{% static 'img/qq.png'%}" alt="qq">
                         </div>
+                        <div id="download_overflow_2" class="download_overflow" style="left:0;">
+                                <div id="download_close_2" class="download_close" onclick="download_close()">关闭</div>
+                                <div class="download_way">
+                                    <ul>
+                                        <li>请选择下载方式</li>
+                                        <li><a href="#"> 端游下载</a></li>
+                                        <li><a href="#"> 安卓下载</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                     </div>
                     <div class="swiper-slide" data-hash="ugc">
+                        <div id="download_overflow_3" class="download_overflow" style="left:0;">
+                                <div id="download_close_3" class="download_close" onclick="download_close()">关闭</div>
+                                <div class="download_way">
+                                    <ul>
+                                        <li>请选择下载方式</li>
+                                        <li><a href="#"> 端游下载</a></li>
+                                        <li><a href="#"> 安卓下载</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         <div class="ugc_con">
                             <div id="ugc_header" class="ugc_header">
                                 <ul>
@@ -164,15 +184,15 @@
                         </div>
                         </div>
                     </div>
-                    <div class="swiper-slide" data-hash="download">
-                        <div class="download_way">
-                            <ul>
-                                <li>请选择下载方式</li>
-                                <li><a href="#"> 端游下载</a></li>
-                                <li><a href="#"> 安卓下载</a></li>
-                            </ul>
-                        </div>
-                    </div>
+<!--                    <div class="swiper-slide" data-hash="download">-->
+<!--                        <div class="download_way">-->
+<!--                            <ul>-->
+<!--                                <li>请选择下载方式</li>-->
+<!--                                <li><a href="#"> 端游下载</a></li>-->
+<!--                                <li><a href="#"> 安卓下载</a></li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
                 <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>

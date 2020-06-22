@@ -6,13 +6,13 @@ from __future__ import absolute_import, unicode_literals
 import os
 from celery import Celery, platforms
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'game_website.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'UGC.settings')
 
 # redis作队列中间件
 # app = Celery('server_manage', backend='redis', broker='redis://localhost')
 # rabbitmq作消息队列
 # app = Celery('server_manage', broker='amqp://guest:guest@localhost')
-app = Celery('game_website')
+app = Celery('UGC')
 
 app.config_from_object('django.conf:settings', namespace='CELERY')
 

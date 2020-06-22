@@ -2,17 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edcdff1e-7611-4d1e-bf3d-b41f10cc4968" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/UGC/asgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UGC/wsgi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/home/static/css/create_mod.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/home/static/css/create_mod.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/home/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/home/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/home/static/img/baymax.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/home/static/img/bg_1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/home/static/img/matrix_code.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/home/static/img/qq.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/img/show_video.mp4" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/home/static/js/public.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/home/static/js/public.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/home/static/js/swiper-nav-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/home/static/js/swiper-nav-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ugc_home/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_website/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_website/asgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_website/celery.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_website/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_website/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_website/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ugc_mod_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ugc_mod_create.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
