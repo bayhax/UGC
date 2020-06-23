@@ -17,6 +17,15 @@ from ugc_home.models import UgcUser
 import re
 
 
+# 首页
+class IndexView(View):
+    def get(self, request):
+        return render(request, 'index.html')
+
+    def post(self,  request):
+        pass
+
+
 class RegisterView(View):
     """（类视图）注册"""
 
@@ -192,3 +201,11 @@ class ModView(View):
         mod_list = [{'mod_id': '1', 'mod_img': '23', 'mod_title': 'r'},
                     {'mod_id': '2', 'mod_img': '24', 'mod_title': 'ef'}]
         return HttpResponse(json.dumps(mod_list))
+
+
+def supervisor(request):
+    return render(request, 'supervisor.html')
+
+
+def dispute(request):
+    return render(request, 'dispute.html')

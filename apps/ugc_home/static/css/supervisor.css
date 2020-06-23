@@ -1,4 +1,4 @@
-.supervisor {
+/*.supervisor {
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
@@ -190,4 +190,55 @@
     text-indent:15px;
     color: yellow;
     display: block;
+}*/
+.supervisor {
+    color: #F2F2F2;
+    width: 100rem;
+    height: 50rem;
+    margin: auto;
+    margin-top: 4rem;
+    background: no-repeat url(../img/news_more_bg.png);
+    background-color: transparent;
+}
+.supervisor_explain {
+    font-size: 2rem;
+    width: 80rem;
+    margin: auto;
+    text-indent: 3rem;
+}
+.block_title {
+    margin-top: 1.5rem;
+    margin-bottom:0.8rem;
+    text-align: center;
+    font-size:2rem;
+    background: #272727;
+}
+.supervisor_con{
+    text-align: left;
+    width: 87rem;
+    height: 42rem;
+    display: inline-block;
+    margin-left: 5rem;
+    margin-top: 5rem;
+    font-size: 1.3rem;
+
+    overflow: auto;
+}
+.supervisor_con::-webkit-scrollbar {
+    width: 0.3rem; //滚动条的宽度
+}
+.supervisor_con::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background: rgba(156,153,153,0.6);
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.08);
+}
+.supervisor_con::-webkit-scrollbar-thumb {
+    background-color: #8899A7;//滚动条的颜色
+    border-radius: 3px;//滚动条的边框倒角
+}
+p {
+    text-indent: 3rem;
+}
+li {
+    width: 20rem;
 }

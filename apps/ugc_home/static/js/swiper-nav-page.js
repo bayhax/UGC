@@ -22,7 +22,7 @@ window.onhashchange=function(event){
     recognize_url_hash();
 };
 function recognize_url_hash(){
-    if(window.location.hash=="#ugc_index"){
+    if(window.location.hash=="#ugc_index" || window.location.hash == ""){
         $("#ugc_index").addClass("active_button")
         $("#ugc_mod,#ugc_server").removeClass("active_button")
         $.post("/ugc_home/mod", function(data){
@@ -35,7 +35,7 @@ function recognize_url_hash(){
                 row.style = 'height:25rem;width:100%;margin:1rem auto;no-repeat background:url(../../static/img/bg_1.png);color:#F2F2F2;'
                 row.innerHTML = mod_list[i].mod_title;
                 link.appendChild(row)
-                link.href = '/home/index'
+                link.href = '/ugc_home/index'
                 table.appendChild(link);
             }
         });
