@@ -1,33 +1,3 @@
-//var video = document.querySelector('#display_video');
-//var mediaSource = new MediaSource();
-//video.src = URL.createObjectURL(mediaSource);
-//mediaSource.addEventListener('sourceopen', sourceOpen);
-//
-//function sourceOpen(e) {
-//    URL.revokeObjectURL(video.src);
-//    // 设置 媒体的编码类型
-//    var mime = 'video/mp4; codecs="avc1.42E01E, mp4a.40.2"';
-//    var mediaSource = e.target;
-//    var sourceBuffer = mediaSource.addSourceBuffer(mime);
-//    var videoUrl = '../static/img/show_video.mp4';
-//    fetch(videoUrl).then(function(response) {
-//            console.log(response)
-//            return response.arrayBuffer();
-//    })
-//    .then(function(arrayBuffer) {
-//        sourceBuffer.addEventListener('updateend', function(e) {
-//            if (!sourceBuffer.updating && mediaSource.readyState === 'open') {
-//                mediaSource.endOfStream();
-//                // 在数据请求完成后，我们需要调用 endOfStream()。它会改变 MediaSource.readyState 为 ended 并且触发 sourceended 事件。
-//                video.play().then(function() {}).catch(function(err) {
-//                    console.log(err)
-//                });
-//            }
-//        });
-//        sourceBuffer.appendBuffer(arrayBuffer);
-//    });
-//}
-
 // ugc页面
 var ugcSwiper = new Swiper('.swiper-ugc', {
     direction: 'horizontal',
@@ -37,59 +7,6 @@ var ugcSwiper = new Swiper('.swiper-ugc', {
     mousewheel: false,
     hashNavigation:true,
 });
-
- // 整体swiper切换
-var mySwiper = new Swiper('.swiper-container', {
-    lazy: true,
-    direction: 'vertical',
-    mousewheel: true,
-    hashNavigation:true,
-    //pagination: {
-    //  el: '.swiper-pagination',
-    //  clickable: true,
-
-    //},
-});
-// 判断鼠标是否在table MOD内，如果在，则禁用滚轮控制，以使mod可以滚动，如果不在，则开启滚轮控制，控制上下翻页。
-$(document).mousemove(function(e){
-	if($.contains($("#ugc_index_mod")[0],e.target) || $("#ugc_index_mod")[0]==e.target){
-        mySwiper.mousewheel.disable();
-    }else{
-	    mySwiper.mousewheel.enable();
-    }
-});
-
-// 导航条切换swiper页面
-$('#index').click(function(){
-    mySwiper.slideTo(0, 1000, true);
-})
-$('#contact').click(function(){
-    mySwiper.slideTo(1, 1000, true);
-})
-$('#ugc').click(function(){
-    mySwiper.slideTo(2, 1000, true);
-})
-//$('#download').click(function(){
-//    mySwiper.slideTo(3, 1000, true);
-//})
-function download(){
-    if(mySwiper.realIndex == 0){
-        document.getElementById("download_overflow").style.display="block";
-    }else if(mySwiper.realIndex == 1){
-        document.getElementById("download_overflow_2").style.display="block";
-    }else{
-        document.getElementById("download_overflow_3").style.display="block";
-    }
-};
-function download_close(){
-    if(mySwiper.realIndex == 0){
-        document.getElementById("download_overflow").style.display="none";
-    }else if(mySwiper.realIndex == 1){
-        document.getElementById("download_overflow_2").style.display="none";
-    }else{
-        document.getElementById("download_overflow_3").style.display="none";
-    }
-};
 $('#ugc_index').click(function(){
     ugcSwiper.slideTo(0, 1000, true);
 })
@@ -105,43 +22,7 @@ window.onhashchange=function(event){
     recognize_url_hash();
 };
 function recognize_url_hash(){
-    if(window.location.hash=="#index" || window.location.hash==""){
-        $("#index").addClass("active")
-        $(".bg_img").css({"background":"url(../../static/img/bg_1.png","background-size":"cover"})
-        $("#ugc,#contact,#download").removeClass("active")
-    }else if(window.location.hash=="#ugc"){
-        $("#ugc").addClass("active")
-        $(".bg_img").css({"background":"url(../../static/img/bg_1.png","background-size":"cover"})
-        $("#index,#contact,#download").removeClass("active")
-        $("#ugc_index").addClass("active_button")
-        $("#ugc_mod,#ugc_server").removeClass("active_button")
-        ugcSwiper.slideTo(0, 200, true)
-        $.post("/ugc_home/mod", function(data){
-            var mod_list = JSON.parse(data)
-            var table = document.getElementById('ugc_index_mod_table') // 获取表格元素
-            table.innerHTML = ''
-            for(var i=0;i<mod_list.length;i++){
-                var link = document.createElement('a')
-                var row = document.createElement('div')
-                row.style = 'height:25rem;width:100%;margin:1rem auto;background:no-repeat url(../../static/img/bg_1.png);color:#F2F2F2;'
-                row.innerHTML = mod_list[i].mod_title;
-                link.appendChild(row)
-                link.href = '/home/index'
-                table.appendChild(link);
-            }
-        });
-    }else if(window.location.hash=="#contact"){
-        $("#contact").addClass("active")
-        $(".bg_img").css({"background":"url(../../static/img/bg_1.png","background-size":"cover"})
-        $("#ugc,#index,#download").removeClass("active")
-    }
-//    else if(window.location.hash=="#download"){
-//        $("#download").addClass("active")
-//        $(".bg_img").css({"background":"url(../../static/img/bg_1.png","background-size":"cover"})
-//        $("#ugc,#contact,#index").removeClass("active")
-//    }
-    else if(window.location.hash=="#ugc_index"){
-        mySwiper.slideTo(2, 200, true);
+    if(window.location.hash=="#ugc_index"){
         $("#ugc_index").addClass("active_button")
         $("#ugc_mod,#ugc_server").removeClass("active_button")
         $.post("/ugc_home/mod", function(data){
@@ -159,7 +40,6 @@ function recognize_url_hash(){
             }
         });
     }else if(window.location.hash=="#ugc_mod"){
-        mySwiper.slideTo(2, 200, true);
         $("#ugc_mod").addClass("active_button")
         $("#ugc_index,#ugc_server").removeClass("active_button")
         $.post('/ugc_mod/all_mod', function(data){
@@ -326,7 +206,6 @@ function recognize_url_hash(){
             }
         })
     }else{
-        mySwiper.slideTo(2, 200, true);
         $("#ugc_server").addClass("active_button")
         $("#ugc_mod,#ugc_index").removeClass("active_button")
     }

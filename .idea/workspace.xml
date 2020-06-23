@@ -2,21 +2,224 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edcdff1e-7611-4d1e-bf3d-b41f10cc4968" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/UGC/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UGC/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/home/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/home/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/home/static/img/show_video.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/home/static/js/public.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/home/static/js/public.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/home/static/js/swiper-nav-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/home/static/js/swiper-nav-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/tasks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_website/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_website/asgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_website/celery.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_website/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_website/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_website/wsgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UGC/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/UGC/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UGC/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/UGC/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/contact/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/contact/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/contact/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/contact/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/contact/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/contact/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/contact/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/contact/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/contact/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/css/bootstrap-table.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/css/bootstrap-table.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/css/create_mod.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/css/dispute.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/css/pagination.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/css/reset.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/css/supervisor.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/css/swiper.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/img/4399.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/img/PageDown.png" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/img/PageDown.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/img/bg_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/img/download_game.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/img/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/img/hide_title.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/img/pause.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/img/play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/img/qq.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/img/taptap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/img/test.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/img/title_head.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/img/ugc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/base.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/jquery-1.12.4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/jquery.pagination.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/ar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/ar_SA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/az.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/be.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/bg_BG.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/bn_BD.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/bs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/cs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/cy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/da.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/de.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/de_AT.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/dv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/el.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/en_CA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/en_GB.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/eo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/es.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/es_MX.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/et.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/eu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/fa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/fa_IR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/fi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/fo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/fr_FR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/gd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/gl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/he_IL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/hi_IN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/hr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/hu_HU.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/hy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/id.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/is_IS.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/it.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/ja.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/ka_GE.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/kab.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/kk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/km_KH.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/ko_KR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/ku.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/ku_IQ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/lb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/lt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/lv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/ml.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/ml_IN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/mn_MN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/nb_NO.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/nl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/pl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/pt_BR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/pt_PT.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/ro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/ru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/si_LK.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/sk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/sl_SI.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/sr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/sv_SE.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/ta.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/ta_IN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/tg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/th_TH.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/tr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/tr_TR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/tt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/ug.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/uk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/uk_UA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/vi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/vi_VN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/zh_CN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/langs/zh_TW.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/mod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/advlist/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/anchor/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/autolink/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/autoresize/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/autosave/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/bbcode/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/charmap/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/code/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/colorpicker/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/contextmenu/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/directionality/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/emoticons/img/smiley-cool.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/emoticons/img/smiley-cry.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/emoticons/img/smiley-embarassed.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/emoticons/img/smiley-foot-in-mouth.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/emoticons/img/smiley-frown.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/emoticons/img/smiley-innocent.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/emoticons/img/smiley-kiss.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/emoticons/img/smiley-laughing.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/emoticons/img/smiley-money-mouth.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/emoticons/img/smiley-sealed.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/emoticons/img/smiley-smile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/emoticons/img/smiley-surprised.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/emoticons/img/smiley-tongue-out.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/emoticons/img/smiley-undecided.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/emoticons/img/smiley-wink.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/emoticons/img/smiley-yell.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/emoticons/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/example/dialog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/example/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/example_dependency/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/fullpage/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/fullscreen/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/hr/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/image/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/imagetools/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/importcss/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/insertdatetime/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/layer/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/legacyoutput/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/link/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/lists/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/media/moxieplayer.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/media/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/nonbreaking/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/noneditable/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/pagebreak/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/paste/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/preview/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/print/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/save/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/searchreplace/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/spellchecker/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/tabfocus/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/table/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/template/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/textcolor/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/textpattern/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/visualblocks/css/visualblocks.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/visualblocks/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/visualchars/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/plugins/wordcount/plugin.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/public.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/register.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/skins/lightgray/content.inline.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/skins/lightgray/content.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/skins/lightgray/fonts/tinymce-small.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/skins/lightgray/fonts/tinymce-small.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/skins/lightgray/fonts/tinymce-small.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/skins/lightgray/fonts/tinymce-small.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/skins/lightgray/fonts/tinymce.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/skins/lightgray/fonts/tinymce.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/skins/lightgray/fonts/tinymce.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/skins/lightgray/fonts/tinymce.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/skins/lightgray/img/anchor.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/skins/lightgray/img/loader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/skins/lightgray/img/object.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/skins/lightgray/img/trans.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/skins/lightgray/skin.ie7.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/skins/lightgray/skin.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/swiper-nav-page.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/swiper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/swiper.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/theme/default/icon-ext.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/theme/default/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/theme/default/layer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/theme/default/loading-0.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/theme/default/loading-1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/theme/default/loading-2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/themes/modern/theme.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/static/js/tinymce.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/home/views.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,6 +256,9 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/ugc_home" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/apps/home/static/img" />
       <recent name="$PROJECT_DIR$/apps/home/static/js" />
@@ -106,10 +312,11 @@
     </state>
     <state x="552" y="219" width="672" height="678" key="search.everywhere.popup/67.27.1641.899@67.27.1641.899" timestamp="1591788596172" />
     <state x="555" y="219" width="672" height="678" key="search.everywhere.popup/67.27.1651.899@67.27.1651.899" timestamp="1589803055193" />
-    <state x="614" y="388" width="540" height="175" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1591250425418">
-      <screen x="67" y="27" width="1641" height="899" />
+    <state x="685" y="450" width="540" height="225" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1592881669918">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="614" y="388" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/67.27.1641.899@67.27.1641.899" timestamp="1591250425418" />
     <state x="617" y="388" width="540" height="175" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/67.27.1651.899@67.27.1651.899" timestamp="1589773321611" />
+    <state x="685" y="450" width="540" height="225" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1592881669918" />
   </component>
 </project>

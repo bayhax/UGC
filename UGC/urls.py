@@ -18,11 +18,9 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', include('home.urls')),  # 首页链接
     path('ugc_home/', include('ugc_home.urls')),  # ugc首页连接
     path('ugc_mod/',  include('ugc_mod.urls')),  # ugc模型链接
     path('ugc_server/', include('ugc_server.urls')),  # 用户自建服务器
-    path('contact/', include('contact.urls')),  # 联系我们
     path('password-reset/', include('password_reset.urls')),  # 重置密码
     path('tinymce', include('tinymce.urls')),  # 富文本编辑器
 ]

@@ -42,11 +42,9 @@ INSTALLED_APPS = [
     'django_celery_results',  # 定时任务结果
     'password_reset',  # 重置密码
     'tinymce',  # 富文本编辑器
-    'home',  # 官网首页
     'ugc_home',  # ugc首页
     'ugc_mod',  # ugc_mod
     'ugc_server',  # ugc服务器
-    'contact',  # 联系我们
 ]
 
 MIDDLEWARE = [
