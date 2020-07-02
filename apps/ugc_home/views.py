@@ -83,7 +83,7 @@ class RegisterView(View):
         send_register_active_email.delay(email, username, token)
 
         # 返回应答,跳转到首页
-        return redirect('/home/index#ugc')
+        return redirect('/#ugc')
 
 
 class ActiveView(View):
@@ -104,7 +104,7 @@ class ActiveView(View):
             user.save()
 
             # 跳转到登录页面
-            return redirect('/home/index#ugc')
+            return redirect('/#ugc')
 
         except SignatureExpired as e:
             # 激活链接已过期
@@ -154,7 +154,7 @@ class LoginView(View):
                 login(request, user)
 
                 # 跳转到ugc首页
-                response = redirect('/home/index#ugc')
+                response = redirect('/#ugc_index')
 
                 # 判断是否需要记住用户名
                 remember = request.POST.get('remember')
@@ -178,7 +178,7 @@ class LoginView(View):
 # 退出登录
 def user_quit(request):
     logout(request)
-    return redirect('/home/index#ugc')
+    return redirect('/#ugc_index')
 
 
 # 忘记密码重置
@@ -195,7 +195,7 @@ class ResetPasswordView(View):
 # ugc_index页面mod展示
 class ModView(View):
     def get(self, request):
-        return redirect('/ugc_home/index')
+        return redirect('/')
 
     def post(self, request):
         mod_list = [{'mod_id': '1', 'mod_img': '23', 'mod_title': 'r'},

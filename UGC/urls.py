@@ -14,11 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, re_path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ugc_home/', include('ugc_home.urls')),  # ugc首页连接
+    re_path(r'^', include('ugc_home.urls')),  # ugc首页连接
     path('ugc_mod/',  include('ugc_mod.urls')),  # ugc模型链接
     path('ugc_server/', include('ugc_server.urls')),  # 用户自建服务器
     path('password-reset/', include('password_reset.urls')),  # 重置密码

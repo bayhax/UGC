@@ -25,7 +25,7 @@ function recognize_url_hash(){
     if(window.location.hash=="#ugc_index" || window.location.hash == ""){
         $("#ugc_index").addClass("active_button")
         $("#ugc_mod,#ugc_server").removeClass("active_button")
-        $.post("/ugc_home/mod", function(data){
+        $.post("/mod", function(data){
             var mod_list = JSON.parse(data)
             var table = document.getElementById('ugc_index_mod_table') // 获取表格元素
             table.innerHTML = ''
@@ -35,7 +35,7 @@ function recognize_url_hash(){
                 row.style = 'height:25rem;width:100%;margin:1rem auto;no-repeat background:url(../../static/img/bg_1.png);color:#F2F2F2;'
                 row.innerHTML = mod_list[i].mod_title;
                 link.appendChild(row)
-                link.href = '/ugc_home/index'
+                link.href = '/index'
                 table.appendChild(link);
             }
         });

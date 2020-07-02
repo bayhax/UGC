@@ -1,24 +1,59 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="zh-CN">
 {% load static %}
-{% block title %}北京第零世界科技有限公司{% endblock title %}
+<head>
+    <meta charset="utf-8">
+    <title>北京第零世界科技有限公司</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
-{% block body %}
-<div class="body">
-
-    <div>
-        <form>
-            名称<br>
-            <input type="text" id="server_name">
-            选择规格套餐<br>
-            <input type="radio", id="category">
-            选择租赁时长<br>
-            <input type="radio" id="rent_time">
-            租赁至： 到期日期
-            <input type="radio"><a href="#">同意&lt;&lt;xxx协议&gt;&gt;</a>
-            <input type="submit" value="积分获得">
-            <input type="submit" value="￥购买">
-        </form>
-
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/server.css'%}">
+</head>
+<body>
+    <div style="text-align:center;">
+        名称 <br>
+        <input type="text" id="server_name"><br>
+        选择规格套餐<br>
+        <div class="server_package">
+            <ul>
+                <li><input type="radio" name="package" id="ten_radio" class="package_radio" value="10" hidden>
+                    <label for="ten_radio" class="package_text">10人</label></li>
+                <li><input type="radio" name="package" id="twenty_radio" class="package_radio" value="20" hidden>
+                    <label for="twenty_radio" class="package_text">20人</label></li>
+                <li><input type="radio" name="package" id="forty_radio" class="package_radio" value="40" hidden>
+                <label for="forty_radio" class="package_text">40人</label></li>
+            </ul>
+        </div>
+        选择租赁时长<br>
+        <div class="server_rent_time">
+            <ul>
+                <li><input type="radio" name="rent_time" id="thirty_day" value="30" class="rent_time_radio" hidden>
+                    <label for="thirty_day" class="rent_time_text">30天</label></li>
+                <li><input type="radio" name="rent_time" id="sixty_day" value="60" class="rent_time_radio" hidden>
+                    <label for="sixty_day" class="rent_time_text">60天</label></li>
+                <li><input type="radio" name="rent_time" id="ninety_day" value="90" class="rent_time_radio" hidden>
+                    <label for="ninety_day" class="rent_time_text">90天</label></li>
+                <li><input type="radio" name="rent_time" id="half_year" value="180" class="rent_time_radio" hidden>
+                    <label for="half_year" class="rent_time_text">180天</label></li>
+                <li><input type="radio" name="rent_time" id="one_year" value="360" class="rent_time_radio" hidden>
+                    <label for="one_year" class="rent_time_text">360天</label></li>
+                <li><input type="radio" name="rent_time" id="other_duration" class="rent_time_radio" hidden>
+                    <label for="other_duration" class="rent_time_text">其他</label></li>
+            </ul>
+        </div>
+        <div>租赁至： <span id="deadline"></span></div>
+        <div>
+            <label id="agree_label" for="agree"><input type="checkbox" name="agree" id="agree"></label>&nbsp;&nbsp;
+            <a href="#">同意&lt;&lt;xxx协议&gt;&gt;</a><br>
+        </div>
+        <div>
+            <button type="button" id="score" value="">积分获得</button>
+            <button type="button" id="money" value="">￥购买</button>
+        </div>
     </div>
-</div>
-{% endblock body %}
+    <script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/server.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+.radio_cancel {
+
+}
+input[type=radio]:checked + .package_text{
+    background:green;
+}
+.package_text {
+    cursor: pointer;
+    font-size: 1.5rem;
+    background: red;
+    margin: 0.5rem;
+}
+.rent_time_text {
+    cursor: pointer;
+    font-size: 1.5rem;
+    background: red;
+    margin: 0.5rem;
+}
+input[type=radio]:checked + .rent_time_text{
+    background:green;
+}
+
+.server_package ul{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    list-style:none;
+}
+
+.server_rent_time ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    list-style:none;
+}

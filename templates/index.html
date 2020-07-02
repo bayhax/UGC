@@ -50,11 +50,11 @@
                             <div id="ugc_header" class="ugc_header">
                                 <ul>
                                     <li id="ugc_index" class="ugc_index">
-                                        <a href="/ugc_home/index#ugc_index">首页</a></li>
+                                        <a href="/#ugc_index">首页</a></li>
                                     <li id="ugc_mod" class="ugc_mod">
-                                        <a href="/ugc_home/index#ugc_mod">MOD</a></li>
+                                        <a href="/#ugc_mod">MOD</a></li>
                                     <li id="ugc_server" class="ugc_server">
-                                        <a href="/ugc_home/index#ugc_server">服务器</a></li>
+                                        <a href="/#ugc_server">服务器</a></li>
                                 </ul>
                         </div>
 
@@ -65,12 +65,12 @@
                                         <div id="index_user" class="ugc_user">
                                             {% if request.user.is_authenticated %}
                                                 <div class="user">{{ request.user }}
-                                                    <a href='/ugc_home/user_quit'><span style="font-size:14px;">退出</span></a>
+                                                    <a href='/user_quit'><span style="font-size:14px;">退出</span></a>
                                                 </div>
                                                 <div id="score" class="score">积分</div>
                                             {% else %}
-                                                <div id="user" class="user"><a href="/ugc_home/login"> 登录</a>|
-                                                <a href="/ugc_home/register"> 注册</a></div>
+                                                <div id="user" class="user"><a href="/login"> 登录</a>|
+                                                <a href="/register"> 注册</a></div>
 
                                             {% endif %}
                                         </div>
@@ -89,8 +89,8 @@
                                                     <input type="hidden" id="user_id" value="{{ request.user.id }}">已获得</div>
                                                 <div class="score" id="created" style="cursor:pointer;">我创建的</div>
                                             {% else %}
-                                                <div class="user"><a href="/ugc_home/login">请登录</a>|
-                                                <a href="/ugc_home/register"> 注册</a></div>
+                                                <div class="user"><a href="/login">请登录</a>|
+                                                <a href="/register"> 注册</a></div>
                                             {% endif %}
                                         </div>
                                         <div class="ugc_box" id="ugc_mod_mod">
@@ -109,15 +109,27 @@
                                     <div class="swiper_con">
                                         {% if request.user.is_authenticated %}
                                             <div id="server_user" class="ugc_user">
-                                                    <div class="user">创建租赁服</div>
+                                                <div class="user"><a href="/ugc_server/create_server">创建租赁服</a></div>
                                             </div>
                                             <div class="ugc_box">
-                                                您还未开通租赁服
+                                                <div class="server_manage">
+                                                    <div class="">私密     公开</div>
+                                                    <div class="server_info">
+                                                        ID:99999       名称：叫啥好呢
+                                                        人数： 3/10
+                                                        有效期： 2020-9-02 12：39 至 2020-10-31 12：39
+                                                        MOD：
+                                                    </div>
+                                                    <div>
+                                                        <button type="button" id="renewal" value="续费">续费</button>
+                                                        <button type="button" id="edit_mod" value="">编辑MOD</button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         {% else %}
                                             <div class="ugc_server">
-                                                <div class="user"><a href="/ugc_home/login"> 登录</a>|
-                                                <a href="/ugc_home/register"> 注册</a></div>
+                                                <div class="user"><a href="/login"> 登录</a>|
+                                                <a href="/register"> 注册</a></div>
                                             </div>
                                             <div class="ugc_box">
                                                 请登录
@@ -137,8 +149,8 @@
                     <div class="box">
                         <div class="content">
                             <p>
-                                <a href="/ugc_home/supervisor" target="_blank">家长监护工程</a><span>|</span>
-                                <a href="/ugc_home/dispute" target="_blank">纠纷处理</a>
+                                <a href="/supervisor" target="_blank">家长监护工程</a><span>|</span>
+                                <a href="/dispute" target="_blank">纠纷处理</a>
                             </p>
                             <p><span>健康游戏忠告：抵制不良游戏，拒绝盗版游戏，注意自我保护，谨防上当受骗，适度游戏益脑，沉迷游戏伤身，合理安排时间，享受健康生活</span></p>
                             <p><span>北京第零世界科技有限公司 地址：北京市朝阳区建国路15号院甲1号北岸1292三间房创意生活园区9-7291 电话：010-60607973</span></p>

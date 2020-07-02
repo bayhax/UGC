@@ -5,7 +5,7 @@ from django.urls import path, re_path
 from apps.ugc_home import views
 app_name = 'ugc_home'
 urlpatterns = [
-    path('index', views.IndexView.as_view()),  # 首页
+    re_path(r'^$', views.IndexView.as_view()),  # 首页
     path('login', views.LoginView.as_view(), name='login'),  # 登录页面
     path('reset_password', views.ResetPasswordView.as_view(), name='reset_password'),  # 重置密码
     path('user_quit', views.user_quit, name='user_quit'),  # 退出

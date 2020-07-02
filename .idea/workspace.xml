@@ -2,33 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a29c1ee-1efc-4340-a14a-bbc0e4dc2c1a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/UGC.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/game_website.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/css/dispute.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/css/dispute.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/css/supervisor.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/css/supervisor.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/img/4399.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/img/pause.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/img/play.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/img/qq.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/img/taptap.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/img/test.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/img/title_head.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/js/public.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/js/public.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UGC/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/UGC/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/js/swiper-nav-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/js/swiper-nav-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ugc_home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ugc_home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ugc_mod/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_mod/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ugc_server/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_server/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ugc_server/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_server/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/create_server.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,14 +39,15 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/apps/ugc_home/static" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../company_website" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/apps/ugc_home/static" />
       <recent name="$PROJECT_DIR$/apps/ugc_home/static/img" />
+      <recent name="$PROJECT_DIR$/apps/ugc_home/static" />
       <recent name="$PROJECT_DIR$/apps/ugc_home/static/css" />
       <recent name="$PROJECT_DIR$/templates" />
     </key>
@@ -69,9 +66,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1592883821276">
+    <state x="776" y="310" width="379" height="412" key="FileChooserDialogImpl" timestamp="1593606228291">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1592883821276" />
+    <state x="693" y="268" width="379" height="412" key="FileChooserDialogImpl/67.27.1636.895@67.27.1636.895" timestamp="1592902751453" />
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1593606228291" />
   </component>
 </project>

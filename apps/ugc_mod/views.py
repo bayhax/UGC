@@ -30,8 +30,7 @@ class UserObtainedView(View):
         user_id = request.POST['user_id']
 
         # 在缓存中获取该账户id的所有已经获得的mod
-        mod_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12]
+        mod_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] * 5
 
         # 返回给页面
         return HttpResponse(json.dumps({'mod_list': mod_list}))
