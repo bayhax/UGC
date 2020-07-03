@@ -30,16 +30,7 @@
     <!--网页顶部导航块-->
     <div class="head_nav">
             <div class="logo"><img src="{% static 'img/logo.png' %}" alt="logo" height="100%"></div>
-<!--            <div class="title_link">-->
-<!--                <ul>-->
-<!--                    <li class="li"><a href="/home/index#index" class="active" id="index">首页</a></li>-->
-<!--                    <li class="li"><a href="/home/index#contact" id="contact">联系我们</a></li>-->
-<!--                    <li class="li"><a href="/home/index#ugc" id="ugc">UGC中心</a></li>-->
-<!--                    <li class="li filling" onclick="download()"><a href="#" id="download">下载</a></li>-->
-<!--                </ul>-->
-<!--&lt;!&ndash;                <div class="hide_title"><img src="{% static 'img/hide_title.png' %}" style="height: 1.5rem;margin-top: 0.5rem;"></div>&ndash;&gt;-->
-<!--            </div>-->
-        </div>
+    </div>
 
     <!--最外层body很重要，对footer的绝对定位有重要作用，不然footer没有参考-->
     <div id="body_con" class="body_con">
@@ -47,18 +38,18 @@
         <div class="body_container">
             <!-- Swiper -->
             <div class="ugc_con">
-                            <div id="ugc_header" class="ugc_header">
-                                <ul>
-                                    <li id="ugc_index" class="ugc_index">
-                                        <a href="/#ugc_index">首页</a></li>
-                                    <li id="ugc_mod" class="ugc_mod">
-                                        <a href="/#ugc_mod">MOD</a></li>
-                                    <li id="ugc_server" class="ugc_server">
-                                        <a href="/#ugc_server">服务器</a></li>
-                                </ul>
-                        </div>
+                <div id="ugc_header" class="ugc_header">
+                    <ul>
+                        <li id="ugc_index" class="ugc_index">
+                            <a href="/#ugc_index">首页</a></li>
+                        <li id="ugc_mod" class="ugc_mod">
+                            <a href="/#ugc_mod">MOD</a></li>
+                        <li id="ugc_server" class="ugc_server">
+                            <a href="/#ugc_server">服务器</a></li>
+                    </ul>
+                </div>
 
-                            <div class="swiper-ugc">
+                <div class="swiper-ugc">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide" data-hash="ugc_index">
                                     <div id="swiper_con" class="swiper_con ">
@@ -96,10 +87,10 @@
                                         <div class="ugc_box" id="ugc_mod_mod">
                                             <table id="mod_table"></table>
                                             <div class="mod_select">
-                                                <button id="prev">上一页</button>
+                                                <button id="prev" class="page_select_button">上一页</button>
                                                 <div class="page_select" id="page_select">
                                                 </div>
-                                                <button id="next">下一页</button>
+                                                <button id="next" class="page_select_button">下一页</button>
                                             </div>
                                         </div>
 
@@ -109,11 +100,28 @@
                                     <div class="swiper_con">
                                         {% if request.user.is_authenticated %}
                                             <div id="server_user" class="ugc_user">
-                                                <div class="user"><a href="/ugc_server/create_server">创建租赁服</a></div>
+                                                <div class="user">
+                                                    <a href="/ugc_server/create_server" class="create_server">创建租赁服</a>
+                                                </div>
                                             </div>
                                             <div class="ugc_box">
                                                 <div class="server_manage">
-                                                    <div class="">私密     公开</div>
+                                                    <div class="">
+                                                        <label for="server_status">
+                                                            <span class="server_status_text" id="server_status_text">关闭</span>
+                                                            <input type="checkbox" id="server_status" name="server_status" hidden>
+                                                            <div class="switch_box">
+                                                                <div class="switch_inner"></div>
+                                                            </div>
+                                                        </label>
+                                                        <label for="is_server_private">
+                                                            <span class="server_status_text" id="is_server_private_text">关闭</span>
+                                                            <input type="checkbox" id="is_server_private" name="is_server_private" hidden>
+                                                            <div class="switch_box">
+                                                                <div class="switch_inner"></div>
+                                                            </div>
+                                                        </label>
+                                                    </div>
                                                     <div class="server_info">
                                                         ID:99999       名称：叫啥好呢
                                                         人数： 3/10
@@ -121,7 +129,7 @@
                                                         MOD：
                                                     </div>
                                                     <div>
-                                                        <button type="button" id="renewal" value="续费">续费</button>
+                                                        <button type="button" id="renewal" value="">续费</button>
                                                         <button type="button" id="edit_mod" value="">编辑MOD</button>
                                                     </div>
                                                 </div>
@@ -139,7 +147,7 @@
                                 </div>
                             </div>
                         </div>
-                        </div>
+            </div>
                 <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
         </div>

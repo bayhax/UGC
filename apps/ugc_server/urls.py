@@ -7,4 +7,5 @@ from apps.ugc_server import views
 urlpatterns = [
     path('ugc_server', views.UgcServerView.as_view()),  # 用户自建服务器首页
     path('create_server', views.CreateServerView.as_view()),  # 创建租赁服
+    path('purchase', views.ServerPurchaseView.as_view()),  # 购买租赁服
 ]

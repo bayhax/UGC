@@ -165,6 +165,38 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     margin-right: 20%;
     color: #F2F2F2;
 }
+.switch_box {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    height: 1.5rem;
+    width: 3rem;
+    border-radius: 40%;
+    background: #CC0000;
+}
+.switch_inner {
+    position: absolute;
+    left: 4%;
+    top: 6%;
+    bottom: 13%;
+    width: 50%;
+    background: rgba(230, 230, 230, 0.9);
+    border-radius: 50%;
+}
+input[type=checkbox]:checked + .switch_box {
+    background: #66CC33;
+}
+input[type=checkbox]:checked + .switch_box .switch_inner {
+    left: auto;
+    right: 4%;
+}
+.create_server {
+    color: #F2F2F2;
+    cursor: position;
+}
+.create_server:hover {
+    background: lightgreen;
+}
 /*页尾隐藏在页面下方，完全透明显示出来后多高内容 -webkit- -moz- 不同浏览器的布局属性*/
 .box_footer{position:absolute;top:auto;left:0;right:0;bottom:-12rem;z-index:1;height:12rem;opacity:0;background:rgba(0,0,0,0.6);-webkit-transition:all .5s;-o-transition:all .5s;transition:all .5s}
 /*鼠标移动到什么区域可以显示页尾，中间高两边低*/
@@ -399,7 +431,7 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
 .page_select{
     margin:auto 20px;
 }
-.page_select, button {
+.page_select, .page_select_button {
     cursor: pointer;
     display: none;
 }

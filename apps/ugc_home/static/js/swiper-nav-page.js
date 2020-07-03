@@ -16,6 +16,20 @@ $('#ugc_mod').click(function(){
 $('#ugc_server').click(function(){
     ugcSwiper.slideTo(2, 1000, true);
 })
+$("#server_status").change(function(){
+    if($("input[name='server_status']:checked").val() == 'on'){
+        document.getElementById("server_status_text").innerText = '开放'
+    }else{
+        document.getElementById("server_status_text").innerText = '关闭'
+    }
+})
+$("#is_server_private").change(function(){
+    if($("input[name='is_server_private']:checked").val() == 'on'){
+        document.getElementById("is_server_private_text").innerText = '开放'
+    }else{
+        document.getElementById("is_server_private_text").innerText = '关闭'
+    }
+})
 recognize_url_hash();
 // 导航追踪
 window.onhashchange=function(event){

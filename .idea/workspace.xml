@@ -3,16 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="5a29c1ee-1efc-4340-a14a-bbc0e4dc2c1a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UGC/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/UGC/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/js/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/js/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/js/swiper-nav-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/js/swiper-nav-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_mod/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_mod/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ugc_server/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_server/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ugc_server/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_server/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/create_server.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/create_server.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/create_server.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

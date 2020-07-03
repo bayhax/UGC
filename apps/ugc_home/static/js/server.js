@@ -5,8 +5,8 @@ function price() {
     if(rent_time == null || rent_time == 'on' || number == null){
         return false
     }else{
-        document.getElementById("score").innerText = number * rent_time + " 积分获得"
-        document.getElementById("money").innerText = number * rent_time + "￥ 购买"
+        document.getElementById("score_purchase").innerText = number * rent_time + " 积分获得"
+        document.getElementById("money_purchase").innerText = number * rent_time + "￥ 购买"
     }
 }
 // 服务器租赁截止日期
@@ -22,4 +22,30 @@ $(".rent_time_radio").change(function(){
 })
 $(".package_radio").change(function(){
     price();
+})
+// 积分获得
+$("#score_purchase").click(function(){
+    // 购买前必须能计算出金额
+    var rent_time = $("input[name='rent_time']:checked").val();
+    var number = $("input[name='package']:checked").val();
+    if(rent_time == null || number == null){
+        return false;
+    }else{
+        var price = rent_time * number
+        if($("input[name='agree']:checked").val() == 'on'){
+            $.post("/ugc_server/purchase", {'price': price}, function(ret){
+
+            })
+        }else{
+            window.open()
+        }
+    }
+})
+// 人民币玩家
+$("#money_purchase").click(function(){
+    if($("input[name='agree']:checked").val() == 'on'){
+        window.open()
+    }else{
+        window.open()
+    }
 })
