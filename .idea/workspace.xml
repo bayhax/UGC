@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a29c1ee-1efc-4340-a14a-bbc0e4dc2c1a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/score_purchase.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/css/server.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/css/server.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/js/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/js/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/js/swiper-nav-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/js/swiper-nav-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ugc_server/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_server/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ugc_server/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_server/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ugc_server/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_server/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/create_server.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/create_server.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/purchase.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,10 +67,15 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="776" y="310" width="379" height="412" key="FileChooserDialogImpl" timestamp="1593606228291">
-      <screen x="67" y="27" width="1853" height="1053" />
+    <state x="695" y="269" width="374" height="352" key="FileChooserDialogImpl" timestamp="1593829636522">
+      <screen x="67" y="27" width="1640" height="899" />
     </state>
     <state x="693" y="268" width="379" height="412" key="FileChooserDialogImpl/67.27.1636.895@67.27.1636.895" timestamp="1592902751453" />
+    <state x="695" y="269" width="374" height="352" key="FileChooserDialogImpl/67.27.1640.899@67.27.1640.899" timestamp="1593829636522" />
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1593606228291" />
+    <state x="550" y="219" width="672" height="678" key="search.everywhere.popup" timestamp="1593839758892">
+      <screen x="67" y="27" width="1640" height="899" />
+    </state>
+    <state x="550" y="219" width="672" height="678" key="search.everywhere.popup/67.27.1640.899@67.27.1640.899" timestamp="1593839758892" />
   </component>
 </project>

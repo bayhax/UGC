@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>北京第零世界科技有限公司</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/purchase.css'%}">
+</head>
+<body>
+    <div class="purchase">
+        共{{ money_purchase }},请选择支付方式：
+        <div class="purchase_button">
+            <button id="weChat">微信支付</button>
+            <button id="aliPay">支付宝支付</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/purchase.js' %}"></script>
+</body>
+</html>

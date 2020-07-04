@@ -1,6 +1,7 @@
 from django.db import models
 from db.base_model import BaseModel
 from ugc_mod.models import UgcMod
+from ugc_home.models import UgcUser
 # Create your models here.
 
 
@@ -13,6 +14,7 @@ class UgcServer(BaseModel):
     start_time = models.DateTimeField(verbose_name='起始时间')
     end_time = models.DateTimeField(verbose_name='结束时间')
     status = models.SmallIntegerField(verbose_name='服务器状态')
+    ugc_user = models.ForeignKey(UgcUser, blank=True, null=True, on_delete=models.SET_NULL)
 
     class Meta:
         db_table = 'ugc_server'

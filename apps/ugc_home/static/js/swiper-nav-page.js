@@ -222,5 +222,105 @@ function recognize_url_hash(){
     }else{
         $("#ugc_server").addClass("active_button")
         $("#ugc_mod,#ugc_index").removeClass("active_button")
+        // 获得该用户所有的租赁服
+        $.post('/ugc_server/ugc_server', function(server_data){
+            var server_data = JSON.parse(server_data);
+            // 根据server_data动态创建租赁服div个数
+            // 清除原有内容
+            var server_manage = document.getElementById("server_manage")
+            server_manage.innerHTML = '';
+            // 开关1
+            var switch_inner = document.createElement('div')
+            switch_inner.class = "switch_inner"
+            var switch_box = document.createElement('div')
+            switch_box.class = "switch_box"
+            switch_box.appendChild(switch_inner)
+
+            var server_status = document.createElement('input')
+            server_status.type = "checkbox"
+            server_status.name = "server_status"
+            server_status.id = "server_status"
+            server_status.style = "hidden"
+
+            var server_status_text = document.createElement('span')
+            server_status_text.class = "server_status_text"
+            server_status_text.id = "server_status_text"
+            server_status_text.innerText = "关闭"
+
+            var label = document.createElement('label')
+            label.for = "server_status"
+
+            label.append(server_status_text, server_status, switch_box)
+
+            // 开关2
+            var switch_inner2 = document.createElement('div')
+            switch_inner2.class = "switch_inner"
+            var switch_box2 = document.createElement('div')
+            switch_box2.class = "switch_box"
+            switch_box2.appendChild(switch_inner2)
+
+            var server_private = document.createElement('input')
+            server_private.type = "checkbox"
+            server_private.name = "is_server_private"
+            server_private.id = "is_server_private"
+            server_private.style = 'hidden'
+
+            var is_server_private_text = document.createElement('span')
+            is_server_private_text.class = "is_server_private_text"
+            is_server_private_text.id = "is_server_private_text"
+            is_server_private_text.innerText = "关闭"
+
+            var label2 = document.createElement('label')
+            label2.for = "is_server_private"
+            label2.append(is_server_private_text, server_private, switch_box2)
+
+            // 开关div
+            var switch_show = document.createElement('div')
+            switch_show.class = "switch_show"
+            switch_show.appendChild(label)
+            switch_show.appendChild(label2)
+
+            // 服务器信息
+            var server_id = document.createElement('span')
+            server_id.class = "server_id"
+            server_id.innerText = "ID:0000"
+            var server_name = document.createElement('span')
+            server_name.class = "server_name"
+            server_name.innerText = "名称：叫啥好呢"
+            var server_max_player = document.createElement('span')
+            server_max_player.class = "server_max_player"
+            server_max_player.innerText = "人数：3/10"
+            var server_rent_time = document.createElement('span')
+            server_rent_time.class = "server_rent_time"
+            server_rent_time.innerText = "有效期： 2020-9-02 12：39 至 2020-10-31 12：39"
+            var server_mod = document.createElement('span')
+            server_mod.class = "server_mod"
+            server_mod.innerText = ""
+
+            var server_info = document.createElement('div')
+            server_info.class = "server_info"
+            server_info.append(server_id, server_name, server_max_player, server_rent_time, server_mod)
+
+            // 服务器管理按钮
+            var renewal = document.createElement('button')
+            renewal.type = "button"
+            renewal.innerHTML = '续费'
+            var edit_mod = document.createElement('button')
+            edit_mod.type = "button"
+            edit_mod.innerHTML = "编辑MOD"
+
+            var server_manage_button = document.createElement('div')
+            server_manage_button.class = "server_manage_button"
+
+            server_manage_button.appendChild(renewal)
+            server_manage_button.appendChild(edit_mod)
+
+            // 加入服务器管理块
+            var box = document.createElement('div')
+            box.class = "server_manage_box"
+            box.append(switch_show, server_info, server_manage_button)
+
+            server_manage.appendChild(box)
+        })
     }
 };
