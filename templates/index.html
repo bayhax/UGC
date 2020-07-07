@@ -26,10 +26,30 @@
     <!-- Demo styles -->
 </head>
 <body>
-
     <!--网页顶部导航块-->
     <div class="head_nav">
-            <div class="logo"><img src="{% static 'img/logo.png' %}" alt="logo" height="100%"></div>
+        <div id="ugc_header" class="ugc_header">
+            <ul>
+                <li id="ugc_index" class="ugc_index">
+                    <a href="/#ugc_index">精选</a></li>
+                <li id="ugc_mod" class="ugc_mod">
+                    <a href="/#ugc_mod">MOD</a></li>
+                <li id="ugc_server" class="ugc_server">
+                    <a href="/#ugc_server">服务器</a></li>
+            </ul>
+            <div id="index_user" class="ugc_user">
+                {% if request.user.is_authenticated %}
+                    <div class="user">{{ request.user }}
+                        <a href='/user_quit'><span style="font-size:14px;">退出</span></a>
+                    </div>
+                    <div id="score" class="score">积分</div>
+                {% else %}
+                    <div id="user" class="user"><a href="/login"> 登录</a>|
+                    <a href="/register"> 注册</a></div>
+                {% endif %}
+            </div>
+        </div>
+
     </div>
 
     <!--最外层body很重要，对footer的绝对定位有重要作用，不然footer没有参考-->
@@ -38,118 +58,67 @@
         <div class="body_container">
             <!-- Swiper -->
             <div class="ugc_con">
-                <div id="ugc_header" class="ugc_header">
-                    <ul>
-                        <li id="ugc_index" class="ugc_index">
-                            <a href="/#ugc_index">首页</a></li>
-                        <li id="ugc_mod" class="ugc_mod">
-                            <a href="/#ugc_mod">MOD</a></li>
-                        <li id="ugc_server" class="ugc_server">
-                            <a href="/#ugc_server">服务器</a></li>
-                    </ul>
-                </div>
-
                 <div class="swiper-ugc">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide" data-hash="ugc_index">
-                                    <div id="swiper_con" class="swiper_con ">
-                                        <div id="index_user" class="ugc_user">
-                                            {% if request.user.is_authenticated %}
-                                                <div class="user">{{ request.user }}
-                                                    <a href='/user_quit'><span style="font-size:14px;">退出</span></a>
-                                                </div>
-                                                <div id="score" class="score">积分</div>
-                                            {% else %}
-                                                <div id="user" class="user"><a href="/login"> 登录</a>|
-                                                <a href="/register"> 注册</a></div>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" data-hash="ugc_index">
+                            <div id="swiper_con" class="swiper_con ">
 
-                                            {% endif %}
-                                        </div>
-                                        <div class="ugc_box">
-                                            <div class="ugc_index_mod" id="ugc_index_mod">
-                                                <table id="ugc_index_mod_table"></table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide" data-hash="ugc_mod">
-                                    <div class="swiper_con">
-                                        <div id="mod_user" class="ugc_user">
-                                            {% if request.user.is_authenticated %}
-                                                <div class="user" id="obtained">
-                                                    <input type="hidden" id="user_id" value="{{ request.user.id }}">已获得</div>
-                                                <div class="score" id="created" style="cursor:pointer;">我创建的</div>
-                                            {% else %}
-                                                <div class="user"><a href="/login">请登录</a>|
-                                                <a href="/register"> 注册</a></div>
-                                            {% endif %}
-                                        </div>
-                                        <div class="ugc_box" id="ugc_mod_mod">
-                                            <table id="mod_table"></table>
-                                            <div class="mod_select">
-                                                <button id="prev" class="page_select_button">上一页</button>
-                                                <div class="page_select" id="page_select">
-                                                </div>
-                                                <button id="next" class="page_select_button">下一页</button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="swiper-slide" data-hash="ugc_server">
-                                    <div class="swiper_con">
-                                        {% if request.user.is_authenticated %}
-                                            <div id="server_user" class="ugc_user">
-                                                <div class="user">
-                                                    <a href="/ugc_server/create_server" class="create_server">创建租赁服</a>
-                                                </div>
-                                            </div>
-                                            <div class="ugc_box">
-                                                <div class="server_manage" id="server_manage">
-                                                    <div class="server_manage_box">
-                                                        <div class="switch_show">
-                                                            <label for="server_status">
-                                                                <span class="server_status_text" id="server_status_text">关闭</span>
-                                                                <input type="checkbox" id="server_status" name="server_status" hidden>
-                                                                <div class="switch_box">
-                                                                    <div class="switch_inner"></div>
-                                                                </div>
-                                                            </label>
-                                                            <label for="is_server_private">
-                                                                <span class="server_status_text" id="is_server_private_text">关闭</span>
-                                                                <input type="checkbox" id="is_server_private" name="is_server_private" hidden>
-                                                                <div class="switch_box">
-                                                                    <div class="switch_inner"></div>
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                        <div class="server_info">
-                                                            <span class="server_id">ID:99999</span>
-                                                            <span class="server_name">名称：叫啥好呢</span>
-                                                            <span class="server_max_player">人数： 3/10</span>
-                                                            <span class="server_rent_time">有效期： 2020-9-02 12：39 至 2020-10-31 12：39</span>
-                                                            <span class="server_mod">MOD：</span>
-                                                        </div>
-                                                        <div class="server_manage_button">
-                                                            <button type="button" id="renewal" value="">续费</button>
-                                                            <button type="button" id="edit_mod" value="">编辑MOD</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        {% else %}
-                                            <div class="ugc_server">
-                                                <div class="user"><a href="/login"> 登录</a>|
-                                                <a href="/register"> 注册</a></div>
-                                            </div>
-                                            <div class="ugc_box">
-                                                请登录
-                                            </div>
-                                        {% endif %}
+                                <div class="ugc_box">
+                                    <div class="ugc_index_mod" id="ugc_index_mod">
+                                        <table id="ugc_index_mod_table"></table>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="swiper-slide" data-hash="ugc_mod">
+                            <div class="swiper_con">
+                                <div id="mod_user" class="ugc_user">
+                                    {% if request.user.is_authenticated %}
+                                        <div class="user" id="obtained">
+                                            <input type="hidden" id="user_id" value="{{ request.user.id }}">已获得</div>
+                                        <div class="score" id="created" style="cursor:pointer;">我创建的</div>
+                                    {% else %}
+                                        <div class="user"><a href="/login">请登录</a>|
+                                        <a href="/register"> 注册</a></div>
+                                    {% endif %}
+                                </div>
+                                <div class="ugc_box" id="ugc_mod_mod">
+                                    <table id="mod_table"></table>
+                                    <div class="mod_select">
+                                        <button id="prev" class="page_select_button">上一页</button>
+                                        <div class="page_select" id="page_select">
+                                        </div>
+                                        <button id="next" class="page_select_button">下一页</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="swiper-slide" data-hash="ugc_server">
+                            <div class="swiper_con">
+                                {% if request.user.is_authenticated %}
+                                    <div id="server_user" class="ugc_user">
+                                        <div class="user">
+                                            <a href="/ugc_server/create_server" class="create_server">创建租赁服</a>
+                                        </div>
+                                    </div>
+                                    <div class="ugc_box">
+                                        <div class="server_manage" id="server_manage">
+                                        </div>
+                                    </div>
+                                {% else %}
+                                    <div class="ugc_server">
+                                        <div class="user"><a href="/login"> 登录</a>|
+                                        <a href="/register"> 注册</a></div>
+                                    </div>
+                                    <div class="ugc_box">
+                                        请登录
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
                 <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
@@ -174,7 +143,7 @@
                 </footer>
             </div>
     </div>
-    <div id="bg_img" class="bg_img active_img"></div>
+<!--    <div id="bg_img" class="bg_img active_img"></div>-->
     <!-- Swiper JS -->
     <script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>

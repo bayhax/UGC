@@ -1,26 +1,12 @@
-body{font-family:'Microsoft Yahei';font-size:14px;color:#666;
-}
+body{font-family:'Microsoft Yahei';font-size:14px;color:#666;background:#ddd;}
 html,body{height:100%;min-width: 1000px;min-height: 1000px;}
-.bg_img{
-    pointer-events:none;
-    position:fixed;
-    z-index:-1;
-    top:0;left:0;height:0;bottom:0;
-    height:100%;
-    width:100%;
-    opacity:0;
-    background:no-repeat url(../img/bg_1.png);
-    background-size: cover;
-    -webkit-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out;
-}
 .active_img {
     opacity:1;
 }
 .head_nav {
-    height: 8%;
-    background:  no-repeat 100% url(../img/title_head.png);
+    height: 7%;
+    width: 100%;
+    position: absolute;
 }
 .body_con{position:relative;overflow:hidden;z-index:0;min-width:800px;max-width:2560px;height:92%;margin:0 auto}
 
@@ -40,7 +26,7 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     border-bottom: 2px solid #e27a3f;
 }
 .active_button {
-    background: #45b29d;
+    border-bottom: 5px solid #0095c6;
 }
 .swiper-container {
     width: 100%;
@@ -79,9 +65,10 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     --swiper-preloader-color: #00ff33;
 }
 .ugc_header {
-    width: 80%;
-    margin: 0 10%;
-    height: 10%;
+    width: 56.25%;
+    margin: auto;
+    position: relative;
+    top: 40%;
 }
 .ugc_header ul {
     display: -webkit-box;
@@ -95,20 +82,18 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
         -ms-flex-pack: center;
             justify-content: center;
     list-style:none;
-    height: 100%;
-    width: 100%;
+    width: 35%;
 }
 .ugc_header ul li{
-    font-size: 2rem;
+    font-size: 1.5rem;
     list-style: none;
     display: inline-block;
-    width: 20%;
-    line-height: 5rem;
+    width: 30%;
     text-align: center;
     cursor: pointer;
 }
 .ugc_header ul li a{
-    color: #F2F2F2;
+    color: #272727;
 }
 .swiper_con {
     height: 100%;
@@ -168,7 +153,7 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
 .server_manage_box{
     height: 10rem;
     border: 1px solid;
-}
+|}
 .switch_box {
     cursor: pointer;
     display: inline-block;
