@@ -5,25 +5,28 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic import View
 
+from ugc_mod.models import UgcMod
 
-# Create your views here.
 
 class AllModView(View):
     def get(self, request):
-        return redirect('/home/index#ugc_mod')
+        return render(request, 'ugc_mod.html')
 
     def post(self, request):
         # 所有MOD,在缓存中。
-        mod_list = [1, 2]
+        mod_dic = {}
+        all_mod = UgcMod.objects.all()
+        for mod in all_mod:
+            mod_dic[mod.title] = str(mod.main_pic)
         # 返回给页面
-        return HttpResponse(json.dumps({'mod_list': mod_list}))
+        return HttpResponse(json.dumps(mod_dic))
 
 
 class UserObtainedView(View):
     """用户获得的MOD"""
 
     def get(self, request):
-        return redirect('/home/index#ugc_mod')
+        return render(request, 'ugc_mod.html')
 
     def post(self, request):
 

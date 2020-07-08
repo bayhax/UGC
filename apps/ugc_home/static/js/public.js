@@ -15,15 +15,28 @@ function format(shijianchuo)
     }
 };
 format(timestamp2);
-var game_video = document.getElementById('display_video');
-function playPause(){
-    if(game_video.paused){
-        $(".play_pause").css("background", "no-repeat url(../static/img/play.png)");
-        game_video.play();
-    }
-    else{
-        $(".play_pause").css("background", "no-repeat url(../static/img/pause.png)");
-        game_video.pause();
-    }
-};
 
+// 使footer始终固定在底部。
+function footerPosition(){
+    // footer对象, 当footer底部到页面顶端距离小于页面可见区域高度，固定页尾到底部
+    var footer = $(".footer");
+    var height = footer.offset().top + footer.height();
+    if(height < document.body.clientHeight){
+        $(".footer").addClass("fixed_bottom")
+    }
+}
+function footerPosition2(){
+    var footer = $(".footer");
+    var scroll_height = $(document).scrollTop() + document.documentElement.clientHeight;
+    var height = footer.offset().top + footer.height();
+    if(scroll_height >= height){
+        $(".footer").addClass("fixed_bottom")
+    }else{
+        $(".footer").removeClass("fixed_bottom")
+    }
+}
+// 滑动和滚动时改变位置
+footerPosition();
+footerPosition2();
+$(document).resize(footerPosition2)
+$(document).scroll(footerPosition2)

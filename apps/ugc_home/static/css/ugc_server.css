@@ -1,0 +1,52 @@
+.create_server_box {
+    font-size: 1.5rem;
+    color: #f2f2f2;
+    width: 12.5rem;
+    height: 2.5rem;
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: #0095c6;
+    text-align: center;
+    line-height: 2.5rem;
+    margin-left: 30.5rem;
+    margin-top: 0.5rem;
+}
+.server_manage_box{
+   height: 18.75rem;
+    width: 55rem;
+    background-color: #f2f2f2;
+    margin: auto;
+    margin-bottom: 2rem;
+}
+.switch_box {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    height: 1.5rem;
+    width: 3rem;
+    border-radius: 40%;
+    background: #CC0000;
+}
+.switch_inner {
+    position: absolute;
+    left: 4%;
+    top: 6%;
+    bottom: 13%;
+    width: 50%;
+    background: rgba(230, 230, 230, 0.9);
+    border-radius: 50%;
+}
+input[type=checkbox]:checked + .switch_box {
+    background: #66CC33;
+}
+input[type=checkbox]:checked + .switch_box .switch_inner {
+    left: auto;
+    right: 4%;
+}
+.create_server {
+    color: #F2F2F2;
+    cursor: position;
+}
+.create_server:hover {
+    background: lightgreen;
+}

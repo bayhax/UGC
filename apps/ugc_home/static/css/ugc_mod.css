@@ -1,0 +1,13 @@
+.mod_top {
+    width: 56.25%;
+    margin: auto;
+}
+.obtained {
+    cursor: pointer;
+    float: left;
+    margin-left: 10rem;
+}
+.created{
+    cursor: pointer;
+    margin-left: 53rem;
+}

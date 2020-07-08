@@ -18,6 +18,9 @@ import re
 
 
 # 首页
+from ugc_mod.models import UgcMod
+
+
 class IndexView(View):
     def get(self, request):
         return render(request, 'index.html')
@@ -198,9 +201,14 @@ class ModView(View):
         return redirect('/')
 
     def post(self, request):
-        mod_list = [{'mod_id': '1', 'mod_img': '23', 'mod_title': 'r'},
-                    {'mod_id': '2', 'mod_img': '24', 'mod_title': 'ef'}]
-        return HttpResponse(json.dumps(mod_list))
+        # 所有MOD,在缓存中。
+        mod_dic = {}
+        all_mod = UgcMod.objects.all()
+        for mod in all_mod:
+            mod_dic[mod.title] = str(mod.main_pic)
+
+        # 返回给页面
+        return HttpResponse(json.dumps(mod_dic))
 
 
 def supervisor(request):

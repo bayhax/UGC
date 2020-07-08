@@ -1,22 +1,21 @@
-{% extends 'base.html' %}
+{% extends 'ugc_base.html' %}
 {% load static %}
 {% block title %}北京第零世界科技有限公司{% endblock title %}
-
+{% block topfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/ugc_server.css'%}">
+{% endblock topfiles %}
 {% block body %}
-<div class="body">
-    <div class="head_nav">
-        <ul>
-            <li><a href="/ugc_home/ugc_index">首页</a></li>
-            <li><a href="/ugc_mod/ugc_mod">MOD</a></li>
-            <li><a href="/ugc_server/ugc_server">服务器</a></li>
-        </ul>
-
+<div id="server_user" class="ugc_user">
+    <div class="create_server_box">
+        <a href="/ugc_server/create_server" class="create_server">创建租赁服</a>
     </div>
-    <div class="user">
-        创建租赁服
-    </div>
-    <div class="show">
-
+</div>
+<div class="ugc_box">
+    <div class="server_manage" id="server_manage">
     </div>
 </div>
 {% endblock body %}
+<!-- 网页底部引入文件块 -->
+{% block bottomfiles %}
+    <script type="text/javascript" src="{% static 'js/ugc_server.js' %}"></script>
+{% endblock bottomfiles%}

@@ -9,6 +9,7 @@ class UgcMod(BaseModel):
     """ugc_mod模型"""
     objects = models.Manager()
     title = models.CharField(max_length=20, unique=True, verbose_name='标题')
+    main_pic = models.ImageField(upload_to='mod_pic', verbose_name='展示图片')
     status = models.SmallIntegerField(verbose_name='状态')
     content = HTMLField(verbose_name='mod内容')
     create = models.ForeignKey(UgcUser, blank=True, null=True, on_delete=models.SET_NULL, verbose_name='创建者id')

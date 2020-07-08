@@ -133,6 +133,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIR = [os.path.join(BASE_DIR, 'static')]
 # 指定收集静态文件的路径
 # STATIC_ROOT = '/home/static'
+
+# 图片上传文件夹
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/home/UGC/apps/ugc_home/media'
+
 # 富文本编辑器配置
 TINYMCE_DEFAULT_CONFIG = {
     'selector': 'textarea',

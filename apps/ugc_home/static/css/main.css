@@ -1,4 +1,4 @@
-body{font-family:'Microsoft Yahei';font-size:14px;color:#666;background:#ddd;}
+body{font-family:'Microsoft Yahei';background:#ddd;min-height:100%;}
 html,body{height:100%;min-width: 1000px;min-height: 1000px;}
 .active_img {
     opacity:1;
@@ -6,63 +6,8 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
 .head_nav {
     height: 7%;
     width: 100%;
-    position: absolute;
-}
-.body_con{position:relative;overflow:hidden;z-index:0;min-width:800px;max-width:2560px;height:92%;margin:0 auto}
-
-.body_container {
-    height: 100%;
-    width: 100%;
-}
-.logo {
-    display: inline-block;
-    padding-left: 5%;
-    height: 90%;
-    margin-top: 0.2%;
-    width: 10%;
-}
-
-.active {
-    border-bottom: 2px solid #e27a3f;
-}
-.active_button {
-    border-bottom: 5px solid #0095c6;
-}
-.swiper-container {
-    width: 100%;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.swiper-slide {
-    overflow: hidden;
-    text-align: center;
-    font-size: 18px;
-    background-color: rgba(255, 255, 255, 0);
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-.ugc_con {
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-}
-.swiper-ugc {
-    width: 100%;
-    height: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    --swiper-theme-color: #ff6600;
-    --swiper-preloader-color: #00ff33;
+    position: relative;
+    background: #e8e3e3;
 }
 .ugc_header {
     width: 56.25%;
@@ -83,6 +28,10 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
             justify-content: center;
     list-style:none;
     width: 35%;
+    float: left;
+    height: 2.9rem;
+    line-height: 2.9rem;
+    margin-left:4rem;
 }
 .ugc_header ul li{
     font-size: 1.5rem;
@@ -95,110 +44,120 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
 .ugc_header ul li a{
     color: #272727;
 }
-.swiper_con {
+
+.body_container {
+    height: 100%;
+    width: 100%;
+}
+.logo {
+    display: inline-block;
+    padding-left: 5%;
+    height: 90%;
+    margin-top: 0.2%;
+    width: 10%;
+}
+
+.active {
+    border-bottom: 2px solid #e27a3f;
+}
+.active_button {
+    border-bottom: 5px solid #0095c6;
+    width:120%;
+}
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ugc_con {
+    display: inline-block;
     height: 100%;
     width: 100%;
 }
 
 .ugc_user {
     line-height: 2rem;
-    width: 80%;
-    margin: 0 10%;
+    width: 50%;
+    margin: 0 15%;
     height: 5%;
+    height: 2.9rem;
+    color: #666;
+    position: relative;
+    left: 25rem;
 }
 .ugc_index_mod {
     position: relative;
     height: 95%;
     width: 90%;
     margin:1% auto;
-    overflow-y:auto;
     color:#F2F2F2;
-    -webkit-overflow-scrolling:touch;
-}
-
-.ugc_index_mod::-webkit-scrollbar {
-    width: 6px; //滚动条的宽度
-}
-.ugc_index_mod::-webkit-scrollbar-thumb {
-    background-color: #8899A7;//滚动条的颜色
-    border-radius: 3px;//滚动条的边框倒角
 }
 
 .ugc_box {
     text-align: center;
     margin:auto;
     width: 75%;
-    height: 90%;
-    /*background: red;*/
-    overflow: auto;
     position:relative;
 }
 .ugc_user .user {
-    float: left;
-    margin-left: 24%;
+    float: right;
     cursor: pointer;
+    font-size: 1.25rem;
+    margin-top: -0.5rem;
+    width: 15rem;
 }
 .ugc_user .user a {
-    color: #F2F2F2;
+    color: #666;
+    font-size: 1.25rem;
 }
 .ugc_user .quit {
     float: left;
-    color: #F2F2F2;
+    color: #666;
 }
 .ugc_user .score {
     float: right;
-    margin-right: 20%;
-    color: #F2F2F2;
+    margin-right: 40%;
+    color: #666;
+    margin-top:-0.5rem;
 }
-.server_manage_box{
-    height: 10rem;
-    border: 1px solid;
-|}
-.switch_box {
-    cursor: pointer;
+.user_text {
+    width: 6rem;
+    float: left;
+}
+.user_avatar {
+    width: 6rem;
+    float: left;
+}
+.mod_row_title{
     display: inline-block;
-    position: relative;
-    height: 1.5rem;
-    width: 3rem;
-    border-radius: 40%;
-    background: #CC0000;
-}
-.switch_inner {
-    position: absolute;
-    left: 4%;
-    top: 6%;
-    bottom: 13%;
-    width: 50%;
-    background: rgba(230, 230, 230, 0.9);
-    border-radius: 50%;
-}
-input[type=checkbox]:checked + .switch_box {
-    background: #66CC33;
-}
-input[type=checkbox]:checked + .switch_box .switch_inner {
-    left: auto;
-    right: 4%;
-}
-.create_server {
-    color: #F2F2F2;
-    cursor: position;
-}
-.create_server:hover {
-    background: lightgreen;
-}
-/*页尾隐藏在页面下方，完全透明显示出来后多高内容 -webkit- -moz- 不同浏览器的布局属性*/
-.box_footer{position:absolute;top:auto;left:0;right:0;bottom:-12rem;z-index:1;height:12rem;opacity:0;background:rgba(0,0,0,0.6);-webkit-transition:all .5s;-o-transition:all .5s;transition:all .5s}
-/*鼠标移动到什么区域可以显示页尾，中间高两边低*/
-.box_footer:before{content:'';display:block;position:absolute;top:auto;left:0;right:0;bottom:0;z-index:0;width:20rem;height:130%;margin:0 auto}
-/*鼠标移动到该区域，显示出来，y轴向上移动页面下方的距离，从下向上滑入的效果*/
-.box_footer:hover{opacity:0.6;-webkit-transform:translateY(-12rem);-ms-transform:translateY(-12rem);transform:translateY(-12rem)}
-/*显示出来后footer的大小*/
-.box_footer .footer{height:12rem}
-.footer {
-    position: relative;
-    overflow: hidden;
     width: 100%;
-    height: 6rem;
+    height: 3.125rem;
+    font-size: 1.5rem;
+    background: rgba(8,8,8,0.3);
+    margin-top: 20.625rem;
+    color: #f2f2f2;
+    line-height: 3.125rem;
+}
+.mod_row {
+    height:23.75rem;
+    width:42.5rem;
+    margin:1rem auto;b
+    color:#F2F2F2;
+    font-size:1.5rem;'
+}
+
+.footer {
+    width: 100%;
+    background:rgba(0,0,0,0.6);
+}
+.fixed_bottom {
+    width: 100%;
+}
+.footer_fixed_bottom {
+    bottom:0;
+    position: absolute;
 }
 /*footer显示区域*/
 .footer .box {
@@ -207,6 +166,7 @@ input[type=checkbox]:checked + .switch_box .switch_inner {
     height: 100%;
     margin: 0 auto;
 }
+
 /*底部logo显示，可有可无*/
 .footer .box .logo {
     display: block;

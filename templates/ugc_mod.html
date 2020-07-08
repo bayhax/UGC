@@ -1,27 +1,27 @@
-{% extends 'base.html' %}
+{% extends 'ugc_base.html' %}
 {% load static %}
 {% block title %}北京第零世界科技有限公司{% endblock title %}
-
+{% block topfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/ugc_mod.css'%}">
+{% endblock topfiles %}
 {% block body %}
-<div class="body">
-    <div class="head_nav">
-        <ul>
-            <li><a href="/ugc_home/ugc_index">首页</a></li>
-            <li><a href="/ugc_mod/ugc_mod">MOD</a></li>
-            <li><a href="/ugc_server/ugc_server">服务器</a></li>
-        </ul>
-
-    </div>
-    <div class="user">
-        <div class="obtain">
-            已获得
+{% if request.user.is_authenticated %}
+<div class="mod_top">
+    <div class="obtained" id="obtained">
+        <input type="hidden" id="user_id" value="{{ request.user.id }}">已获得</div>
+    <div class="created" id="created" style="cursor:pointer;">我创建的</div>
+</div>
+{% endif %}
+<div class="ugc_box" id="ugc_mod_mod">
+    <table id="mod_table"></table>
+    <div class="mod_select">
+        <button id="prev" class="page_select_button">上一页</button>
+        <div class="page_select" id="page_select">
         </div>
-        <div class="create">
-            我创建的
-        </div>
-    </div>
-    <div class="show">
-
+        <button id="next" class="page_select_button">下一页</button>
     </div>
 </div>
 {% endblock body %}
+{% block bottomfiles %}
+    <script type="text/javascript" src="{% static 'js/ugc_mod.js' %}"></script>
+{% endblock bottomfiles%}

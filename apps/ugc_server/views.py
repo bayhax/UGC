@@ -40,7 +40,7 @@ class UgcServerView(View):
     """用户自建服页面"""
 
     def get(self, request):
-        return redirect('/#ugc_server')
+        return render(request, 'ugc_server.html')
 
     def post(self, request):
         user_id = request.user.id
