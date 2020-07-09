@@ -62,7 +62,7 @@
 	{% block body %}
 	{% endblock body%}
 
-
+    {% block footer %}
     <footer id="footer" class="footer">
         <div class="box">
             <div class="content">
@@ -79,7 +79,7 @@
             </div>
         </div>
     </footer>
-
+    {% endblock footer %}
 	<!-- 网页底部html元素块 -->
 	{% block bottom %}{% endblock bottom%}
     <script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js' %}"></script>

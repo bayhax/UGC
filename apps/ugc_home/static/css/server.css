@@ -1,24 +1,217 @@
+.rent_server {
+    position: relative;
+    top: 5%;
+}
+.rent_server_head {
+    width: 61.25rem;
+    margin: auto;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+.rent_server_box {
+    width: 61.25rem;
+    height: 31.25rem;
+    margin: auto;
+}
+.box_left {
+    float: left;
+    width: 35rem;
+    height: 35rem;
+    border: 1px solid #666;
+}
+.server_name_text {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    color: #272727;
+    background: no-repeat 0rem url(../img/server_manage_point.png);
+}
+.server_name_text span {
+    margin-left: 1rem;
+}
+.server_name {
+    width: 20.5rem;
+    height: 2.25rem;
+    border-radius: 10px;
+    border: 0;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+}
+.server_name::placeholder {
+    position: relative;
+    font-size:1.5rem;
+    top:0.25rem;
+    left:0.5rem;
+}
+.server_setting {
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+    color: #272727;
+    background: no-repeat 0rem url(../img/server_manage_point.png);
+}
+.setting_box {
+    margin-left: 1rem;
+    margin-top:0.5rem;
+    font-size: 1.25rem;
+    color: #272727;
+}
 
-input[type=radio]:checked + .package_text{
-    background:green;
+.server_setting span{
+    margin-left: 1rem;
+}
+.switch_box {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    height: 2.0625rem;
+    width: 4.0625rem;
+    border-radius: 10px;
+    background: #A7A7A7;
+    top: 0.6rem;
+    margin-left: 0.5rem;
+    margin-right: 2rem;
+}
+
+.switch_inner {
+    position: absolute;
+    left: 4%;
+    top: 9%;
+    bottom: 1%;
+    width: 50%;
+    background: no-repeat url(../img/switch_inner.png);
+}
+.switch_off {
+    font-size: 0.8rem;
+    font-weight: bold;
+    /* position: relative; */
+    float: right;
+    margin-top: 0.7rem;
+    margin-right: 0.3rem;
+}
+.switch_on {
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 0.7rem;
+    /* position: relative; */
+    float: left;
+    margin-left: 0.3rem;
+}
+input[type=checkbox]:checked + .switch_box {
+    background: lightgreen;
+}
+input[type=checkbox]:checked + .switch_box .switch_inner {
+    left: auto;
+    right: 1%;
+}
+.password {
+    width: 17.5rem;
+    height: 2.25rem;
+    border-radius: 10px;
+    border: 0;
+    margin-left: 1rem;
+    margin-top: 0.8rem;
+}
+.password::placeholder {
+    position: relative;
+    font-size:1.5rem;
+    top:0.25rem;
+    left:0.5rem;
+}
+.server_max_player {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    color: #272727;
+    background: no-repeat 0rem url(../img/server_manage_point.png);
+}
+.server_max_player span {
+    margin-left: 1rem;
+}
+.box_left_format {
+    width: 33rem;
+    margin-left:2rem;
+}
+.server_package {
+    margin-left:1.1rem;
 }
 .package_text {
     cursor: pointer;
-    font-size: 1.5rem;
-    background: red;
-    margin: 0.5rem;
+    width: 8.125rem;
+    height: 3.125rem;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    border: 0;
+    text-align: center;
+    line-height: 3.125rem;
+    color: #272727;
+    font-size: 1.1875rem;
+    margin-right: 2rem;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+.package_text:hover {
+    background-color: #397589;
+}
+input[type=radio]:checked + .package_text{
+    background-color: #0095c6;
 }
 .rent_time_text {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    color: #272727;
+    background: no-repeat 0rem url(../img/server_manage_point.png);
+}
+.rent_time_text span {
+    margin-left: 1rem;
+}
+.server_rent_time {
+    margin-left: 1rem;
+}
+.rent_time_day {
     cursor: pointer;
-    font-size: 1.5rem;
-    background: red;
-    margin: 0.5rem;
+    width: 8.125rem;
+    height: 3.125rem;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    border: 0;
+    text-align: center;
+    line-height: 3.125rem;
+    color: #272727;
+    font-size: 1.1875rem;
+    margin-right: 2rem;
+    margin-top: 0.5rem;
+    display: inline-block;
 }
-input[type=radio]:checked + .rent_time_text{
-    background:green;
+.rent_time_day:hover{
+    background-color: #397589;
 }
-
-.server_package ul{
+input[type=radio]:checked + .rent_time_day{
+     background-color: #0095c6;
+}
+.rent_time_deadline {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    color: #666;
+    margin-left: 1rem;
+}
+.box_right {
+    width: 25.625rem;
+    height: 35rem;
+    float: left;
+    border: 1px solid #666;
+}
+.box_right_format {
+    margin-left:1rem;
+}
+.pay_way {
+    margin-top: 6rem;
+    font-size: 1.5625rem;
+    font-weight: 600;
+    color: #272727;
+}
+.weChat_pay {
+    margin-right:5rem;
+}
+.pay_way ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -31,17 +224,77 @@ input[type=radio]:checked + .rent_time_text{
             justify-content: center;
     list-style:none;
 }
-
-.server_rent_time ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    list-style:none;
+.pay_way ul li {
+    cursor: pointer;
+    height: 2.7rem;
+}
+.pay_activate_li {
+    background: no-repeat 0rem 2.2rem url(../img/border_bottom.png)
+}
+.pay_hr {
+    margin-top: -0.3rem;
+    border: 0;
+    border-bottom: 2px solid #666;
+    width: 85%;
+}
+.amount {
+    text-align: center;
+    height: 7rem;
+    line-height: 7rem;
+    font-size: 1.25rem;
+    color: #272727;
+}
+.pay_text {
+    height: 3rem;
+    width: 14rem;
+    margin: auto;
+    line-height: 3rem;
+    margin-top: 2rem;
+    background: no-repeat 0rem 0.5rem url(../img/weChat_pay.png)
+}
+.weChat_pay_text {
+    margin-left: 0.5rem;
+    /* margin-top: -5rem; */
+    display: inline0bl;
+    display: inline-block;
+    position: relative;
+    top: -0.5rem;
+}
+#money {
+    font-size: 3rem;
+    color: #272727;
+    font-weight: 500;
+}
+.pay_button {
+    cursor: pointer;
+    width: 16rem;
+    height: 3.125rem;
+    border: 0;
+    border-radius: 10px;
+    font-size: 1.625rem;
+    font-weight: 600;
+    color: #f2f2f2;
+    margin-left: 4rem;
+    background-color: #0095C6;
+    outline: none;
+}
+.agree_box {
+    margin-top: 2rem;
+    font-size: 1rem;
+    color: #666;
+    margin-left: 2rem;
+}
+#agree {
+    width: 1.5rem;
+    height: 1.125rem;
+    background-color: #fff;
+    top: 0.175rem;
+    position: relative;
+}
+#agree_label input[type=checkbox] {
+    -webkit-appearance: none;
+    outline: none;
+}
+#agree_label input[type=checkbox]:checked {
+    background: no-repeat url(../img/agree.png) #fff;
 }
