@@ -245,23 +245,15 @@ input[type=radio]:checked + .rent_time_day{
     color: #272727;
 }
 .pay_text {
-    height: 3rem;
-    width: 14rem;
-    margin: auto;
-    line-height: 3rem;
-    margin-top: 2rem;
-    background: no-repeat 0rem 0.5rem url(../img/weChat_pay.png)
-}
-.weChat_pay_text {
     margin-left: 0.5rem;
-    /* margin-top: -5rem; */
-    display: inline0bl;
     display: inline-block;
     position: relative;
     top: -0.5rem;
+    margin-right: 0.5rem;
 }
-#money {
-    font-size: 3rem;
+
+.money {
+    font-size: 2.25rem;
     color: #272727;
     font-weight: 500;
 }

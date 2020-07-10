@@ -18,7 +18,7 @@
                     <div class="setting_box">
                         <div>私密:
                             <label for="is_private">
-                                <input type="checkbox" name="is_private" id="is_private" class="is_private" hidden>
+                                <input type="checkbox" name="is_private" id="is_private" class="is_private" hidden checked>
                                 <div class="switch_box">
                                     <div class="switch_inner"></div>
                                     <span class="switch_on">ON</span>
@@ -80,8 +80,7 @@
                     </div>
                     <hr class="pay_hr">
                     <div class="amount" id="amount">
-                        <img src="{% static 'img/weChat_pay.png' %}" hidden>
-                        <span class="weChat_pay_text">微信扫码支付<span id="money"></span>元</span>
+
                     </div>
                     <button type="button" class="pay_button" id="pay_button">支付</button>
                     <div class="agree_box">

@@ -127,8 +127,40 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     float: left;
 }
 .user_avatar {
+    width: 3.5rem;
+    height: 3.5rem;
+    float: left;
+    background:no-repeat url(../img/avatar.png)
+}
+.user_avatar ul {
+    display: none;
+}
+.user_avatar ul li {
+    font-size: 1.25rem;
+    width: 100%;
+    text-align: left;
+}
+.user_avatar:hover {
+    background:no-repeat url(../img/avatar_hover.png)
+}
+.user_avatar:hover ul{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: left;
+    list-style: none;
     width: 6rem;
     float: left;
+    height: 4rem;
+    line-height: 1.9rem;
+    margin-left: 0rem;
+    margin-top: 3rem;
 }
 .mod_row_title{
     display: inline-block;
@@ -150,10 +182,12 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
 
 .footer {
     width: 100%;
+    height: 12.5rem;
     background:rgba(0,0,0,0.6);
 }
 .fixed_bottom {
     width: 100%;
+
 }
 .footer_fixed_bottom {
     bottom:0;
@@ -263,69 +297,179 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     padding: 0 0.05rem;
 }
 /* 登录 */
+.reset_password, .register_head, .login_head {
+    width: 56.25rem;
+    margin: auto;
+    text-align: center;
+    font-size: 2.875rem;
+    color: #272727;
+    margin-top: 4rem;
+}
+.reset_password_hr, .register_head_hr, .login_head_hr {
+    border: 0;
+    border-bottom: 3px solid #a9a5a5;
+    width: 56.25rem;
+    margin: auto;
+}
 .form_input {
     position: absolute;
-    top:35%;
+    margin-top: 5rem;
     left: 40%;
 }
+.reset_password_form {
+    position: absolute;
+    margin-top: 3rem;
+    left: 40%;
+}
+#id_username_or_email {
+    width: 26.25rem;
+    height: 2.5rem;
+    outline: none;
+    border: 0;
+    color: #272727;
+    text-indent: 0.5rem;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    background-color: #fff;
+}
+#reset_password_button {
+    cursor: pointer;
+    width: 26.25rem;
+    height: 2.5rem;
+    margin-top: 2rem;
+    outline: none;
+    border: 0;
+    border-radius: 10px;
+    background-color: #0095c6;
+    font-size: 1.125rem;
+    color: #f2f2f2;
+}
 .user_error,.pwd_error{color:#f00;position:relative;display:none;}
-.name_input,.pass_input{display:block;width:20rem;height:3rem;border:1px solid #e0e0e0;font-size:1rem;margin-bottom:0.5rem;}
+.name_input,.pass_input
+{
+    display: block;
+    width: 26.25rem;
+    height: 2.5rem;
+    border: 0;
+    font-size: 1.25rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    outline: none;
+    background-color: #f2f2f2;
+}
+.pass_input::placeholder, .name_input::placeholder{
+    position: relative;
+    font-size:1.25rem;
+    color: #999;
+    top: 0.2rem;
+    left: 0.5rem;
+}
+
 .pass_input{top:65px;background-position:280px -95px;}
 .more_input{position:relative; width:100%;}
 
 .more_input input{float:left;height:1.3rem;line-height:1.3rem;}
 .more_input label{float:left;margin-left:10px;}
-.more_input a{float:right;color:#666}
+.more_input a
+{
+    margin-top: -1.2rem;
+    float: right;
+    color: #0095c6;
+    font-size: 1rem;
+    margin-right: 1rem;
+}
 .more_input a:hover{color:#ff8800}
 
 .input_submit{
-    width: 100%;
-    height: 2.2rem;
+    width: 12rem;
+    height: 2.5rem;
     position: relative;
-    left: 0;
     top: 0.2rem;
-    background-color: #47aa34;
-    color: #fff;
-    font-size: 22px;
+    background-color: #0095c6;
+    color: #f2f2f2;
+    font-size: 1.25rem;
     border: 0px;
+    border-radius: 10px;
     margin: 0.5rem 0rem;
+    margin-right: 2rem;
     cursor: pointer;
+    outline: none;
+}
+.register_button {
+    cursor: pointer;
+    width: 12rem;
+    height: 2.5rem;
+    border: 0;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    background-color: #f2f2f2;
+    color: #272727;
+    outline: none;
+}
+.register_button a{
+    color:#272727;
+}
+.login_agree {
+    font-size: 1.125rem;
+    color: #545454;
+    margin-top: 1rem;
+}
+.login_agree a {
+    color: #0095c6;
 }
 /* 注册 */
 .register {
-    position: absolute;
-    top:35%;
+    position: relative;
+    margin-top: 3rem;
     left: 40%;
+    width: 30rem;
 }
 .register ul li input {
-    height: 2rem;
-    width: 15rem;
-    margin: 0.2rem 0;
-    border:1px solid #e0e0e0;
-    outline:none;
-    text-indent:10px;
-    background-color:#f8f8f8;
+    height: 2.5rem;
+    width: 26.25rem;
+    margin: 0.6rem 0;
+    outline: none;
+    text-indent: 10px;
+    background-color: #f2f2f2;
+    border: 0;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    color: #272727;
 }
+
 .register ul li label {
     display: inline-block;
     width: 5rem;
 }
 .register .agreement {
     margin: 0.3rem 0;
-    position:relative;
-    width:100%;
-    height: 1rem;
+    position: relative;
+    width: 100%;
+    font-size: 1.125rem;
+    color: #272727;
 }
-.register li.agreement #allow {
-    height: 1rem;
-    width: 1rem;
-    line-height: 1rem;
-    margin-right:1rem;
-    display: inline-block;
+.agreement a{
+    color: #0095c6;
+}
+
+#agree {
+    width: 1.5rem;
+    height: 1.125rem;
+    background-color: #fff;
+    top: -0.2rem;
+    position: relative;
+    border-radius:0;
+}
+#agree_label input[type=checkbox] {
+    -webkit-appearance: none;
+    outline: none;
+}
+#agree_label input[type=checkbox]:checked {
+    background: no-repeat url(../img/agree.png) #fff;
 }
 .register li.agreement label {
     float: left;
-    width: 20rem;
+    width: 2rem;
     line-height: 1.5rem;
     display: inline-block;
 }
@@ -338,8 +482,11 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     margin-top:0.3rem;
 }
 .register li.reg_sub input {
-    width: 20.5rem;
-    background-color:#06ec82;
+    cursor: pointer;
+    width: 26.25rem;
+    height: 2.5rem;
+    background-color: #0095c6;
+    color: #f2f2f2;
 }
 .register .error_tip {
     display: none;
@@ -349,7 +496,12 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     display: none;
     color: red;
 }
-
+.go_login a {
+    float: right;
+    margin-right: 4rem;
+    font-size: 1.125rem;
+    color: #0095c6;
+}
 /* mod列表分页*/
 .ugc_box table{
     margin: auto;

@@ -11,14 +11,19 @@ $(document).on("change", "input[name='is_private']", function(){
 function price(way) {
     var rent_time = $("input[name='rent_time']:checked").val();
     var number = $("input[name='package']:checked").val();
+    var money = (rent_time * number).toFixed(2)
     if(rent_time == null || rent_time == 'on' || number == null){
         return false
     }else{
         if(way=="weChat"){
-            document.getElementById("amount").innerHTML = "<span class='weChat_pay_text'>微信扫码支付<span id='money'>" +
-                                                           number * rent_time+ "</span>元</span>"
+            document.getElementById("amount").innerHTML = "<img src='../static/img/weChat_pay.png'>" +
+                                                          "<span class='pay_text'>微信扫码支付" +
+                                                          "<span style='font-size:2.25rem;font-weight:bold;'>" +
+                                                           money + "</span>元</span>"
         }else{
-            document.getElementById("amount").innerHTML = "积分支付<span id='money'>" + number * rent_time + "</span>"
+            document.getElementById("amount").innerHTML = "<span class='pay_text'>积分支付" +
+                                                          "<span style='font-size:2.25rem;font-weight:bold;'>"
+                                                          + money + "</span>积分</span>"
         }
     }
 };
@@ -47,11 +52,21 @@ $(".rent_time_radio").change(function(){
         date.setTime(date.getTime() + rent_time * 60 * 60 * 24 * 1000);
         var end = date.getFullYear() + '年' + (date.getMonth() + 1) + '月' + date.getDate() + '日';
         document.getElementById("deadline").innerText = start + '——' + end;
-        price("weChat");
+        var pay_way_hidden = $("#pay_way_hidden").val()
+        if(pay_way_hidden == "1"){
+            price("weChat");
+        }else{
+            price("score");
+        }
     }
 })
 $(".package_radio").change(function(){
-    price();
+    var pay_way_hidden = $("#pay_way_hidden").val()
+    if(pay_way_hidden == "1"){
+        price("weChat");
+    }else{
+        price("score");
+    }
 })
 function pay_way(purchase_url){
     // 购买前必须能计算出金额

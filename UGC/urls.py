@@ -25,4 +25,5 @@ urlpatterns = [
     path('ugc_server/', include('ugc_server.urls')),  # 用户自建服务器
     path('password-reset/', include('password_reset.urls')),  # 重置密码
     path('tinymce', include('tinymce.urls')),  # 富文本编辑器
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

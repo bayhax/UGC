@@ -43,7 +43,7 @@ class UgcServerView(View):
         return render(request, 'ugc_server.html')
 
     def post(self, request):
-        user_id = request.user.id
+        user_name = request.user.username
         server_id = []
         server_name = []
         server_max_player = []
@@ -58,7 +58,8 @@ class UgcServerView(View):
                                            'start_time', 'end_time')
             server_data = [x.decode('utf-8') for x in server_data]
 
-            server_id.append(server.decode('utf-8').split(':')[-1])
+            # server_id.append(server.decode('utf-8').split(':')[-1])
+            server_id.append(user_name)
             server_name.append(server_data[0])
             server_max_player.append(server_data[1])
             server_start_time.append(server_data[2])
