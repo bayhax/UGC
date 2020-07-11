@@ -36,12 +36,15 @@
     border: 0;
     margin-left: 1rem;
     margin-top: 0.5rem;
+    font-size: 1.25rem;
+    color: #272727;
+    text-indent: 0.5rem;
+    outline: none;
 }
 .server_name::placeholder {
     position: relative;
     font-size:1.5rem;
     top:0.25rem;
-    left:0.5rem;
 }
 .server_setting {
     margin-top: 0.5rem;
@@ -110,12 +113,15 @@ input[type=checkbox]:checked + .switch_box .switch_inner {
     border: 0;
     margin-left: 1rem;
     margin-top: 0.8rem;
+    font-size: 1.25rem;
+    text-indent: 0.5rem;
+    outline: none;
+    color: #272727;
 }
 .password::placeholder {
     position: relative;
     font-size:1.5rem;
     top:0.25rem;
-    left:0.5rem;
 }
 .server_max_player {
     margin-top: 1rem;

@@ -10,9 +10,9 @@ $(document).on("change", "input[name='server_status']", function(){
 $(document).on("change", "input[name='is_server_private']", function(){
     if($("input[name='is_server_private']:checked").val() == 'on'){
         //兄弟节点span元素改变值
-        this.previousElementSibling.innerText = "开放"
-    }else{
         this.previousElementSibling.innerText = "私密"
+    }else{
+        this.previousElementSibling.innerText = "开放"
     }
 })
 $("#ugc_server").addClass("active_button")
@@ -51,6 +51,13 @@ $.post('/ugc_server/ugc_server', function(server_data){
         server_status_text.class = "server_status_text"
         server_status_text.id = "server_status_text_" + i
         server_status_text.innerText = "关闭"
+        // 服务器是否开启
+        if(server_data.server_status[i] == 1){
+            server_status.checked = "checked"
+            server_status_text.innerText = "开启"
+        }else{
+            server_status_text.innerText = "关闭"
+        }
 
         var label = document.createElement('label')
         label.setAttribute('for', 'server_status_' + i)
@@ -81,7 +88,13 @@ $.post('/ugc_server/ugc_server', function(server_data){
         var is_server_private_text = document.createElement('span')
         is_server_private_text.className = "is_server_private_text"
         is_server_private_text.id = "is_server_private_text_" + i
-        is_server_private_text.innerText = "关闭"
+        // 服务器是否私密
+        if(server_data.server_is_private[i] == 1){
+            server_private.checked = "checked"
+            is_server_private_text.innerText = "私密"
+        }else{
+            is_server_private_text.innerText = "开放"
+        }
 
         var label2 = document.createElement('label')
         label2.setAttribute('for', 'is_server_private_' + i)

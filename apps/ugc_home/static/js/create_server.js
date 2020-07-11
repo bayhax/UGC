@@ -72,6 +72,7 @@ function pay_way(purchase_url){
     // 购买前必须能计算出金额
     var rent_time = $("input[name='rent_time']:checked").val();
     var number = $("input[name='package']:checked").val();
+    var is_private = $("input[name='is_private']").val()
     if(rent_time == null || number == null){
         alert('请选择正确的租赁套餐（人数和时长）');
     }else{
@@ -102,6 +103,53 @@ $("#pay_button").on("click", function(){
     if(pay_way_hidden == "1"){
         pay_way("/ugc_server/money_purchase")
     }else{
-        pay_way("/ugc_server/score_purchase")
+        // 租赁服务器所需信息变量  服务器名称/最大人数/租赁时间
+        var server_name = document.getElementById("server_name").value;
+        var max_player = $("input[name='package']:checked").val();
+        var rent_time = $("input[name='rent_time']:checked").val();
+        var date = new Date(Date.now());
+        var start_time = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+        date.setTime(date.getTime() + rent_time * 60 * 60 * 24 * 1000);
+        var end_time = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+        // 是否私密
+        var is_private
+        var password = ''
+        if($("input[name='is_private']:checked").val() == "on"){
+            is_private = 1
+            password = $("#password").val()
+        }else{
+            is_private = 0
+        }
+        if(rent_time == null || max_player == null){
+            alert('请选择正确的租赁套餐（人数和时长）');
+        }else{
+            var user_id = $("#user_id").val()
+            if(user_id !== ''){
+                var price = rent_time * max_player
+                // 支付页面弹出居中
+                if($("input[name='agree']:checked").val() == 'on'){
+                    var url = "/ugc_server/score_purchase";
+                    $.ajax({
+                        type: 'post',
+                        dataType: 'json',
+                        data: {'server_name':server_name, 'max_player':max_player, 'is_private': is_private, 'password':password, 'start_time':start_time, 'end_time':end_time, 'rent_time':rent_time, 'price':price},
+                        url: url,
+                        success: function(ret){
+                            alert(ret.tips)
+                        },
+                        error: function(ret){
+                            alert(ret.tips)
+                        },
+                        timeout: function(){
+                            alert('连接超时，请稍后再试')
+                        },
+                    })
+                }else{
+                    alert('请勾选协议按钮')
+                }
+            }else{
+                alert('请先登录')
+            }
+        }
     }
 })

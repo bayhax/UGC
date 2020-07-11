@@ -41,8 +41,8 @@
                 {% if request.user.is_authenticated %}
                     <div class="user">
                         <div class="user_text">
-                            <span>{{ request.user }}</span>
-                            <div id="score" class="score">积分</div>
+                            <span class="username">{{ request.user }}</span>
+                            <div id="score" class="score">积分:{{ request.user.score }}</div>
                         </div>
                         <div class="user_avatar_drop">
                             <span class="user_avatar"></span>
