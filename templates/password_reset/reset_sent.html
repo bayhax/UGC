@@ -4,5 +4,8 @@
 {% block title %}{% trans "Password recovery sent" %}{% endblock %}
 
 {% block content %}
-	<p>{% blocktrans with ago=timestamp|timesince %}An email was sent to <strong>{{ email }}</strong> {{ ago }} ago. Use the link in it to set a new password.{% endblocktrans %}</p>
+<!--	<p>{% blocktrans with ago=timestamp|timesince %}An email was sent to <strong>{{ email }}</strong> {{ ago }} ago. Use the link in it to set a new password.{% endblocktrans %}</p>-->
+	<div class="send_mail_text">
+	<p>{% blocktrans with ago=timestamp|timesince %}我们已经向您的邮箱<strong>{{ email }}</strong>发送了一封邮件.<br> 利用邮件中的链接可以进行更改密码。注意查收！.{% endblocktrans %}</p>
+	</div>
 {% endblock %}

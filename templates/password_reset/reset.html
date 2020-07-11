@@ -4,11 +4,44 @@
 	{% if invalid %}{% url "password_reset_recover" as recovery_url %}
 		<p>{% blocktrans %}Sorry, this password reset link is invalid. You can still <a href="{{ recovery_url }}">request a new one</a>.{% endblocktrans %}</p>
 	{% else %}
-		<p>{% blocktrans %}Hi, <strong>{{ username }}</strong>. Please choose your new password.{% endblocktrans %}</p>
-		<form method="post" action="{% url "password_reset_reset" token %}">
+	<div class="reset_password">重置密码</div>
+    <hr class="reset_password_hr">
+    <div class="reset_process">
+        <ul>
+            <li>
+                <span class="reset_one_circle">
+                    <span class="reset_num">1</span>
+                </span>
+                <span>验证身份</span>
+                <span>——&nbsp;</span>
+            </li>
+            <li>
+                <span class="reset_one_circle active_circle">
+                    <span class="reset_num active_circle_num">2</span>
+                </span>
+                <span style="color:#0095c6;">设置密码</span>
+                <span>——&nbsp;</span>
+            </li>
+            <li>
+                <span class="reset_one_circle">
+                    <span class="reset_num">3</span>
+                </span>
+                <span>设置成功</span>
+            </li>
+        </ul>
+    </div>
+	<div class="reset_password_form">
+		<p class="reset_welcome">{% blocktrans %}Hi, <strong>{{ username }}</strong>. Please choose your new password.{% endblocktrans %}</p>
+		<form method="post" action="{% url 'password_reset_reset' token %}">
 			{% csrf_token %}
-			{{ form.as_p }}
-			<p><input type="submit" value="{% trans "Set new password" %}"></p>
+<!--			{{ form.as_p }}-->
+			<p><label for="id_password1"></label>
+				<input type="password" name="password1" class="reset_new_password" required id="id_password1" placeholder="新密码"></p>
+			<p><label for="id_password2"></label>
+				<input type="password" name="password2" class="reset_new_password" required id="id_password2" placeholder="新密码(确认)"></p>
+<!--			<p><input type="submit" value="设置新密码"></p>-->
+			<p><input type="submit" class="reset_button" value="{% trans 'Set new password' %}"></p>
 		</form>
+	</div>
 	{% endif %}
 {% endblock %}

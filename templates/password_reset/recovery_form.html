@@ -6,6 +6,30 @@
 {% block content %}
 	<div class="reset_password">重置密码</div>
     <hr class="reset_password_hr">
+    <div class="reset_process">
+        <ul>
+            <li>
+                <span class="reset_one_circle active_circle">
+                    <span class="reset_num active_circle_num">1</span>
+                </span>
+                <span style="color:#0095c6;">验证身份</span>
+                <span>——&nbsp;</span>
+            </li>
+            <li>
+                <span class="reset_one_circle">
+                    <span class="reset_num">2</span>
+                </span>
+                <span>设置密码</span>
+                <span>——&nbsp;</span>
+            </li>
+            <li>
+                <span class="reset_one_circle">
+                    <span class="reset_num">3</span>
+                </span>
+                <span>设置成功</span>
+            </li>
+        </ul>
+    </div>
 	<div class="reset_password_form">
 	<form method="post" action="{{ url }}">
 		{% csrf_token %}

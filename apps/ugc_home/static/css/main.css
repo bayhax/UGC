@@ -536,3 +536,81 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     cursor: pointer;
     display: none;
 }
+/* 重置密码 */
+.reset_process ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    list-style:none;
+    margin-top: 2rem;
+}
+.reset_one_circle {
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    background: #ddd;
+    border: 0.1px solid;
+}
+.reset_num {
+    display: block;
+    color: #272727;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+.active_circle, .active_circle_num{
+    border: 0.1px solid #0095c6;
+    border-radius: 50%;
+}
+/* 发送邮件 */
+.send_mail_text{
+    font-size: 1.5rem;
+    color: #272727;
+    width:56.25rem;
+    margin: auto;
+    margin-top:5rem;
+}
+/* 设置新密码 */
+.reset_welcome {
+    font-size:1.25rem;
+    color: #272727;
+}
+.reset_new_password {
+    width: 26.25rem;
+    height: 2.5rem;
+    border: 0;
+    border-radius: 10px;
+    outline: none;
+    background-color: #fff;
+    margin-top:0.5rem;
+    text-indent: 0.5rem;
+    font-size: 1.25rem;
+}
+.reset_new_password::placeholder{
+    color: #999;
+}
+.reset_button {
+    width: 26.25rem;
+    height: 2.5rem;
+    margin-top:1rem;
+    border: 0;
+    border-radius: 10px;
+    outline: none;
+    background-color: #0095c6;
+    font-size: 1.25rem;
+    color: #f2f2f2;
+}
+.reset_successful {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 1.5rem;
+    color: #272727;
+}

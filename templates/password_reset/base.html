@@ -38,25 +38,8 @@
                     <a href="/ugc_server/ugc_server">服务器</a></li>
             </ul>
             <div id="index_user" class="ugc_user">
-                {% if request.user.is_authenticated %}
-                    <div class="user">
-                        <div class="user_text">
-                            <span>{{ request.user }}</span>
-                            <a href='/user_quit'><span>退出</span></a>
-                            <div id="score" class="score">积分</div>
-                        </div>
-                        <div class="user_avatar">
-                            <ul>
-                                <li>个人中心</li>
-                                <li>退出</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                {% else %}
-                    <div id="user" class="user"><a href="/login"> 登录</a>|
-                    <a href="/register"> 注册</a></div>
-                {% endif %}
+                <div id="user" class="user"><a href="/login"> 登录</a>|
+                <a href="/register"> 注册</a></div>
             </div>
         </div>
 
