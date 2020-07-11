@@ -1,0 +1,37 @@
+{% extends 'ugc_base.html' %}
+{% load static %}
+{% block title %}北京第零世界科技有限公司{% endblock title %}
+{% block topfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/user_center.css'%}">
+{% endblock topfiles %}
+{% block body %}
+    <div class="user_center_box">
+        <div class="user_center_head">
+            <span><a href="/" class="active_color">首页</a></span>
+            <span>&gt;</span>
+            <span>个人中心</span>
+        </div>
+        <hr class="user_center_hr">
+        <div class="user_center_middle">
+            <div class="user_center_left">
+                <div style="height:1rem;"></div>
+                <ul>
+                    <li><span class="active_color" id="email">邮箱绑定</span></li>
+                    <li><span id="password">密码安全</span></li>
+                </ul>
+            </div>
+            <div class="user_center_right">
+                <span class="right_text" id="right_text">已绑定邮箱</span>
+                <br>
+                <a href="/change_email_confirm" id="change"><button type="button" class="right_button" id="right_button">修改绑定邮箱</button></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}
+    <footer class="footer" hidden></footer>
+{% endblock %}
+<!-- 网页底部引入文件块 -->
+{% block bottomfiles %}
+    <script type="text/javascript" src="{% static 'js/user_center.js' %}"></script>
+{% endblock bottomfiles%}

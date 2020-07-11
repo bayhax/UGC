@@ -1,6 +1,7 @@
 import json
 
 from django.contrib.auth.backends import ModelBackend
+from django.contrib.auth.hashers import check_password, make_password
 from django.db.models import Q
 from django.http import HttpResponse
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer, SignatureExpired
@@ -178,6 +179,16 @@ class LoginView(View):
             return render(request, 'login.html', {'errmsg': '用户名或密码错误'})
 
 
+# 个人中心
+class UserCenterView(View):
+    """修改邮箱/密码等操作"""
+    def get(self, request):
+        return render(request, "user_center.html")
+
+    def post(self, request):
+        pass
+
+
 # 退出登录
 def user_quit(request):
     logout(request)
@@ -185,11 +196,84 @@ def user_quit(request):
 
 
 # 忘记密码重置
-class ResetPasswordView(View):
-    """重置密码"""
+# class ResetPasswordView(View):
+#     """重置密码"""
+#
+#     def get(self, request):
+#         return render(request, 'login.html')
+#
+#     def post(self, request):
+#         pass
 
+# 修改密码--验证身份
+class ChangePasswordConfirmView(View):
     def get(self, request):
-        return render(request, 'login.html')
+        return render(request, 'change_password_confirm.html')
+
+    def post(self, request):
+        pass
+
+
+# 修改密码 -- 输入新密码
+class ChangePassword(View):
+    def get(self, request):
+        return render(request, 'change_password.html')
+
+    def post(self, request):
+        user_id = request.user.id
+        user = UgcUser.objects.get(id=user_id)
+        new_password = request.POST['new_password']
+        try:
+            # if check_password(new_password, user.password):
+            user.password = make_password(new_password)
+            user.save()
+            tips = "success"
+        except Exception as e:
+            tips = "error"
+        return HttpResponse(json.dumps({'tips': tips}))
+
+
+# 修改密码 -- 修改成功
+class ChangePasswordDoneView(View):
+    def get(self, request):
+        return render(request, 'change_password_done.html')
+
+    def post(self, request):
+        pass
+
+
+# 修改邮箱--验证身份
+class ChangeEmailConfirmView(View):
+    def get(self, request):
+        return render(request, 'change_email_confirm.html')
+
+    def post(self, request):
+        pass
+
+
+# 修改邮箱 -- 输入新邮箱
+class ChangeEmail(View):
+    def get(self, request):
+        return render(request, 'change_email.html')
+
+    def post(self, request):
+        user_id = request.user.id
+        user = UgcUser.objects.get(id=user_id)
+        new_email = request.POST['new_email']
+        try:
+            # if check_password(new_password, user.password):
+            user.email = new_email
+            user.save()
+            tips = "success"
+        except Exception as e:
+            tips = "error"
+        return HttpResponse(json.dumps({'tips': tips}))
+
+
+# 修改密码 -- 修改成功
+class ChangeEmailDoneView(View):
+    def get(self, request):
+        return render(request, 'change_email_done.html')
 
     def post(self, request):
         pass
@@ -217,3 +301,4 @@ def supervisor(request):
 
 def dispute(request):
     return render(request, 'dispute.html')
+

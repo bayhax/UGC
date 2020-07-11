@@ -1,0 +1,89 @@
+.user_center_box {
+    width: 56.25%;
+    margin: auto;
+    margin-top: 3rem;
+}
+.user_center_head {
+    font-size: 1.25rem;
+    color: #272727;
+}
+.active_color {
+    color: #0095c6;
+}
+.user_center_hr {
+    border: 0;
+    border-bottom: 2px solid #999;
+}
+.user_center_middle {
+    margin-top:-7px;
+}
+.user_center_left {
+    border-right: 2px solid #999;
+    width: 10rem;
+    height: 30rem;
+    float: left;
+}
+.user_center_left ul {
+    margin-top: 1rem;
+    color: #272727;
+}
+.user_center_left ul li {
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 3.5rem;
+}
+.user_center_right {
+    text-align: center;
+}
+.right_text {
+    margin-top: 4rem;
+    display: inline-block;
+    font-size: 1.5rem;
+    color: #272727;
+}
+.right_button {
+    cursor: pointer;
+    width: 15rem;
+    height: 3rem;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: #f2f2f2;
+    border:0;
+    border-radius: 10px;
+    outline: none;
+    background-color: #0095c6;
+}
+#email, #password {
+    cursor: pointer;
+}
+
+/* 修改密码 */
+#confirm_next, #change, #change_email {
+    cursor: pointer;
+    width: 26.25rem;
+    height: 2.5rem;
+    margin-top: 2rem;
+    outline: none;
+    border: 0;
+    border-radius: 10px;
+    background-color: #0095c6;
+    font-size: 1.125rem;
+    color: #f2f2f2;
+}
+.change_new_password {
+    width: 26.25rem;
+    height: 2.5rem;
+    border: 0;
+    border-radius: 10px;
+    outline: none;
+    background-color: #fff;
+    margin-top:1rem;
+    text-indent: 0.5rem;
+    font-size: 1.25rem;
+}
+.change_password_success {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 3rem;
+    color: #272727;
+}

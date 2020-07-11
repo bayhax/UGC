@@ -42,14 +42,14 @@
                     <div class="user">
                         <div class="user_text">
                             <span>{{ request.user }}</span>
-                            <a href='/user_quit'><span>退出</span></a>
                             <div id="score" class="score">积分</div>
                         </div>
-                        <div class="user_avatar">
-                            <ul>
-                                <li>个人中心</li>
-                                <li>退出</li>
-                            </ul>
+                        <div class="user_avatar_drop">
+                            <span class="user_avatar"></span>
+                            <div class="avatar_drop_content">
+                                <p><a href="/user_center"><span>个人中心</span></a></p>
+                                <p><a href='/user_quit'><span>退出</span></a></p>
+                            </div>
                         </div>
                     </div>
 

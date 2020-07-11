@@ -61,8 +61,7 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     border-bottom: 2px solid #e27a3f;
 }
 .active_button {
-    border-bottom: 5px solid #0095c6;
-    width:120%;
+    background:no-repeat 0.3rem 2.3rem url(../img/border_bottom.png)
 }
 .swiper-container {
     width: 100%;
@@ -126,41 +125,32 @@ html,body{height:100%;min-width: 1000px;min-height: 1000px;}
     width: 6rem;
     float: left;
 }
+.user_avatar_drop {
+    position: relative;
+    display: inline-block;
+}
 .user_avatar {
     width: 3.5rem;
     height: 3.5rem;
     float: left;
     background:no-repeat url(../img/avatar.png)
 }
-.user_avatar ul {
+.avatar_drop_content {
     display: none;
-}
-.user_avatar ul li {
-    font-size: 1.25rem;
-    width: 100%;
-    text-align: left;
-}
-.user_avatar:hover {
-    background:no-repeat url(../img/avatar_hover.png)
-}
-.user_avatar:hover ul{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: left;
-    list-style: none;
+    position: absolute;
     width: 6rem;
     float: left;
     height: 4rem;
     line-height: 1.9rem;
     margin-left: 0rem;
     margin-top: 3rem;
+    z-index: 99;
+}
+.user_avatar_drop:hover {
+    background:no-repeat url(../img/avatar_hover.png)
+}
+.user_avatar_drop:hover .avatar_drop_content{
+   display: block;
 }
 .mod_row_title{
     display: inline-block;
