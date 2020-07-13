@@ -286,13 +286,30 @@ class ModView(View):
 
     def post(self, request):
         # 所有MOD,在缓存中。
-        mod_dic = {}
+        title = []
+        main_pic = []
+
         all_mod = UgcMod.objects.all()
         for mod in all_mod:
-            mod_dic[mod.title] = str(mod.main_pic)
+            title.append(mod.title)
+            main_pic.append(str(mod.main_pic))
 
         # 返回给页面
-        return HttpResponse(json.dumps(mod_dic))
+        return HttpResponse(json.dumps({'mod_title': title, 'main_pic': main_pic}))
+
+
+# # 所有mod
+# def all_mod_view(request):
+#     # 所有MOD,在缓存中。
+#     title = []
+#     main_pic = []
+#
+#     all_mod = UgcMod.objects.all()
+#     for mod in all_mod:
+#         title.append(mod.title)
+#         main_pic.append(str(mod.main_pic))
+#     # 返回给页面
+#     return HttpResponse(json.dumps({'mod_title': title, 'main_pic': main_pic}), content_type='application/json')
 
 
 def supervisor(request):

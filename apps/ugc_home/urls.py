@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 # @Time: 5/18/20 10:45 AM
 # @Author:bayhax
-from django.urls import path, re_path
+from django.urls import path, re_path, include
 from apps.ugc_home import views
 
 from django.contrib.auth import views as auth_views
@@ -23,6 +23,7 @@ urlpatterns = [
     path('register', views.RegisterView.as_view()),  # 注册页面
     re_path(r'^active/(?P<token>.*)$', views.ActiveView.as_view()),  # 邮箱验证
     path('mod', views.ModView.as_view()),  # MOD展示页
+    # path('all_mod', views.all_mod_view),  # 所有mod
     path('supervisor', views.supervisor),  # 家长监护
     path('dispute', views.dispute),  # 纠纷处理
 ]
