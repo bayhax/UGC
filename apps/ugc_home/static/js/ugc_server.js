@@ -113,7 +113,7 @@ $.post('/ugc_server/ugc_server', function(server_data){
 
         var server_id = document.createElement('div')
         server_id.className = "server_id"
-        server_id.innerText = "ID: " + server_data.server_id[i]
+        server_id.innerText = "ID: " + server_data.user_name
 
         var basic_info = document.createElement('div')
         basic_info.className = "basic_info"
@@ -156,12 +156,18 @@ $.post('/ugc_server/ugc_server', function(server_data){
         // 服务器管理按钮
         var change_password = document.createElement('button')
         change_password.type = "button"
+        change_password.className = "change_password"
+        change_password.id = "server_" + server_data.server_id[i]
         change_password.innerHTML = '修改密码'
         var renewal = document.createElement('button')
         renewal.type = "button"
+        renewal.className = "renewal"
+        renewal.id = "renewal_server_" + server_data.server_id[i]
         renewal.innerHTML = '续费'
         var edit_mod = document.createElement('button')
         edit_mod.type = "button"
+        edit_mod.className = "edit_mod"
+        edit_mod.id = "edit_mod_server_" + server_data.server_id[i]
         edit_mod.innerHTML = "编辑MOD"
 
         var server_manage_button = document.createElement('div')
@@ -176,4 +182,29 @@ $.post('/ugc_server/ugc_server', function(server_data){
 
         server_manage.appendChild(box)
     }
+})
+// 修改服务器密码按钮
+$(document).on("click", ".change_password", function(){
+    // 支付页面弹出居中
+    var iHeight = 400;
+    var iWidth = 600;
+    var iTop = (window.screen.availHeight - iHeight) / 2;
+    var iLeft = (window.screen.availWidth - iWidth) / 2;
+
+    var windowStyle = 'height=' + iHeight + ',width=' + iWidth + ',top=' + iTop + ',left=' + iLeft +
+                        ',status=no,toolbar=no,menubar=no,location=no,resizable=no,scrollbars=0,titlebar=no';
+    window.open('/ugc_server/change_server_password?server_id=' + $(this).attr("id"), '修改服务器密码', windowStyle)
+})
+
+// 服务器续费按钮
+$(document).on("click", ".renewal", function(){
+    // 支付页面弹出居中
+    var iHeight = 400;
+    var iWidth = 600;
+    var iTop = (window.screen.availHeight - iHeight) / 2;
+    var iLeft = (window.screen.availWidth - iWidth) / 2;
+
+    var windowStyle = 'height=' + iHeight + ',width=' + iWidth + ',top=' + iTop + ',left=' + iLeft +
+                        ',status=no,toolbar=no,menubar=no,location=no,resizable=no,scrollbars=0,titlebar=no';
+    window.open('/ugc_server/renewal?server_id=' + $(this).attr("id"), '修改服务器密码', windowStyle)
 })

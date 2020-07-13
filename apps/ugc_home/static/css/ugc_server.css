@@ -9,7 +9,7 @@
     background-color: #0095c6;
     text-align: center;
     line-height: 2.5rem;
-    margin-left: 30.5rem;
+    margin-left: 17rem;
     margin-top: 0.5rem;
 }
 .create_server_box:hover {
@@ -115,6 +115,7 @@
     border: 0;
     color: #f2f2f2;
     background-color: #0095c6;
+    outline: none;
 }
 .server_manage_button button:hover {
     background-color: #397589;

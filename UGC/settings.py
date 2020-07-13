@@ -27,7 +27,7 @@ SECRET_KEY = '%-f^4kumq!$6#w=bdao1yjil4z-6t1_6sjr(%$)d*z*g)=ja!p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ugc.zerogame.com.cn', '127.0.0.1', '172.16.32.15']
 
 # Application definition
 

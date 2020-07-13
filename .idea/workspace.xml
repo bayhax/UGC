@@ -3,13 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="5a29c1ee-1efc-4340-a14a-bbc0e4dc2c1a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UGC/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/UGC/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/css/server.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/css/create_server.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/js/create_server.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/js/create_server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/css/ugc_server.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/css/ugc_server.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/js/ugc_server.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/js/ugc_server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ugc_server/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_server/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ugc_server/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_server/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ugc_server/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_server/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/create_server.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/create_server.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ugc_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ugc_base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/score_purchase.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/score_purchase.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -81,16 +82,5 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="718" y="427" width="540" height="250" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1594386326481" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/apps/ugc_server/views.py</url>
-          <line>121</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

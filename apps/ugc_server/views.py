@@ -13,6 +13,8 @@ from ugc_home.models import UgcUser
 from ugc_server.tasks import start_server
 from ugc_server.models import UgcServer
 
+from django.contrib.auth.hashers import make_password
+
 
 @receiver(post_save, sender=UgcServer)
 def update_server(sender, **kwargs):
@@ -63,8 +65,7 @@ class UgcServerView(View):
                                            'status', 'start_time', 'end_time')
             server_data = [x.decode('utf-8') for x in server_data]
 
-            # server_id.append(server.decode('utf-8').split(':')[-1])
-            server_id.append(user_name)
+            server_id.append(server.decode('utf-8').split(':')[-1])
             server_name.append(server_data[0])
             server_max_player.append(server_data[1])
             server_is_private.append(server_data[2])
@@ -82,9 +83,10 @@ class UgcServerView(View):
             # end_time_temp = server.end_time.replace(tzinfo=pytz.UTC).astimezone(pytz.timezone('Asia/Shanghai'))
             # server_end_time.append(end_time_temp.strftime('%Y-%m-%d %H:%M'))
         # json串
-        server_data = {'server_id': server_id, 'server_name': server_name, 'server_max_player': server_max_player,
-                       'server_is_private': server_is_private, 'server_status': server_status,
-                       'server_start_time': server_start_time, 'server_end_time': server_end_time}
+        server_data = {'server_id': server_id, 'user_name': user_name, 'server_name': server_name,
+                       'server_max_player': server_max_player, 'server_is_private': server_is_private,
+                       'server_status': server_status, 'server_start_time': server_start_time,
+                       'server_end_time': server_end_time}
         # 数据返回页面
         return HttpResponse(json.dumps(server_data))
 
@@ -135,7 +137,7 @@ class ScoreServerPurchaseView(ServerPurchaseView):
             # 异步开启服务器，celery, 并将该租赁服务器所属信息入库
             start_server.delay()
             ugc_server = UgcServer(server_name=server_name, max_player=max_player, is_private=is_private,
-                                   server_password=password, status=0, start_time=datetime.now(),
+                                   server_password=make_password(password), status=0, start_time=datetime.now(),
                                    end_time=datetime.now() + timedelta(days=rent_time), ugc_user_id=ugc_user_id)
             ugc_server.save()
             # 积分变化
@@ -155,3 +157,56 @@ class MoneyServerPurchaseView(ServerPurchaseView):
 
     def post(self, request):
         pass
+
+
+# 修改服务器密码
+class ChangeServerPasswordView(View):
+    def get(self, request):
+        server_id = request.GET['server_id']
+        return render(request, 'change_server_password.html', {'server_id': server_id})
+
+    def post(self, request):
+        server_id = request.POST['server_id'].split('_')[-1]
+        new_password = request.POST['password']
+        # 修改密码
+        try:
+            UgcServer.objects.filter(id=server_id).update(server_password=make_password(new_password))
+            tips = '修改成功'
+            return HttpResponse(json.dumps({'tips': tips}))
+        except Exception as e:
+            print(e)
+            tips = '修改失败'
+            return HttpResponse(json.dumps({'tips': tips}))
+
+
+# 服务器续费
+class RenewalView(View):
+    def get(self, request):
+        server_id = request.GET['server_id'].split('_')[-1]
+        server = UgcServer.objects.get(id=server_id)
+        end_time = server.end_time.strftime('%Y-%m-%d %H:%M')
+        return render(request, 'renewal.html', {'server_id': server.id, 'server_name': server.server_name,
+                                                'end_time': end_time, 'max_player': server.max_player})
+
+    def post(self, request):
+        try:
+            get_end_time = request.POST['renewal_end_time']
+            renewal_end_time = datetime.strptime(get_end_time, '%Y-%m-%d %H:%M')
+            print(renewal_end_time)
+            server_id = int(request.POST['server_id'])
+            score = request.POST['score']
+            user_score = request.user.score
+            # 积分足够，更改到期日期并扣除相应积分
+            if user_score >= int(score):
+                UgcUser.objects.filter(id=request.user.id).update(score=user_score - int(score))
+                UgcServer.objects.filter(id=server_id).update(end_time=renewal_end_time)
+                # 更改缓存时间
+                redis_conn = get_redis_connection('default')
+                redis_conn.hset('server:%d' % server_id, 'end_time', get_end_time)
+                tips = "续费成功"
+            else:
+                tips = "续费失败，可能积分不足"
+            return HttpResponse(json.dumps({'tips': tips}))
+        except Exception as e:
+            print(e)
+            return HttpResponse(json.dumps({'tips': '出现异常，请稍后再试'}))

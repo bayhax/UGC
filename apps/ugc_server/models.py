@@ -9,7 +9,7 @@ class UgcServer(BaseModel):
     """UGC服务器表"""
     objects = models.Manager()
     server_name = models.CharField(max_length=6, verbose_name='服务器名称')
-    server_password = models.CharField(max_length=32, null=True, verbose_name='服务器密码')
+    server_password = models.CharField(max_length=128, null=True, verbose_name='服务器密码')
     max_player = models.SmallIntegerField(verbose_name='服务器最大人数')
     start_time = models.DateTimeField(verbose_name='起始时间')
     end_time = models.DateTimeField(verbose_name='结束时间')

@@ -1,0 +1,98 @@
+.rent_time_text {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    color: #272727;
+    background: no-repeat 0rem url(../img/server_manage_point.png);
+}
+.rent_time_text span {
+    margin-left: 1rem;
+}
+.server_rent_time {
+    margin-left: 1rem;
+}
+.rent_time_day {
+    cursor: pointer;
+    width: 8.125rem;
+    height: 3.125rem;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    border: 0;
+    text-align: center;
+    line-height: 3.125rem;
+    color: #272727;
+    font-size: 1.1875rem;
+    margin-right: 2rem;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+.rent_time_day:hover{
+    background-color: #397589;
+}
+input[type=radio]:checked + .rent_time_day{
+     background-color: #0095c6;
+}
+.box_right_format {
+    text-align: center;
+}
+.pay_way {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #272727;
+}
+.weChat_pay {
+    margin-right:5rem;
+}
+.pay_way ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    list-style:none;
+}
+.pay_way ul li {
+    cursor: pointer;
+    height: 2.7rem;
+}
+.pay_activate_li {
+    background: no-repeat 0rem 1.8rem url(../img/border_bottom.png);
+}
+
+.amount {
+    text-align: center;
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 1.25rem;
+    color: #272727;
+}
+.pay_text {
+    margin-left: 0.5rem;
+    display: inline-block;
+    position: relative;
+    top: -0.5rem;
+    margin-right: 0.5rem;
+}
+
+.money {
+    font-size: 2.25rem;
+    color: #272727;
+    font-weight: 500;
+}
+.pay_button {
+    cursor: pointer;
+    width: 10rem;
+    height: 2rem;
+    border: 0;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #f2f2f2;
+    background-color: #0095C6;
+    outline: none;
+    text-align: center;
+}

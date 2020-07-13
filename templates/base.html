@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <!-- 网页标题内容块-->
+    <title>{% block title %}北京第零世界科技有限公司{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css'%}">
+    <!-- 网页顶部引入文件块 -->
+	{% block topfiles %}{% endblock topfiles %}
+    <!--2020.04.04全国抗击疫情哀悼日灰色背景-->
+    <style>
+        .gray{
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+            _filter: none;
+        }
+    </style>
+</head>
+<body>
+	{% block header_con %}
+	{% endblock header_con %}
+
+	<!-- 网站主题内容块 -->
+	{% block body %}
+	{% endblock body%}
+
+    {% block footer %}
+
+    {% endblock footer %}
+	<!-- 网页底部html元素块 -->
+	{% block bottom %}{% endblock bottom%}
+    <script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>
+	<!-- 网页底部引入文件块 -->
+	{% block bottomfiles %}
+
+    {% endblock bottomfiles%}
+</body>
+</html>

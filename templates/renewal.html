@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block topfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/renewal.css'%}">
+{% endblock %}
+{% block body %}
+    <input type="hidden" value="{{ server_id }}" id="server_id">
+    <div>
+        <span>当前该服务器({{ server_name }})的到期时间为<span id="end_time">{{ end_time }}</span></span>
+        <div class="rent_server_box">
+            <div class="box_left">
+                <div class="box_left_format">
+                    <div class="rent_time_text"><span>选择租赁时长</span></div>
+                    <div class="server_rent_time">
+                        <label for="thirty_day">
+                            <input type="radio" name="rent_time" id="thirty_day" value="30" class="rent_time_radio" hidden>
+                            <span class="rent_time_day">30天</span>
+                        </label>
+                        <label for="sixty_day">
+                            <input type="radio" name="rent_time" id="sixty_day" value="60" class="rent_time_radio" hidden>
+                            <span class="rent_time_day">60天</span>
+                        </label>
+                        <label for="ninety_day">
+                            <input type="radio" name="rent_time" id="ninety_day" value="90" class="rent_time_radio" hidden>
+                            <span class="rent_time_day">90天</span>
+                        </label>
+                        <label for="half_year">
+                            <input type="radio" name="rent_time" id="half_year" value="180" class="rent_time_radio" hidden>
+                            <span class="rent_time_day">180天</span>
+                        </label>
+                        <label for="one_year">
+                            <input type="radio" name="rent_time" id="one_year" value="360" class="rent_time_radio" hidden>
+                            <span class="rent_time_day">360天</span>
+                        </label>
+                    </div>
+                    <div class="rent_time_deadline">续费至： <span id="deadline"></span></div>
+                </div>
+            </div>
+
+            <div class="box_right">
+                <div class="box_right_format">
+                    <div class="pay_way">
+                        <ul>
+                            <li class="weChat_pay pay_activate_li" id="weChat_pay"><span>微信支付</span></li>
+                            <li class="score_pay" id="score_pay"><span>积分支付</span></li>
+                        </ul>
+                    </div>
+                    <div class="amount" id="amount">
+
+                    </div>
+                    <button type="button" class="pay_button" id="pay_button">支付</button>
+                    <div>
+                        <input type="hidden" value="1" id="pay_way_hidden">
+                        <input type="hidden" value="{{ max_player }}" id="max_player">
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
+{% block bottomfiles %}
+    <script type="text/javascript" src="{% static 'js/renewal.js' %}"></script>
+{% endblock %}

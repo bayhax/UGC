@@ -10,4 +10,6 @@ urlpatterns = [
     path('purchase', views.ServerPurchaseView.as_view()),  # 购买租赁服
     path('score_purchase', views.ScoreServerPurchaseView.as_view()),  # 积分购买
     path('money_purchase', views.MoneyServerPurchaseView.as_view()),  # 人民币购买
+    path('change_server_password', views.ChangeServerPasswordView.as_view()),  # 修改服务器密码
+    path('renewal', views.RenewalView.as_view()),  # 服务器续费
 ]
