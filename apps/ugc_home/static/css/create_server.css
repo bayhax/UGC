@@ -100,11 +100,11 @@
     margin-left: 0.3rem;
 }
 input[type=checkbox]:checked + .switch_box {
-    background: lightgreen;
+    background: #f8f4f4;
 }
 input[type=checkbox]:checked + .switch_box .switch_inner {
     left: auto;
-    right: 1%;
+    right: 0.5%;
 }
 .password {
     width: 17.5rem;
@@ -273,7 +273,7 @@ input[type=radio]:checked + .rent_time_day{
     font-weight: 600;
     color: #f2f2f2;
     margin-left: 4rem;
-    background-color: #0095C6;
+    background-color: #999;
     outline: none;
 }
 .agree_box {

@@ -23,7 +23,7 @@ $(function(){
 		check_email();
 	});
 
-	$('#allow').click(function() {
+	$('#agree').click(function() {
 		if($(this).is(':checked'))
 		{
 			error_check = false;
@@ -104,13 +104,14 @@ $(function(){
 
 	}
 
-	$('#reg_form').submit(function() {
+	$('form').submit(function(){
 		check_user_name();
 		check_pwd();
 		check_cpwd();
 		check_email();
 		if(error_name == false && error_password == false && error_check_password == false && error_email == false && error_check == false)
 		{
+		    alert("请在一小时内前往邮箱激活账户！")
 			return true;
 		}
 		else
@@ -118,4 +119,5 @@ $(function(){
 			return false;
 		}
 	});
+
 })

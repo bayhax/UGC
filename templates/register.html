@@ -8,7 +8,8 @@
     <div class="register_head">注册</div>
     <hr class="register_head_hr">
     <div class="register">
-        <form method="post" action="" onsubmit="alert('请在一小时内去邮箱中检查邮件且激活账户')">
+        <form method="post" action="">
+            {% csrf_token %}
             <ul>
                 <li>
                     <input type="text" name="username" id="username" placeholder="用户名">

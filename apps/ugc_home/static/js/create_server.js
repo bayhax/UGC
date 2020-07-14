@@ -2,11 +2,23 @@
 // 服务器是否对外开放
 $(document).on("change", "input[name='is_private']", function(){
     if($("input[name='is_private']:checked").val() == 'on'){
-
+        $("#password").attr("readonly", null)
     }else{
-
+        $("#password").attr("readonly", "readonly")
     }
 })
+
+// 是否勾选同意协议按钮
+$(document).on("change", "input[name='agree']", function(){
+    if($("input[name='agree']:checked").val() == 'on'){
+        $("#pay_button").attr("disabled", null)
+        $("#pay_button").css("background-color", "#0095c6")
+    }else{
+        $("#pay_button").attr("disabled", "disabled")
+        $("#pay_button").css("background-color","#999")
+    }
+})
+
 // 服务器租赁价格
 function price(way) {
     var rent_time = $("input[name='rent_time']:checked").val();
@@ -97,6 +109,7 @@ function pay_way(purchase_url){
         }
     }
 }
+
 // 支付按钮
 $("#pay_button").on("click", function(){
     var pay_way_hidden = $("#pay_way_hidden").val()

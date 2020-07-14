@@ -21,11 +21,20 @@
             <a href="/ugc_server/create_server" class="create_server">创建新服务器</a>
         </div>
     </div>
+    <div class="ugc_box">
+        <div class="server_manage">
+        </div>
+    </div>
 {% endif %}
-{% endblock body %}
+{% endblock %}
 <!-- 网页底部引入文件块 -->
 {% block bottomfiles %}
     {% if request.user.is_authenticated %}
     <script type="text/javascript" src="{% static 'js/ugc_server.js' %}"></script>
+    {% else %}
+    <script>
+        $("#ugc_server").addClass("active_button")
+        $("#ugc_mod,#ugc_index").removeClass("active_button")
+    </script>
     {% endif %}
-{% endblock bottomfiles%}
+{% endblock %}

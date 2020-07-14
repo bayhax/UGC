@@ -43,7 +43,7 @@ function load_mod(){
     // 初始化
     var counter = 0
     var page_start = 0;
-    var page_size = 2;
+    var page_size = 3;
 
     // 首次从服务器端取得数据
     getMod(page_start, page_size)

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <!-- 网页标题内容块-->
     <title>{% block title %}北京第零世界科技有限公司{% endblock title %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1">
     <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/swiper.min.css'%}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}">
@@ -41,8 +41,10 @@
                 {% if request.user.is_authenticated %}
                     <div class="user">
                         <div class="user_text">
-                            <span class="username">{{ request.user }}</span>
-                            <div id="score" class="score">积分:{{ request.user.score }}</div>
+                            <ul>
+                                <li><span class="username">{{ request.user }}</span></li>
+                                <li><span id="score" class="score">积分:{{ request.user.score }}</span></li>
+                            </ul>
                         </div>
                         <div class="user_avatar_drop">
                             <span class="user_avatar"></span>
@@ -54,7 +56,8 @@
                     </div>
 
                 {% else %}
-                    <div id="user" class="user"><a href="/login"> 登录</a>|
+                    <div class="login"><a href="/login"> 登录</a>
+                        <span style="color:#0095c6;">|</span>
                     <a href="/register"> 注册</a></div>
                 {% endif %}
             </div>
@@ -65,7 +68,7 @@
 
 	<!-- 网站主题内容块 -->
 	{% block body %}
-	{% endblock body%}
+    {% endblock body%}
 
     {% block footer %}
     <footer id="footer" class="footer">

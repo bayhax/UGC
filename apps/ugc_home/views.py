@@ -44,12 +44,12 @@ class RegisterView(View):
         name = request.POST.get('name')
         email = request.POST.get('email')
         phone = request.POST.get('phone')
-        allow = request.POST.get('allow')
-
+        allow = request.POST.get('agree')
         # 进行数据校验
         if not all([username, password, identity, name, email, phone]):
             # 数据不完整
             return render(request, 'register.html', {'errmsg': '数据不完整'})
+
         # 校验邮箱
         if not re.match(r'^[a-z0-9][\w.\-]*@[a-z0-9\-]+(\.[a-z]{2,5}){1,2}$', email):
             return render(request, 'register.html', {'errmsg': '邮箱不正确'})
@@ -67,13 +67,11 @@ class RegisterView(View):
         if user:
             # 用户名已存在
             return render(request, 'register.html', {'errmsg': '用户已存在'})
-
         # 进行业务处理：进行用户注册
         user = UgcUser.objects.create_user(username=username, password=password, identity=identity, name=name,
                                            email=email, phone=phone)
         user.is_active = 0
         user.save()
-
         # 发送激活邮件，包含激活链接：http://127.0.0.1:8000/
         # 激活连接中需要包含用户的身份信息,并且把身份信息进行加密
 
@@ -82,10 +80,8 @@ class RegisterView(View):
         info = {'confirm': user.id}
         token = serializer.dumps(info)  # bytes
         token = token.decode()  # 解码 默认urf-8
-
         # 发邮件
         send_register_active_email.delay(email, username, token)
-
         # 返回应答,跳转到首页
         return redirect('/#ugc')
 

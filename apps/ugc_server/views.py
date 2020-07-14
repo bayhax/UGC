@@ -22,13 +22,17 @@ def update_server(sender, **kwargs):
     server = kwargs['instance'].__dict__
     server_id = server['id']
     redis_conn = get_redis_connection('default')
+    # 判断是否存在该服务器名称信息
     if redis_conn.exists('server:%d' % server_id):
         redis_conn.delete('server:%d' % server_id)
+    # 将该服务器信息村起来
     redis_conn.hmset('server:%d' % server_id,
                      {'server_name': server['server_name'], 'max_player': server['max_player'],
                       'is_private': server['is_private'], 'status': server['status'],
                       'start_time': server['start_time'].strftime('%Y-%m-%d %H:%M'),
                       'end_time': server['end_time'].strftime('%Y-%m-%d %H:%M'), 'ugc_user_id': server['ugc_user_id']})
+    # 给用户列表增加服务器id
+    redis_conn.rpush('user:%d' % server['ugc_user_id'], "server:%d" % server_id)
 
 
 @receiver(post_delete, sender=UgcServer)
@@ -39,6 +43,8 @@ def delete_server(sender, **kwargs):
     redis_conn = get_redis_connection('default')
     if redis_conn.exists('server:%d' % server_id):
         redis_conn.delete('server:%d' % server_id)
+        # 删除该服务器所在用户列表的信息
+        redis_conn.lrem('user:%d' % server['ugc_user_id'], 0, 'server:%d' % server_id)
 
 
 class UgcServerView(View):
@@ -58,7 +64,8 @@ class UgcServerView(View):
         server_end_time = []
         # 根据user_id查询该用户的所有租赁服信息， 缓存获取
         redis_conn = get_redis_connection('default')
-        server_info = redis_conn.keys("server:*")
+        user_server_len = redis_conn.llen('user:%d' % request.user.id)
+        server_info = redis_conn.lrange("user:%d" % request.user.id, 0, user_server_len)
         # server_info = UgcServer.objects.filter(ugc_user_id=user_id)
         for server in server_info:
             server_data = redis_conn.hmget(server.decode('utf-8'), 'server_name', 'max_player', 'is_private',
@@ -140,6 +147,7 @@ class ScoreServerPurchaseView(ServerPurchaseView):
                                    server_password=make_password(password), status=0, start_time=datetime.now(),
                                    end_time=datetime.now() + timedelta(days=rent_time), ugc_user_id=ugc_user_id)
             ugc_server.save()
+            
             # 积分变化
             UgcUser.objects.filter(id=ugc_user_id).update(score=user_score - int(price))
             tips = '购买成功，服务器将在十分钟内开启，请稍等'

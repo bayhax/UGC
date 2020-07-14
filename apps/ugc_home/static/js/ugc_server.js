@@ -1,3 +1,5 @@
+$("#ugc_server").addClass("active_button")
+$("#ugc_mod,#ugc_index").removeClass("active_button")
 // 服务器状态
 $(document).on("change", "input[name='server_status']", function(){
     if($("input[name='server_status']:checked").val() == 'on'){
@@ -15,8 +17,7 @@ $(document).on("change", "input[name='is_server_private']", function(){
         this.previousElementSibling.innerText = "开放"
     }
 })
-$("#ugc_server").addClass("active_button")
-$("#ugc_mod,#ugc_index").removeClass("active_button")
+
 // 获得该用户所有的租赁服
 $.post('/ugc_server/ugc_server', function(server_data){
     var server_data = JSON.parse(server_data);
