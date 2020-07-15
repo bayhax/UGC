@@ -2,12 +2,21 @@
 user_center_right = $(".user_center_right")
 span = document.getElementById("right_text")
 button = document.getElementById("right_button")
+function replace_pos(text,start,stop,replacetext){
+     mystr = text.substring(0,start)+replacetext+text.substring(stop+1);
+     return mystr;
+}
+hidden_email = $("#hidden_email").val()
+if(hidden_email != null){
+    span.innerHTML = "已绑定邮箱 " + replace_pos(hidden_email, 3, hidden_email.indexOf("@") - 1, '*****')
+}
 // 点击切换
 $("#email").click(function(){
     $("#email").addClass("active_color")
     $("#password").removeClass("active_color")
     $("#change").attr("href", "/change_email_confirm")
-    span.innerText = "已绑定邮箱"
+
+    span.innerHTML = "已绑定邮箱 " + replace_pos(hidden_email, 3, hidden_email.indexOf("@") - 1, '*****')
     button.innerText = "修改绑定邮箱"
 })
 
@@ -32,11 +41,44 @@ $("#change").click(function(){
         return false;
     }
 })
+$('#change_password1').blur(function() {
+		check_pwd();
+	});
 
-// 修改邮箱
-$("#change_email").click(function(){
-    var email = $("#change_email_text").val()
-    $.post("/change_email", {'new_email': email}, function(){
-        window.location.href = "/change_email_done"
-    })
-})
+$('#change_password2').blur(function() {
+    check_cpwd();
+});
+function check_pwd(){
+    var len = $('#change_password1').val().length;
+    if(len<6||len>16)
+    {
+        $('#change_password1').next().html('密码最少6位，最长16位')
+        $('#change_password1').next().show();
+        error_password = true;
+    }
+    else
+    {
+        $('#change_password1').next().hide();
+        error_password = false;
+    }
+}
+
+
+function check_cpwd(){
+    var pass = $('#change_password1').val();
+    var cpass = $('#change_password2').val();
+
+    if(pass!=cpass)
+    {
+        $('#change_password2').next().html('两次输入的密码不一致')
+        $('#change_password2').next().show();
+        error_check_password = true;
+    }
+    else
+    {
+        $('#change_password2').next().hide();
+        error_check_password = false;
+    }
+
+}
+

@@ -51,3 +51,18 @@ format(timestamp2);
 //}
 //footer_test();
 //$(window).resize(footer_test);
+
+// 积分格式化
+function score_format(){
+    var score = parseInt($("#score").text().split(":")[1])
+    var format_score
+    if(score >= 100000000){
+        format_score = (score / 100000000).toFixed(2) + "亿"
+    }else if(score>=10000){
+        format_score = (score / 10000).toFixed(2) + "万"
+    }else{
+        format_score = score
+    }
+    $("#score").text("积分:" + format_score)
+}
+score_format()

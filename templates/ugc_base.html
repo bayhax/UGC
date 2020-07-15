@@ -42,8 +42,8 @@
                     <div class="user">
                         <div class="user_text">
                             <ul>
-                                <li><span class="username">{{ request.user }}</span></li>
-                                <li><span id="score" class="score">积分:{{ request.user.score }}</span></li>
+                                <li><span class="username" title="{{ request.user }}">{{ request.user }}</span></li>
+                                <li><span id="score" class="score" title="{{ request.user.score }}">积分:{{ request.user.score }}</span></li>
                             </ul>
                         </div>
                         <div class="user_avatar_drop">

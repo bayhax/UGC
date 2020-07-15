@@ -32,7 +32,8 @@
         </ul>
     </div>
 	<div class="reset_password_form">
-        <input type="text" required oninvalid="setCustomValidity('请填写用户名或邮箱')" id="id_username_or_email" placeholder="用户名或邮箱"></p>
+        <input type="text" disabled id="id_username_or_email" placeholder="{{ request.user.username }}"><br>
+        <input type="text" disabled id="change_email_email" placeholder="{{ request.user.email }}"><br>
         <a href="/change_email"><button type="button" id="confirm_next">下一步</button></a>
 	</div>
 {% endif %}

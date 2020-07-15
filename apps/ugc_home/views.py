@@ -2,6 +2,7 @@ import json
 
 from django.contrib.auth.backends import ModelBackend
 from django.contrib.auth.hashers import check_password, make_password
+from django.db import DatabaseError
 from django.db.models import Q
 from django.http import HttpResponse
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer, SignatureExpired
@@ -60,7 +61,7 @@ class RegisterView(View):
         # 校验用户名是否重复
         try:
             user = UgcUser.objects.get(username=username)
-        except UgcUser.DoesNotExist:
+        except Exception:
             # 用户名不存在
             user = None
 
@@ -68,10 +69,20 @@ class RegisterView(View):
             # 用户名已存在
             return render(request, 'register.html', {'errmsg': '用户已存在'})
         # 进行业务处理：进行用户注册
-        user = UgcUser.objects.create_user(username=username, password=password, identity=identity, name=name,
-                                           email=email, phone=phone)
-        user.is_active = 0
-        user.save()
+        try:
+            user = UgcUser.objects.create_user(username=username, password=password, identity=identity, name=name,
+                                               email=email, phone=phone)
+            user.is_active = 0
+            user.save()
+        except Exception as e:
+            if 'identity' in str(e):
+                return render(request, 'register.html', {'errmsg': '身份证号已被注册,请重新填写'})
+            elif 'phone' in str(e):
+                return render(request, 'register.html', {'errmsg': '手机号已被注册过，请重新填写'})
+            elif 'email' in str(e):
+                return render(request, 'register.html', {'errmsg': '邮箱已被注册过，请重新填写'})
+            else:
+                return render(request, 'register.html', {'errmsg': '注册信息有误，请重新填写'})
         # 发送激活邮件，包含激活链接：http://127.0.0.1:8000/
         # 激活连接中需要包含用户的身份信息,并且把身份信息进行加密
 
@@ -83,7 +94,7 @@ class RegisterView(View):
         # 发邮件
         send_register_active_email.delay(email, username, token)
         # 返回应答,跳转到首页
-        return redirect('/#ugc')
+        return render(request, 'register.html', {'errmsg': '请在一小时内前往邮箱验证邮件'})
 
 
 class ActiveView(View):

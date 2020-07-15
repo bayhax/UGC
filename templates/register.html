@@ -12,7 +12,7 @@
             {% csrf_token %}
             <ul>
                 <li>
-                    <input type="text" name="username" id="username" placeholder="用户名">
+                    <input type="text" name="username" id="username" placeholder="用户名(英文名不区分大小写)">
                     <span class="error_tip">提示信息</span>
                 </li>
                 <li>
@@ -52,7 +52,8 @@
             </ul>
         </form>
         <div class="go_login"><a href="/login">已有账号，直接登录></a></div>
-        {{ errmsg }}
+        <input type="hidden" value="{{ errmsg }}" id="hidden_errmsg" name="hidden_errmsg">
+<!--        <span id="">{{ errmsg }}</span>-->
     </div>
 {% endblock body %}
 {% block footer %}

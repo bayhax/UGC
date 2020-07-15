@@ -1,6 +1,9 @@
 .mod_top {
     width: 56.25%;
+    font-size: 1.25rem;
     margin: auto;
+    margin-top: 0.5rem;
+    color: #272727;
 }
 .obtained {
     cursor: pointer;

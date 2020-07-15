@@ -35,7 +35,7 @@
 		{% csrf_token %}
 		<!--{{ form.as_p }}-->
 		<p><label for="id_username_or_email"></label>
-            <input type="text" name="username_or_email" required oninvalid="setCustomValidity('请填写用户名或邮箱')" id="id_username_or_email" placeholder="用户名或邮箱"></p>
+            <input type="text" name="username_or_email" required oninvalid="setCustomValidity('请填写用户名')" id="id_username_or_email" placeholder="用户名"></p>
 		<p><input type="submit" value="{% trans 'Recover my password' %}" id="reset_password_button"></p>
 	</form>
 	</div>

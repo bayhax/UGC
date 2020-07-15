@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/user_center.css'%}">
 {% endblock topfiles %}
 {% block body %}
+{% if request.user.is_authenticated %}
     <div class="user_center_box">
         <div class="user_center_head">
             <span><a href="/" class="active_color">首页</a></span>
@@ -22,11 +23,13 @@
             </div>
             <div class="user_center_right">
                 <span class="right_text" id="right_text">已绑定邮箱</span>
+                <input type="hidden" value="{{ request.user.email }}" id="hidden_email">
                 <br>
                 <a href="/change_email_confirm" id="change"><button type="button" class="right_button" id="right_button">修改绑定邮箱</button></a>
             </div>
         </div>
     </div>
+{% endif %}
 {% endblock %}
 {% block footer %}
     <footer class="footer" hidden></footer>

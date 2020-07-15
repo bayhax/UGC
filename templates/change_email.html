@@ -42,5 +42,13 @@
 {% endblock %}
 <!-- 网页底部引入文件块 -->
 {% block bottomfiles %}
-    <script type="text/javascript" src="{% static 'js/user_center.js' %}"></script>
+    <script>
+        // 修改邮箱
+        $("#change_email").click(function(){
+            var email = $("#change_email_text").val()
+            $.post("/change_email", {'new_email': email}, function(){
+                window.location.href = "/change_email_done"
+            })
+        })
+    </script>
 {% endblock bottomfiles%}
