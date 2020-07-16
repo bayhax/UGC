@@ -66,3 +66,38 @@ function score_format(){
     $("#score").text("积分:" + format_score)
 }
 score_format()
+
+
+// 返回顶部
+function backTop(minHeight){
+    var backTopHtml = "<div id='backTopBtn'></div>"
+    $(".ugc_box").append(backTopHtml)
+    // 初始时隐藏箭头
+    $("#backTopBtn").fadeOut(100)
+    // 返回到顶部所需时间，及鼠标悬停时样式
+    $("#backTopBtn").click(function(){
+        $("html, body").animate({scrollTop:0}, 500)
+    }).hover(
+        function(){
+
+        },
+        function(){
+
+        }
+    )
+
+    // 最大多少距离会显示箭头
+    minHeight = 400
+
+    // 页面滚动时距离顶部距离，确定显示或者隐藏返回顶部箭头
+    $(window).scroll(function(){
+        // 滚动条距离顶部距离， 大于minHeight，显示箭头，都则隐藏。
+        var s = $(window).scrollTop()
+        if(s > minHeight){
+            $("#backTopBtn").fadeIn(100)
+        }else{
+            $("#backTopBtn").fadeOut(100)
+        }
+    })
+}
+backTop()

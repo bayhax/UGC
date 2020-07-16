@@ -1,3 +1,50 @@
+// 检查服务器名称规范
+var error_check_server_name = false
+var error_password = false
+$("#server_name").blur(function(){
+    check_server_name()
+})
+
+function check_server_name(){
+    var name_len = $("#server_name").val().length
+    if(name_len > 6){
+        $('#server_name').next().html('服务器名称长度小于6位')
+        $('#server_name').next().show();
+        error_check_server_name = true;
+    }else{
+        $('#server_name').next().hide();
+        error_check_server_name = false;
+    }
+}
+// 检查服务器密码规范
+$("#password").blur(function(){
+    check_password()
+})
+function check_password(){
+    if($("input[name='is_private']:checked").val() == 'on'){
+        var len = $('#password').val().length;
+        var re = /\s+/g
+        if(re.test($("#password").val())){
+            $('#password').next().html('密码不能有空格')
+            $('#password').next().show();
+            error_password = true;
+        }
+        else if(len<8||len>14)
+        {
+            $('#password').next().html('密码最少8位，最长14位')
+            $('#password').next().show();
+            error_password = true;
+        }
+        else
+        {
+            $('#password').next().hide();
+            error_password = false;
+        }
+    }else{
+        error_password = false;
+    }
+}
+
 // 租赁服务器
 // 服务器是否对外开放
 $(document).on("change", "input[name='is_private']", function(){
@@ -24,7 +71,7 @@ function price(way) {
     var rent_time = $("input[name='rent_time']:checked").val();
     var number = $("input[name='package']:checked").val();
     var money = (rent_time * number).toFixed(2)
-    if(rent_time == null || rent_time == 'on' || number == null){
+    if(rent_time == null || number == null){
         return false
     }else{
         if(way=="weChat"){
@@ -127,14 +174,17 @@ $("#pay_button").on("click", function(){
         // 是否私密
         var is_private
         var password = ''
+        // 检查服务器名称和密码规则
+        check_server_name()
+        check_password()
         if($("input[name='is_private']:checked").val() == "on"){
             is_private = 1
             password = $("#password").val()
         }else{
             is_private = 0
         }
-        if(rent_time == null || max_player == null){
-            alert('请选择正确的租赁套餐（人数和时长）');
+        if(rent_time == null || max_player == null || error_password == true || error_check_server_name == true){
+            alert('请选择正确的租赁套餐（人数和时长）,并按规则填写服务器名称和密码');
         }else{
             var user_id = $("#user_id").val()
             if(user_id !== ''){

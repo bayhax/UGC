@@ -3,25 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="5a29c1ee-1efc-4340-a14a-bbc0e4dc2c1a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UGC/celery.py" beforeDir="false" afterPath="$PROJECT_DIR$/UGC/celery.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UGC/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/UGC/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/css/create_server.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/css/create_server.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/css/ugc_mod.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/css/ugc_mod.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/css/ugc_server.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/css/ugc_server.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/css/user_center.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/css/user_center.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/js/create_server.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/js/create_server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/js/public.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/js/public.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/js/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/js/user_center.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/js/user_center.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/change_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/change_email.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/change_email_confirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/change_email_confirm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/change_email_done.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/change_email_done.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/change_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/change_password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/change_password_confirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/change_password_confirm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/change_password_done.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/change_password_done.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/password_reset/recovery_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/password_reset/recovery_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/js/ugc_index.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/js/ugc_index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/js/ugc_server.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/js/ugc_server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ugc_home/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ugc_server/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_server/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ugc_server/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_server/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ugc_server/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_server/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/create_server.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/create_server.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/ugc_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ugc_base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ugc_index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/ugc_server.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ugc_server.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user_center.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_center.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

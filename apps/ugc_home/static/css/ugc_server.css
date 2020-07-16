@@ -20,6 +20,12 @@
 .create_server_box:hover {
     background-color: #397589;
 }
+.server_manage {
+    position: relative;
+    height: 95%;
+    width: 56.25%;
+    margin: 1% auto;
+}
 .server_manage_box{
    height: 18.75rem;
     width: 55rem;

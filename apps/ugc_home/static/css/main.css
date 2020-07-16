@@ -125,11 +125,12 @@ html,body{height:100%;min-width: 720px;min-height: 1000px;}
     color: #666;
     position: relative;
     margin-right: 0rem;
+    margin-left: 56%;
 }
 .ugc_index_mod {
     position: relative;
     height: 95%;
-    width: 90%;
+    width: 56.25%;
     margin:1% auto;
     color:#F2F2F2;
 }
@@ -137,7 +138,7 @@ html,body{height:100%;min-width: 720px;min-height: 1000px;}
 .ugc_box {
     text-align: center;
     margin:auto;
-    width: 75%;
+    width: 100%;
     position:relative;
     /* fuck 这就吸底了??????! */
     min-height: calc(100vh - 19rem);
@@ -158,8 +159,8 @@ html,body{height:100%;min-width: 720px;min-height: 1000px;}
     width: 5rem;
     height: 5rem;
     position: absolute;
-    right: -5rem;
-    bottom: 5rem;
+    right: 8rem;
+    bottom: 4rem;
     background: no-repeat 1.5rem url(../img/back_top.png);
 }
 .ugc_user .user {
@@ -576,6 +577,7 @@ html,body{height:100%;min-width: 720px;min-height: 1000px;}
 .ugc_box table{
     margin: auto;
     width: 80%;
+    margin-left: 6rem;
 }
 .ugc_box table tr{
     width: 100%;

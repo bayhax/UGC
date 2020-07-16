@@ -296,3 +296,7 @@ input[type=radio]:checked + .rent_time_day{
 #agree_label input[type=checkbox]:checked {
     background: no-repeat url(../img/agree.png) #fff;
 }
+.error_tip {
+    display: none;
+    color: red;
+}

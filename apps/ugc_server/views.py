@@ -29,7 +29,7 @@ def update_server(sender, **kwargs):
     redis_conn.hmset('server:%d' % server_id,
                      {'server_name': server['server_name'], 'max_player': server['max_player'],
                       'is_private': server['is_private'], 'status': server['status'],
-                      'start_time': server['start_time'].strftime('%Y-%m-%d %H:%M'),
+                      'start_time': server['start_time'].strftime('%Y-%m-%d %H:%M'), 'is_deadline': server['is_deadline'],
                       'end_time': server['end_time'].strftime('%Y-%m-%d %H:%M'), 'ugc_user_id': server['ugc_user_id']})
     # 给用户列表增加服务器id
     redis_conn.rpush('user:%d' % server['ugc_user_id'], "server:%d" % server_id)
@@ -60,6 +60,7 @@ class UgcServerView(View):
         server_max_player = []
         server_is_private = []
         server_status = []
+        server_is_deadline = []
         server_start_time = []
         server_end_time = []
         # 根据user_id查询该用户的所有租赁服信息， 缓存获取
@@ -69,7 +70,7 @@ class UgcServerView(View):
         # server_info = UgcServer.objects.filter(ugc_user_id=user_id)
         for server in server_info:
             server_data = redis_conn.hmget(server.decode('utf-8'), 'server_name', 'max_player', 'is_private',
-                                           'status', 'start_time', 'end_time')
+                                           'status', 'start_time', 'end_time', 'is_deadline')
             server_data = [x.decode('utf-8') for x in server_data]
 
             server_id.append(server.decode('utf-8').split(':')[-1])
@@ -79,7 +80,7 @@ class UgcServerView(View):
             server_status.append(server_data[3])
             server_start_time.append(server_data[4])
             server_end_time.append(server_data[5])
-
+            server_is_deadline.append(server_data[6])
             # 数据库获取
             # server_id.append(server.id)
             # server_name.append(server.server_name)
@@ -93,7 +94,7 @@ class UgcServerView(View):
         server_data = {'server_id': server_id, 'user_name': user_name, 'server_name': server_name,
                        'server_max_player': server_max_player, 'server_is_private': server_is_private,
                        'server_status': server_status, 'server_start_time': server_start_time,
-                       'server_end_time': server_end_time}
+                       'server_end_time': server_end_time, 'server_is_deadline': server_is_deadline}
         # 数据返回页面
         return HttpResponse(json.dumps(server_data))
 
@@ -146,6 +147,7 @@ class ScoreServerPurchaseView(ServerPurchaseView):
             ugc_server = UgcServer(server_name=server_name, max_player=max_player, is_private=is_private,
                                    server_password=make_password(password), status=0, start_time=datetime.now(),
                                    end_time=datetime.now() + timedelta(days=rent_time), ugc_user_id=ugc_user_id)
+            ugc_server.is_deadline = 0
             ugc_server.save()
             
             # 积分变化
