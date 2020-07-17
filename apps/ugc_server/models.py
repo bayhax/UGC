@@ -13,9 +13,11 @@ class UgcServer(BaseModel):
     max_player = models.SmallIntegerField(verbose_name='服务器最大人数')
     start_time = models.DateTimeField(verbose_name='起始时间')
     end_time = models.DateTimeField(verbose_name='结束时间')
+    region = models.CharField(max_length=20, verbose_name='地区')
     status = models.SmallIntegerField(verbose_name='服务器状态')
     is_private = models.SmallIntegerField(verbose_name='是否私密')
     is_deadline = models.SmallIntegerField(verbose_name='是否到期')
+    is_authenticate_password = models.SmallIntegerField(verbose_name='是否开启密码验证')
     ip = models.CharField(max_length=40, verbose_name='服务器ip')
     ugc_user = models.ForeignKey(UgcUser, blank=True, null=True, on_delete=models.SET_NULL)
 

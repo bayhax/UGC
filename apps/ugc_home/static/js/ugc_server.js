@@ -3,21 +3,43 @@ $("#ugc_mod,#ugc_index").removeClass("active_button")
 // 服务器状态
 $(document).on("change", "input[name='server_status']", function(){
     var id_num = $(this).attr("id").split('_')[2]
-    var is_deadline_id = $("#is_deadline_"+id_num).val()
-    if($("input[name='server_status']:checked").val() == 'on'){
+    if($("#server_status_" + id_num).is(":checked")){
         this.previousElementSibling.innerText = "开启"
     }else{
         this.previousElementSibling.innerText = "关闭"
     }
 })
+
 // 服务器是否对外开放
 $(document).on("change", "input[name='is_server_private']", function(){
-    console.log($(this).attr("id"), this.previousElementSibling.innerText)
-    if($("input[name='is_server_private']:checked").val() == 'on'){
-        //兄弟节点span元素改变值
-        this.previousElementSibling.innerText = "私密"
+    // 验证是否开启密码验证
+    var id_num = $(this).attr("id").split('_')[3]
+
+    var authenticate = $("#authenticate_password_" + id_num).val()
+    if(authenticate == 0){
+        if($("#is_server_private_" + id_num).is(":checked")){
+            //兄弟节点span元素改变值
+            this.previousElementSibling.innerText = "私密"
+        }else{
+            this.previousElementSibling.innerText = "开放"
+        }
     }else{
-        this.previousElementSibling.innerText = "开放"
+        // 开启密码验证，要密码输入对才可以进行私密/开放等的切换
+        if($("#is_server_private_" + id_num).is(":checked")){
+            $("#is_server_private_"+id_num).prop("checked", false)
+        }else{
+            $("#is_server_private_"+id_num).prop("checked", true)
+        }
+        // 打开窗口，输入密码
+        // 支付页面弹出居中
+        var iHeight = 400;
+        var iWidth = 600;
+        var iTop = (window.screen.availHeight - iHeight) / 2;
+        var iLeft = (window.screen.availWidth - iWidth) / 2;
+
+        var windowStyle = 'height=' + iHeight + ',width=' + iWidth + ',top=' + iTop + ',left=' + iLeft +
+                            ',status=no,toolbar=no,menubar=no,location=no,resizable=no,scrollbars=0,titlebar=no';
+        window.open('/ugc_server/authenticate_password', '服务器密码认证', windowStyle)
     }
 })
 
@@ -26,7 +48,6 @@ function getServer(offset, size){
     $.post('/ugc_server/ugc_server', function(server_data){
         var server_data = JSON.parse(server_data);
         var sum = server_data.server_id.length
-
         if(sum - offset < size){
             size = sum - offset;
         }
@@ -193,15 +214,16 @@ function getServer(offset, size){
 
             server_manage_button.append(change_password, renewal, edit_mod)
 
-            var is_deadline = document.createElement('input')
-            is_deadline.type = "hidden"
-            is_deadline.name = "is_deadline"
-            is_deadline.value = server_data.server_is_deadline[i]
-            is_deadline.id = "is_deadline_" + server_data.server_id[i]
+            // 是否开启密码验证
+            var authenticate_password = document.createElement('input')
+            authenticate_password.type = "hidden"
+            authenticate_password.name = "authenticate_password"
+            authenticate_password.value = server_data.is_authenticate_password[i]
+            authenticate_password.id = "authenticate_password_" + server_data.server_id[i]
             // 加入服务器管理块
             var box = document.createElement('div')
             box.className = "server_manage_box"
-            box.append(server_info, server_operate, hr2, switch_show, server_manage_button, is_deadline)
+            box.append(server_info, server_operate, hr2, switch_show, server_manage_button, authenticate_password)
 
             server_manage.appendChild(box)
         }

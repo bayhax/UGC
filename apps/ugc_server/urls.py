@@ -12,4 +12,5 @@ urlpatterns = [
     path('money_purchase', views.MoneyServerPurchaseView.as_view()),  # 人民币购买
     path('change_server_password', views.ChangeServerPasswordView.as_view()),  # 修改服务器密码
     path('renewal', views.RenewalView.as_view()),  # 服务器续费
+    path('authenticate_password', views.AuthenticatePasswordView.as_view()),  # 是否需要验证密码
 ]

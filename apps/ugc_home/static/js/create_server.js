@@ -171,6 +171,10 @@ $("#pay_button").on("click", function(){
         var start_time = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
         date.setTime(date.getTime() + rent_time * 60 * 60 * 24 * 1000);
         var end_time = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+        // 所选择的地域
+        var select_region = document.getElementById("select_region")
+        var region_index = select_region.selectedIndex
+        var region = select_region.options[region_index].text
         // 是否私密
         var is_private
         var password = ''
@@ -195,7 +199,8 @@ $("#pay_button").on("click", function(){
                     $.ajax({
                         type: 'post',
                         dataType: 'json',
-                        data: {'server_name':server_name, 'max_player':max_player, 'is_private': is_private, 'password':password, 'start_time':start_time, 'end_time':end_time, 'rent_time':rent_time, 'price':price},
+                        data: {'server_name':server_name, 'max_player':max_player, 'is_private': is_private, 'password':password,
+                        'start_time':start_time, 'end_time':end_time, 'rent_time':rent_time, 'price':price, 'region': region},
                         url: url,
                         success: function(ret){
                             alert(ret.tips)

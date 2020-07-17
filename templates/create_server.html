@@ -68,6 +68,14 @@
                             <span class="rent_time_day">360天</span>
                         </label>
                     </div>
+                    <div class="rent_region_text"><span>选择地区</span></div>
+                    <div class="rent_region">
+                        <select class="select_box" id="select_region">
+                            {% for reg in region %}
+                                <option>{{ reg }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
                     <div class="rent_time_deadline">租赁时间： <span id="deadline"></span></div>
                 </div>
             </div>

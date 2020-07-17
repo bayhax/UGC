@@ -11,13 +11,13 @@
 }
 .rent_server_box {
     width: 61.25rem;
-    height: 31.25rem;
+    height: 40rem;
     margin: auto;
 }
 .box_left {
     float: left;
     width: 35rem;
-    height: 35rem;
+    height: 40rem;
     border: 1px solid #666;
 }
 .server_name_text {
@@ -199,9 +199,31 @@ input[type=radio]:checked + .rent_time_day{
     color: #666;
     margin-left: 1rem;
 }
+.rent_region_text {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    color: #272727;
+    background: no-repeat 0rem url(../img/server_manage_point.png);
+}
+.rent_region_text span {
+    margin-left: 1rem;
+}
+.select_box {
+    height: 2rem;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    outline: none;
+    border: none;
+    background-color: #f2f2f2;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    color: #272727;
+    z-index: 99;
+    border-radius: 10px;
+}
 .box_right {
     width: 25.625rem;
-    height: 35rem;
+    height: 40rem;
     float: left;
     border: 1px solid #666;
 }
@@ -209,7 +231,7 @@ input[type=radio]:checked + .rent_time_day{
     margin-left:1rem;
 }
 .pay_way {
-    margin-top: 6rem;
+    margin-top: 9rem;
     font-size: 1.5625rem;
     font-weight: 600;
     color: #272727;
