@@ -3,15 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="5a29c1ee-1efc-4340-a14a-bbc0e4dc2c1a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/css/create_server.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/css/create_server.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/js/create_server.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/js/create_server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/js/authenticate_password.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/js/authenticate_password.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ugc_home/static/js/ugc_server.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_home/static/js/ugc_server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ugc_server/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_server/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ugc_server/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_server/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/ugc_server/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_server/tasks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_server/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_server/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/ugc_server/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ugc_server/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/celerybeat.pid" beforeDir="false" afterPath="$PROJECT_DIR$/celerybeat.pid" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/create_server.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/create_server.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

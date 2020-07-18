@@ -1,6 +1,6 @@
 $("#confirm").click(function(){
     var password = $("#authenticate_password").val()
-    var id_num = window.opener.$("input[name='is_server_private']").attr("id").split('_')[3]
+    var id_num = window.atob(window.location.search.substring(1)).split('=')[1]
     var private
     if(window.opener.$("#is_server_private_" + id_num).is(":checked")){
         private = 0

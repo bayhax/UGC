@@ -6,7 +6,7 @@ from ugc_home.models import UgcUser
 
 
 class UgcServer(BaseModel):
-    """UGC服务器表"""
+    """UGC租赁服务器表"""
     objects = models.Manager()
     server_name = models.CharField(max_length=6, verbose_name='服务器名称')
     server_password = models.CharField(max_length=128, null=True, verbose_name='服务器密码')
@@ -38,4 +38,22 @@ class ServerMod(BaseModel):
         index_together = ['server', 'mod']
         db_table = 'server_mod'
         verbose_name = '服务器/Mod对应表'
+        verbose_name_plural = verbose_name
+
+
+class Server(BaseModel):
+    """腾讯云服务器表"""
+    objects = models.Manager()
+    ip = models.CharField(max_length=40, verbose_name='服务器ip')
+    region = models.CharField(max_length=40, verbose_name='地区')
+    end_time = models.DateTimeField(verbose_name='到期时间')
+    disk = models.IntegerField(verbose_name='硬盘')
+    memory = models.IntegerField(verbose_name='内存')
+    bind_width = models.IntegerField(verbose_name='带宽')
+    cpu = models.IntegerField(verbose_name='cpu')
+    rest_disk = models.IntegerField(verbose_name='空闲硬盘', db_index=True)
+
+    class Meta:
+        db_table = 'tencent_server'
+        verbose_name = '腾讯云服务器表'
         verbose_name_plural = verbose_name

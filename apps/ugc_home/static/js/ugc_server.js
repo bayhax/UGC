@@ -14,7 +14,6 @@ $(document).on("change", "input[name='server_status']", function(){
 $(document).on("change", "input[name='is_server_private']", function(){
     // 验证是否开启密码验证
     var id_num = $(this).attr("id").split('_')[3]
-
     var authenticate = $("#authenticate_password_" + id_num).val()
     if(authenticate == 0){
         if($("#is_server_private_" + id_num).is(":checked")){
@@ -39,7 +38,7 @@ $(document).on("change", "input[name='is_server_private']", function(){
 
         var windowStyle = 'height=' + iHeight + ',width=' + iWidth + ',top=' + iTop + ',left=' + iLeft +
                             ',status=no,toolbar=no,menubar=no,location=no,resizable=no,scrollbars=0,titlebar=no';
-        window.open('/ugc_server/authenticate_password', '服务器密码认证', windowStyle)
+        window.open('/ugc_server/authenticate_password?' + window.btoa("id="+id_num), '服务器密码认证', windowStyle)
     }
 })
 
